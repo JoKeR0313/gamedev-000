@@ -15,7 +15,7 @@ class FPSManager:
 
     def set_fps(self, fps):
         if self.min_fps <= fps and self.max_fps >= fps:
-            self._framecount = 0
+            self._frame_count = 0
             self._fps = fps
             self._one_frame_time = self.__get_one_frame_time(fps)
             print('new fps set: {} frame time: {}'.format(

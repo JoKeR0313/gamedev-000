@@ -13,7 +13,7 @@ class Screen:
     def init():
         pygame.init()
         Screen.screen = pygame.display.set_mode(Screen.size,
-                                                pygame.DOUBLEBUF & pygame.HWSURFACE)
+                                                pygame.DOUBLEBUF | pygame.HWSURFACE)
 
 
 class Ball:
