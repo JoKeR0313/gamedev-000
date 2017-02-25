@@ -6,6 +6,7 @@
 - when I say print error/warning/trace msg, I mean to use the Logger class!
 - a simple logger class. First it calls print() and than also logs to file
 - static class because it's needed everywhere
+
     ### Skeleton
         class Logger:
             filename = "" #"logs/sci-fi_game_" + a timestamp from the time module + ".log", so the filename will be different every time we start the game
@@ -30,6 +31,7 @@
 ## ccFileLoader
 - ccFileLoader class to parse JSON files. It is needed to decorate the JSON loader so we can use another format if we need to. Pick a JSON loader module what can parse JSON files, a simple one will do
 - abstract class
+
     ### Skeleton:
         class FileLoader:
             def __init__(self):
@@ -72,6 +74,7 @@
 
 ## ccTexture
 - load the image file from disk and store it in a pygame Surface type
+
     ### Skeleton
         class ccTexture:
             def __init__(self):
@@ -90,6 +93,7 @@
 
 ## ccSprite
 - a sprite renders a quad from a ccTexture to screen when called
+
     ### Skeleton
         class ccSprite:
             def __init__(self, texture, rectangle):
@@ -105,6 +109,7 @@
 ## ccObject
 - very basic object type abstract class. Has type variable, id, object properties, sprite
 - it's abstract because we will make a special object class for tiles and this class will be it's ancestor (and this class is the ancestor of other types of objects also)
+
     ### Skeleton
         class ccObjectBase:
             def __init__(self):
@@ -120,6 +125,7 @@
     
 ## ccBasicObject
 - inherits from ccObject, loads the sprite and has drawing method, not abstract. Has position also
+
     ### Skeleton
         class ccBasicObject(ccObject):
             def __init__(self):
@@ -140,6 +146,7 @@
 ## ccSpriteManager
 - this class handles all the loaded sprites and textures. Keeps dictionary where the key is the name of the sprite and the value is the ccSprite. Should have a getter what gives back a pointer to a sprite (no copying)
 - this class is static, won't be instantiated because we need it all the time while we are running our program
+
     ### Skeleton
         class ccSpriteManager:
             textures = {}
