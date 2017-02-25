@@ -2,13 +2,13 @@
 # Important
 ## * when I say print error/warning/trace msg, I mean to use the Logger class! *
 
-## Logger
+## ccLogger
 - when I say print error/warning/trace msg, I mean to use the Logger class!
 - a simple logger class. First it calls print() and than also logs to file
 - static class because it's needed everywhere
 
     ### Skeleton
-        class Logger:
+        class ccLogger:
             filename = "" #"logs/sci-fi_game_" + a timestamp from the time module + ".log", so the filename will be different every time we start the game
             def __init__(self):
                 #raise an exception (I know we usually don't raise execptions in init but this is an exceptional case :) and also print an error msg to Terminal
@@ -33,7 +33,7 @@
 - abstract class
 
     ### Skeleton:
-        class FileLoader:
+        class ccFileLoader:
             def __init__(self):
                 # init. Use it if you need it
                 self.current_section=""
@@ -70,7 +70,11 @@
             def __init__(self):
                 pass
             def process_file(self, filename):
-                #load the file with the json reader(use load_file() from ancestor). If error happens, abort loading and print error msg. If something was loaded before, release that file and initialize before loading the new file. Go through all the sections. First process the 'Config' section, and process the sprites after Config was processed. Make as much private methods as you like and don't violate the single responsibility principle. In the Config section, read the name of the image file and add it to SpriteManager as a ccTexture (use the filename as the texture name when adding). Store the filename and when creating the sprites, use it to get the texture from SpriteManager
+                #load the file with the json reader(use load_file() from ancestor). 
+                #If error happens, abort loading and print error msg.
+                #If something was loaded before, release that file and initialize
+                #before loading the new file. Go through all the sections. First process the 'Config' section, and process the sprites after Config was processed. Make as much private methods as you like and don't violate the single responsibility principle. In the Config section, read the name of the image file and add it to SpriteManager as a ccTexture (use the filename as the texture name when adding). Store the filename and when creating the sprites, use it to get the texture from SpriteManager
+                pass
 
 ## ccTexture
 - load the image file from disk and store it in a pygame Surface type
@@ -104,7 +108,8 @@
                 pass
 
 ## ccObjectProps
-- settings for objects: object visible, object enabled. A simple class with some enums or bitfields or something what handles on/off values efficiently
+- settings for objects: object visible, object enabled
+- a simple class with some enums or bitfields or something what handles on/off values efficiently
 
 ## ccObject
 - very basic object type abstract class. Has type variable, id, object properties, sprite
@@ -124,7 +129,8 @@
                 # raise an exception that this is an abstract class
     
 ## ccBasicObject
-- inherits from ccObject, loads the sprite and has drawing method, not abstract. Has position also
+- inherits from ccObject, loads the sprite and has drawing method, not abstract
+- has position variable
 
     ### Skeleton
         class ccBasicObject(ccObject):
@@ -144,7 +150,7 @@
                 pass
 
 ## ccSpriteManager
-- this class handles all the loaded sprites and textures. Keeps dictionary where the key is the name of the sprite and the value is the ccSprite. Should have a getter what gives back a pointer to a sprite (no copying)
+- handles all the loaded sprites and textures. Keeps dictionary where the key is the name of the sprite and the value is the ccSprite. Should have a getter what gives back a pointer to a sprite (no copying)
 - this class is static, won't be instantiated because we need it all the time while we are running our program
 
     ### Skeleton
