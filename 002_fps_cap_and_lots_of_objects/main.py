@@ -19,26 +19,26 @@ class Screen:
 class Ball:
 
     def __init__(self, surface):
-        self.position = [0, 0]
-        self.surface = surface
-        self.speed = [0, 0]
+        self.position = pygame.math.Vector2(0,0)
+        self.speed = pygame.math.Vector2(0,0)
+        self.surface = surface        
         self.size = [surface.get_rect().width, surface.get_rect().height]
 
     def move(self, time_passed_in_sec):
-        current_speed = [0, 0]
-        current_speed[0] = self.speed[0] * time_passed_in_sec
-        current_speed[1] = self.speed[1] * time_passed_in_sec
-        self.position[0] += current_speed[0]
-        self.position[1] += current_speed[1]
+        current_speed = pygame.math.Vector2(0,0)
+        current_speed.x = self.speed.x * time_passed_in_sec #TODO: check Vector2 possibilities
+        current_speed.y = self.speed.y * time_passed_in_sec
+        self.position.x += current_speed.x
+        self.position.y += current_speed.y
 
         # TODO: width, height are globals and position, size, speed should have
         # been classes
-        if self.position[0] < 0 or \
-           self.position[0] + self.size[0] > Screen.width:
-            self.speed[0] = -self.speed[0]
-        if self.position[1] < 0 or \
-           self.position[1] + self.size[1] > Screen.height:
-            self.speed[1] = -self.speed[1]
+        if self.position.x < 0 or \
+           self.position.x + self.size[0] > Screen.width:
+            self.speed.x = -self.speed.x
+        if self.position.y < 0 or \
+           self.position.y + self.size[1] > Screen.height:
+            self.speed.y = -self.speed.y
 
 
 def main_loop(objects):
@@ -74,10 +74,10 @@ def main():
 #    orig_ball_surface = pygame.image.load("small_ball.gif")
     for i in range(100):
         ball = Ball(orig_ball_surface)
-        ball.position = [random.randint(0, Screen.width - ball.size[0] - 1),
-                         random.randint(0, Screen.height - ball.size[1] - 1)]
-        ball.speed[0] = random.choice([speed[0], -speed[0]])
-        ball.speed[1] = random.choice([speed[1], -speed[1]])
+        ball.position = pygame.math.Vector2(random.randint(0, Screen.width - ball.size[0] - 1),
+                                            random.randint(0, Screen.height - ball.size[1] - 1))
+        ball.speed = pygame.math.Vector2(random.choice([speed[0], -speed[0]]),
+                                         random.choice([speed[1], -speed[1]]))
         objects.append(ball)
 
     main_loop(objects)
