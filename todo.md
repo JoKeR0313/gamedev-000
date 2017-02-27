@@ -72,9 +72,17 @@
             def process_file(self, filename):
                 #load the file with the json reader(use load_file() from ancestor). 
                 #If error happens, abort loading and print error msg.
-                #If something was loaded before, release that file and initialize
-                #before loading the new file. Go through all the sections. First process the 'Config' section, and process the sprites after Config was processed. Make as much private methods as you like and don't violate the single responsibility principle. In the Config section, read the name of the image file and add it to SpriteManager as a ccTexture (use the filename as the texture name when adding). Store the filename and when creating the sprites, use it to get the texture from SpriteManager
+                #If a sprites file was loaded before, release that file and initialize
+                #before loading the new file. Go through all the sections. 
+				#First process the 'Config' section, and process the sprites after Config was processed. 
+				#Make as much private methods as you like and don't violate the single responsibility principle. 
+				#In the Config section, read the name of the image file and add it to SpriteManager as a ccTexture 
+				#(use the filename as the texture name when adding). 
+				#Store the filename and when creating the sprites, use it to get the texture from SpriteManager
                 pass
+				#if there is a "num_of_sprites" field, it means you have to load more than one sprite, starting from
+				#the offset_x, offset_y, using the provided width,height for all of them. Handle the case, when you reach the
+				#width of the texture! Continue with the next row in this case.
 
 ## ccTexture
 - load the image file from disk and store it in a pygame Surface type
