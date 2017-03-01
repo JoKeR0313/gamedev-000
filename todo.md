@@ -41,7 +41,7 @@
             def process_file(self, filename):
                 #raise an exception that this is an abstract class
                 pass
-            def load_file(self, filename):
+            def __load_file(self, filename):
                 #make the json loading here and set an instance variable what will hold the json reader and can be accessed from now on
                 pass
             def get_section(self, section_name, mandatory=True):
@@ -111,7 +111,10 @@
             def __init__(self, texture, rectangle):
                 #needs an instance variable what stores the width, height and x,y offset. Probably a pygame.Rect type. Store the texture parameter also in an instance variable
                 pass
-            def draw(self, x, y):
+			def load(self, sprites_reader):
+				pass
+
+			def draw(self, x, y):
                 #draw the sprite to screen with pygame. Draw only the sprite from the texture to x,y position
                 pass
 
