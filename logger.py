@@ -13,18 +13,22 @@ class ccLogger:
         raise Exception(message)
 
     @classmethod
-    def error(cls, message):
-        log = (str(datetime.now()) + " !E! " + message + "\n")
-        ccLogger.filename.write(log)
+    def error(cls, *args):
+        log = (str(datetime.now()), " !E! ", ' '.join(args), "\n")
+        ccLogger.filename.write(''.join(log))
         print(log)
 
     @classmethod
-    def warning(cls, message):
-        log = (str(datetime.now()) + " !W! " + message + "\n")
-        ccLogger.filename.write(log)
+    def warning(cls, *args):
+        log = (str(datetime.now()), " !W! ", ' '.join(args), "\n")
+        ccLogger.filename.write(''.join(log))
         print(log)
 
     @classmethod
-    def trace(cls, message):
-        log = (str(datetime.now()) + " !T! " + message + "\n")
+    def trace(cls, *args):
+        log = (str(datetime.now()), " !T! ", ' '.join(args), "\n")
         print(log)
+
+ccLogger.error("Error", "Missing")
+ccLogger.warning("Warning", "Not have")
+ccLogger.trace("Trace", "Program is running")
