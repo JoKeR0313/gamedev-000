@@ -29,7 +29,3 @@ class ccLogger:
     def trace(cls, *args):
         log = (str(datetime.now())[:-3], " !T! ", ' '.join(args), "\n")
         print(''.join(log))
-
-ccLogger.error("Error", "Missing")
-ccLogger.warning("Warning", "Not have")
-ccLogger.trace("Trace", "Program is running")
