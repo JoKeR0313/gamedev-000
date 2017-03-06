@@ -3,7 +3,7 @@ class ccSpriteManager:
     textures = {}
     sprites = {}
 
-    def __init__(self):
+    def __init__(cls):
         stop_being_a_noob = "You cannot instantiate this class. Now go cry in the corner."
         raise Exception(stop_being_a_noob)
 
