@@ -1,5 +1,6 @@
 from cc_fileloader import *
 from cc_logger import *
+from cc_sprite_manager import *
 
 
 class ccSpritesFileLoader(ccFileLoader):
