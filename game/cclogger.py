@@ -28,4 +28,4 @@ class ccLogger:
     @classmethod
     def trace(cls, *args):
         log = (str(datetime.now())[:-3], " !T! ", ' '.join(args), "\n")
-        print(''.join(log))
+        ccLogger.filename.write(''.join(log))
