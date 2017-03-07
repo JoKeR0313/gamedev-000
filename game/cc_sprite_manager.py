@@ -1,3 +1,6 @@
+from cc_logger import ccLogger
+
+
 class ccSpriteManager:
 
     textures = {}
@@ -13,7 +16,7 @@ class ccSpriteManager:
         # already there (texture_name is the key). If it is there, don't add and
         # print a warning msg that says that we wanted to load it twice
         if texture_name in cls.textures:
-            print("Warning: ccTexture is already loaded.")
+            ccLogger.warning("ccTexture is already loaded.")
         else:
             cls.textures[texture_name] = texture
 
@@ -24,7 +27,7 @@ class ccSpriteManager:
         if texture:
             return texture
         else:
-            print("Error: ccTexture not found.")
+            ccLogger.error("ccTexture not found.")
 
     @classmethod
     def add_sprite(cls, sprite_name, sprite):
@@ -32,7 +35,7 @@ class ccSpriteManager:
         # (sprite_name is the key). If it is there, print a warning msg and don't
         # overwrite the previous one
         if sprite_name in cls.sprites:
-            print("Warning: ccSprite is already loaded. It will not be overwritten.")
+            ccLogger.warning("ccSprite is already loaded. It will not be overwritten.")
         else:
             cls.sprites[sprite_name] = sprite
 
@@ -43,4 +46,4 @@ class ccSpriteManager:
         if sprite:
             return sprite
         else:
-            print("Error: ccSprite not found.")
+            ccLogger.error("ccSprite not found.")
