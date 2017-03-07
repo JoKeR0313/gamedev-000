@@ -5,8 +5,9 @@ import os
 class ccLogger:
     if not os.path.exists("logs"):
         os.makedirs("logs")
+    bad_chars = (":", " ")
     filename = open("logs/sci-fi_game_" +
-                    str(datetime.now())[:-7] + ".log", "w")
+                    str(datetime.now()).replace(":", "_").replace(" ", "_")[:-7] + ".log", "w")
 
     def __init__(self, message):
         self.message = message

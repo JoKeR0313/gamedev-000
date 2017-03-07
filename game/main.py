@@ -1,4 +1,4 @@
-from cclogger import ccLogger
+from cc_logger import ccLogger
 
 
 def main():
