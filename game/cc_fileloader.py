@@ -77,7 +77,7 @@ class ccFileLoader:
             try:
                 first_section_list = (list(self.current_dict.items())[self.current_section_id+1])
                 self.current_section = (dict(OrderedDict(first_section_list[1])))
-                self.current_section_id = 0
+                self.current_section_id += 1
                 return True
             except IndexError:
                 print('There is no more section!')
@@ -92,8 +92,9 @@ class ccFileLoader:
 
 #load=ccFileLoader()
 #load.load_file('test.objects.json')
-#load.get_section("obj_test_01", mandatory=True)
-#load.set_section('obj_test_04')
-#load.get_field("velocity_x")
-#load.next_section()
+#print (load.current_dict)
+#print (load.get_section("obj_test_01", mandatory=True))
+#load.set_section('obj_test_03')
+#print(load.get_field("sprite"))
+#print(load.next_section())
 #print (load.current_section)
