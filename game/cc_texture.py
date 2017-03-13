@@ -1,8 +1,8 @@
 import pygame
-from logger import ccLogger
+from cc_logger import ccLogger
 
 class ccTexture:
-
+    resource_dir_path = "./resources/"
     def __init__(self):
 
         self.width = 0
@@ -12,7 +12,7 @@ class ccTexture:
 
     def load_image(self, file_name):
         #load the image as a pygame.Surface and store it
-        self.image = pygame.image.load(file_name)
+        self.image = pygame.image.load(self.resource_dir_path + file_name)
         self.width = self.image.get_width()
         self.height = self.image.get_height()
 
