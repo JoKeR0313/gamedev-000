@@ -10,8 +10,7 @@ class ccSpritesFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            ccload = ccFileLoader()
-            self.texture = ccload.load_file(filename)
+            self.texture = self.load_file(filename)
         except:
             ccLogger.error('File could not be loaded.')
             raise RuntimeError('File could not be loaded.')
@@ -19,6 +18,7 @@ class ccSpritesFileLoader(ccFileLoader):
 
     def __config(self):
         self.file_name = self.texture['Config']['filename']
+        
         ccSpriteManager.add_texture(self.file_name, self.texture)
         for sprite in self.texture:
             if sprite != 'Config':
@@ -34,7 +34,9 @@ class ccSpritesFileLoader(ccFileLoader):
         self.height = self.texture[sprite]['height']
         self.offset_x = self.texture[sprite]['offset_x']
         self.offset_y = self.texture[sprite]['offset_y']
-        self.__put_to_manager()
+        self.rect = (self.offset_x, self.offset_y, self.width, self.height)
+        self.object = ccSprite(self.rect, self.texture)
+        self.__put_to_manager(self.object)
 
     def __multiple_sprite_init(self, sprite):
         offset_x = 0
@@ -52,8 +54,10 @@ class ccSpritesFileLoader(ccFileLoader):
             self.offset_x = offset_x
             self.offset_y = offset_y
             offset_x += self.texture[key]['width']
-            self.__put_to_manager()
+            self.rect = (self.offset_x, self.offset_y, self.width, self.height)
+            self.object = ccSprite(self.rect, self.texture)
+            self.__put_to_manager(self.object)
             num += 1
 
-    def __put_to_manager(self):
-        ccSpriteManager.add_sprite(self.name, self)
+    def __put_to_manager(self, sprite):
+        ccSpriteManager.add_sprite(self.name, sprite)
