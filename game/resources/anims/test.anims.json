@@ -1,0 +1,35 @@
+{
+  "Config": {
+    "filename": "sprites/test.sprites.json"
+  },
+  "anim_00": {
+    "sprites": ["test_00",
+                "test_01",
+                "test_02",
+                "test_03",
+                "test_04"
+               ],
+    "frames": ["0 t10",
+               "1",
+               "2 t30",
+               "3",
+               "4",
+               "goto 1"
+              ]
+  },
+  "anim_01": {
+    "sprites": ["test_all_004",
+                "test_all_003",
+                "test_all_002",
+                "test_all_001",
+                "test_all_000"
+               ],
+    "frames": ["0 t30",
+               "1",
+               "2 t20",
+               "3",
+               "4",
+               "goto 0"
+              ]
+  }
+}

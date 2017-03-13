@@ -1,40 +1,51 @@
 {
-	"Config": {
-		"filenames": ["sprites/test.sprites.json"]
-	},
-	"obj_test_00": {
-		"type": "ccBasicObject",
-		"sprite": "test_00",
-		"visible": true,
-		"velocity_x": 0,
-		"velocity_y": 0
-	},
-	"obj_test_01": {
-		"type": "ccBasicObject",
-		"sprite": "test_01",
-		"visible": true,
-		"velocity_x": 0,
-		"velocity_y": 0
-	},
-	"obj_test_02": {
-		"type": "ccBasicObject",
-		"sprite": "test_02",
-		"visible": true,
-		"velocity_x": 0,
-    "velocity_y": 0
-	},
-  "obj_test_03": {
-		"type": "ccBasicObject",
-		"sprite": "test_03",
-		"visible": true,
-		"velocity_x": 0,
-    "velocity_y": 0
-	},
-  "obj_test_04": {
-		"type": "ccBasicObject",
-		"sprite": "test_04",
-		"visible": true,
-		"velocity_x": 0,
-    "velocity_y": 0
-	}  
+    "Config": {
+        "filenames": ["sprites/test.sprites.json"]
+    },
+    "obj_test_00": {
+        "type": "ccBasicObject",
+        "sprite": "test_00",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_01": {
+        "type": "ccBasicObject",
+        "sprite": "test_01",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_02": {
+        "type": "ccBasicObject",
+        "sprite": "test_02",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_03": {
+        "type": "ccBasicObject",
+        "sprite": "test_03",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_04": {
+        "type": "ccBasicObject",
+        "sprite": "test_04",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "anim_object_00": {
+        "type": "ccAnimObject",
+        "animations": ["anim_00",
+                       "anim_01"
+                      ],
+        "start_anim": "anim_00",
+        "play": true,
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    }
 }
