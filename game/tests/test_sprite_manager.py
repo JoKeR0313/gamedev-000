@@ -35,8 +35,8 @@ class TestSpriteManager:
     def __draw_sprites(self):
         for j in range(self.num_of_rows):
             for i in range(len(self.sprites)):
-                width = self.sprites[i].rectangle[0]
-                height = self.sprites[i].rectangle[1]
+                width = self.sprites[i].rectangle.width
+                height = self.sprites[i].rectangle.height
                 self.sprites[i].draw(self.renderer, i*width+j*width, i*height)
                 self.sprites[i].draw(self.renderer,
                                      (len(self.sprites)-i-1)*width+j*width,
