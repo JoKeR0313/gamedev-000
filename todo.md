@@ -266,43 +266,31 @@
         #it should be the /resources/sprites directory. Use the base_path and put the /resources/sprites/ after it. Be careful with the '/'-s. Don't give back things like this: C:/gamedir//resources/
         pass
         
-        
-        
-        
-        
-!!! Think about it: store the sprite references instead of sprite numbers and you will only need one list of ccAnimFrame in ccAnimSprite        
-        
 ## ccAnimSprite
 - a sprite class what contains more than one sprite and animation info about the playing of the anim
   ### Skeleton
     class ccAnimSprite:
       def __init__(self):
-        #create sprites list (ccSprite) and anim_frames list (ccAnimFrame), both empty
-        pass
-      def add_sprite(self, sprite):
-        # adds a ccSprite to sprites. Error if already exists
+        #create an empty anim_frames list (ccAnimFrame)
         pass
       def add_frame(self, frame):
         # adds a ccAnimFrame to anim_frames list. Error if already exists
-        pass
-      def get_sprite(self, sprite_number):
-        # gets a sprite from sprites list based on it's position in the list. Error and None if not found
         pass
       def get_frame(self, frame_number):
         # gets a ccAnimFrame from anim_frames based on it's position in the list. Error and None if not found
         pass
         
 ## ccAnimFrame
-- has a sprite number what should be displayed, a time while the frame should be displayed and the next anim frame number
+- has a ccSprite what should be displayed, a time while the frame should be displayed and the next anim frame number
   ### Skeleton
     class ccAnimFrame:
-      def __init__(self, sprite_number, time, next_frame):
-        # self. sprite_number, time, next_frame
+      def __init__(self, sprite, time, next_frame):
+        # self. sprite, time, next_frame
         pass
       def get_time(self):
         # self.time
         pass
-      def get_sprite_number(self):
+      def get_sprite(self):
         # guess what
         pass
       def get_next_frame(self):
