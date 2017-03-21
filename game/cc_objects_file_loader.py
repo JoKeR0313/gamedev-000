@@ -17,6 +17,7 @@ class ccObjectsFileLoader(ccFileLoader):
             ccLogger.error('{} could not be loaded.'.format(filename))
             raise RuntimeError('{} could not be loaded.'.format(filename))
         self.__process_config()
+        self.__process_object_sections()
 
     def __process_config(self):
         sprites_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
@@ -24,7 +25,7 @@ class ccObjectsFileLoader(ccFileLoader):
             loader = ccSpritesFileLoader()
             loader.process_file(spr_file)
 
-    def process_object_sections(self):
+    def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
             constructor = globals()[self.current_section['type']]
