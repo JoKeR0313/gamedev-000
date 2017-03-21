@@ -89,6 +89,8 @@ class ccFileLoader:
             return False
         return True
 
+    def get_current_section_name(self):
+        return list(self.current_dict.items())[self.current_section_id][0]
 
 #load=ccFileLoader()
 #load.load_file('test.objects.json')
