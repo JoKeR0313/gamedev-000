@@ -6,8 +6,10 @@
     },
     "obj_test_00": {
         "type": "ccBasicObject",
+        "id_tag": 1,
         "sprite": "test_00",
         "visible": true,
+        "enabled": true,
         "velocity_x": 0,
         "velocity_y": 0
     },
