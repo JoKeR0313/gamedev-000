@@ -30,6 +30,5 @@ class ccObjectsFileLoader(ccFileLoader):
             constructor = globals()[self.current_section['type']]
             obj = constructor()
             obj.load(self.current_section)
-           # ccObjectManager.add_object(self.current_section.key, obj) # section name(key's string format) is needed
-
-
+            current_section_name = self.get_current_Section_name()
+            #ccObjectManager.add_object(current_section_name, obj) # ccObjectManager not implemented yet
