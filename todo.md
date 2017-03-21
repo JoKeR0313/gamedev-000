@@ -473,5 +473,32 @@ Example:
       def get_scene_name(self):
         #gets the scene's name
 
-
-
+## ccActManager
+- handles all the loaded scenes and call it's draw, step.. methods
+  ### Skeleton
+    class ccActManager:
+      scenes = []
+      def __init__(self):
+        #raise an exception (I know we usually don't raise execptions in init but this is an exceptional case :) and also print an error msg
+        pass
+      @classmethod
+      def load(cls, filename):
+        #creates a ccActFileLoader instance and processes the act file, makes the scenes
+        #if something was loaded, removes it and initializes before loading
+        pass
+      @classmethod
+      def draw(cls):
+        #loops through all the scenes and calls it's draw method
+        pass
+      @classmethod
+      def step(cls):
+        #loops through all the scenes and calls it's step method
+        pass
+      @classmethod
+      def push_scene(cls, scene):
+        #appends the incoming scene to the end of the scenes list
+        pass
+      @classmethod
+      def pop_scene(cls):
+        #removes the last scene from the scenes list
+        pass
