@@ -1,4 +1,3 @@
-
 from cc_object_props import ccObjectProps
 from cc_logger import ccLogger
 
@@ -7,18 +6,18 @@ class ccObject:
 
     def __init__(self):
         # initialize instance variables
-        self.type = 'ccObject'  # not sure this will be needed because python has type() function
-        self.idTag = 0
+        self.type = 'ccObject' # not sure this will be needed because python has type() function
+        self.id = None
         self.active_sprite = None
         self.object_props = ccObjectProps()
 
-    def load(self, obj_file_loader):
-        # receives a ccObjectsFileLoader what already has the file which contains
-        # the info for this object and it's current_section is set to this object.
-        # Loads all the data from it EXCEPT the active_sprite. Check out
-        # test.objects.json for the fields.
-        pass
+    def load(self, obj_section):
+        if "visible" in obj_section:
+            self.object_props.object_visible = obj_section["visible"]
+        if "enabled" in obj_section:
+            self.object_props.object_enabled = obj_section["enabled"]
+        if "id" in obj_section:
+            self.id = obj_section["id"]
 
     def draw(self):
-        # raise an exception that this is an abstract class
         ccLogger.error("This is an abstract class, yon can't call this function!")
