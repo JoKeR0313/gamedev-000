@@ -1,42 +1,42 @@
 {
-	"Config": {
-		"filename": "textures/test.png"
-	},
-	"test_00": {
-		"offset_x": 0,
-		"offset_y": 0,
-		"width": 32,
-		"height": 32
-	},
-	"test_01": {
-		"offset_x": 32,
-		"offset_y": 0,
-		"width": 32,
-		"height": 32
-	},
-	"test_02": {
-		"offset_x": 64,
-		"offset_y": 0,
-		"width": 32,
-		"height": 32
-	},
-	"test_03": {
-		"offset_x": 96,
-		"offset_y": 0,
-		"width": 32,
-		"height": 32
-	},
-	"test_04": {
-		"offset_x": 128,
-		"offset_y": 0,
-		"width": 32,
-		"height": 32
-	},
-	"test_all_": {
-		"offset_x": 0,
-		"offset_y": 0,
-		"width": 32,
-		"height": 32,
-		"num_of_sprites": 5
-	}
+  "Config": {
+    "filename": "textures/test.png"
+  },
+  "test_00": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 32,
+    "height": 32
+  },
+  "test_01": {
+    "offset_x": 32,
+    "offset_y": 0,
+    "width": 32,
+    "height": 32
+  },
+  "test_02": {
+    "offset_x": 64,
+    "offset_y": 0,
+    "width": 32,
+    "height": 32
+  },
+  "test_03": {
+    "offset_x": 96,
+    "offset_y": 0,
+    "width": 32,
+    "height": 32
+  },
+  "test_04": {
+    "offset_x": 128,
+    "offset_y": 0,
+    "width": 32,
+    "height": 32
+  },
+  "test_all_": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 32,
+    "height": 32,
+    "num_of_sprites": 5
+  }
 }

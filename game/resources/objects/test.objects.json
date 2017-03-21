@@ -1,6 +1,8 @@
 {
     "Config": {
-        "filenames": ["sprites/test.sprites.json"]
+        "filenames": [
+            "sprites/test.sprites.json"
+        ]
     },
     "obj_test_00": {
         "type": "ccBasicObject",
@@ -39,9 +41,10 @@
     },
     "anim_object_00": {
         "type": "ccAnimObject",
-        "animations": ["anim_00",
-                       "anim_01"
-                      ],
+        "animations": [
+            "anim_00",
+            "anim_01"
+        ],
         "start_anim": "anim_00",
         "play": true,
         "visible": true,

@@ -200,11 +200,12 @@
 - processes xx.objects.json files and fills ObjectManager with the created objects
 - works with every type of Object what have now and will create later
 - how to instantiate a class when you have it's name as a string (you should import all the classes you want to instantiate this way):
-    class_string_name = "TestSpriteManager"
+    class_string_name = "ccBasicObject"
     constructor = globals()[class_string_name]
-    class_instance = constructor()
+    class_instance = constructor() ## same as class_instance = ccBasicObject()
 - check the game\resources\objects\test.objects.json file to see how it's looking like
 - in the 'Config' section, it should load all the sprites files (create ccSpritesFileLoader and load the file)
+!!! works with xx.anims.json files what are also in the Config/filenames field. Instantiates ccAnimsFileLoader for loading
 
     ### Skeleton
         class ccObjectsFileLoader(ccFileLoader):
@@ -245,7 +246,7 @@
       def create_object(cls, object_name):
         #find and make a copy of the object and give back the copy (check out the copy.deepcopy in python and investigat if we can use it). If it can't be found, write an error msg and return with None
       
-## ResourcePaths
+## ccResourcePaths
 - this class helps in finding resources, so we don't have to wire in the paths everywhere
   ### Skeleton
     class ccResourcePaths:
@@ -297,3 +298,180 @@
         # self.next_frame
         pass
         
+## ccAnimObject
+- animated object. Has at least one ccAnimSprite, handles the loading as other Object types and makes the animation running
+- the anim
+  ### Skeleton
+    class ccAnimObject(BasicObject):
+      def __init__(self):
+          #call the ancestor's __init__()
+          #sets the object type to ccAnimObject
+          #and inits everything what's needed to default
+          #NO loading happens here
+          #anims list should contain the loaded ccAnimSprites
+          #story the current animation/frame in variable(s) so you will know where are you currently and can step to the next frame/anim
+          pass
+      def load(self, obj_file_loader):
+          #call ancestor's load() method and get the sprite from SpriteManager
+          #print error if something bad happens
+          #load the data. All the anim should already be in SpriteManager so get it from there!
+          #check the last object in test.objects.json file
+          pass
+      def add_anim(self, anim):
+          #add an animation to anims list. anim should be ccAnimSprite
+          pass
+      def draw(self):
+          #this is not needed, it can use the ancestor's draw method
+          pass
+      def step(self, time_passed):
+          #use the ancestor's step to do moving
+          #handle the anim changing. The incoming time_passed has the passed millisecs since last frame. Use it to move forward in animation
+          #if the displayed sprite should be changed, set the active_sprite with the currently active ccAnimSprite's sprite. active_sprite should always point to a ccSprite object, otherwise the program will crash
+          pass
+      def play(self, anim_name=current_anim):
+          #set and start playing an anim. anim_name is optional, it should play the current animation if the anim_name is not set
+          #if an anim was paused, resume from that point where is was
+          pass
+      def pause(self):
+          #pause the current animation
+          pass
+      def reset(self):
+          #don't change the animation but reset it to start
+          #pause the animation
+          pass
+
+## ccAnimsFileLoader
+- loads xx.anims.json files
+- Config/filename contains only one sprites.json file
+Example:
+  "anim_00": { <-- name of the ccAnimSprite what should be pushed with to ccSpriteManager
+    "sprites": ["test_00", <-- sprite name, loaded from ccSpriteManager, pushed to the ccAnimSprite's frame list
+                "test_01",
+                "test_02",
+                "test_03",
+                "test_04"
+               ],
+    "frames": ["0 t10", <-- 1st frame, info for one frame in ccAnimSprite, 0 means "test_00" ccSprite this time
+               "1", <-- 2nd frame
+               "2 t30",
+               "3",
+               "4",
+               "goto 1" <-- the next frame is the second frame ("1")
+              ]
+  },
+- the class' structure is the same as the other loaders. It's ancestor is ccFileLoader and should use that class' methods
+- should process the config first and all the anims after that
+
+## ccGlobals
+- this name is temporary (or not if we can't find a better one)
+- currently this will contain a pointer to the pygame renderer
+- !!! when this class is ready, remove the renderer parameter from everywhere and use the one provided here
+  ### Skeleton
+    class ccGlobals:
+      renderer = None
+      
+      @staticmethod
+      def set_renderer(renderer):
+        #set the renderer. Incoming param is what pygame provided
+        pass
+      @staticmethod
+      def get_renderer():
+        #get the self.renderer
+        pass
+
+## ccSceneProps
+- scene properties
+- check ccObjectProps for similarities and make an ancestor class for both (ccProps) if needed
+  ### Skeleton
+    class ccSceneProps:
+      def _init__(self):
+        # store if scene enabled, visible, set both to true here
+        pass
+      def set_enabled(self, enabled):
+        # set enabled
+        pass
+      def set_visible(self, visible):
+        # set visible
+        pass
+      def get_enabled(self):
+        # return with enabled variable
+        pass
+      def get_visible(self):
+        # return with visible variable
+        pass
+
+## ccScene
+- basic scene type. A scene has objects which it can display and logic can be implemented here
+- the ccActManager will handle all the created scenes and display them in a specified order
+- everything is displayed through scenes and scene logic handles most of the input coming from the user
+- there are several scene types, ccScene is the most basic
+- ccScene is an abstract class
+  ### skeleton
+    class ccScene:
+      def __init__(self):
+        #create a type, name scene_props variable
+        #scene_props should be ccSceneProps
+        #type should be 'ccScene'
+        #name should be ''. It will be used for identification later, when needed
+        #no, there is no need for objects list right now
+        pass
+      def load(self, filename):
+        #this will load the scene, currently it should just raise an exception
+        pass
+      def draw(self):
+        #raise an exception. This will draw the objects to screen in the child classes 
+        pass
+      def step(self, time_passed):
+        #raise an exception. This will contain the scene logic in child classes
+        pass
+      def __process_config(self, config):
+        #config is the config section of the JSON dict. 
+        #fill the variables from it what are present in this class
+        pass
+
+## ccObjectScene
+- a specialized scene type. It holds a list of objects
+- objects gets rendered to screen and logic is handled here
+  ### Skeleton
+    class ccObjectScene:
+      def __init__(self):
+        #call ancecstor's init
+        #create self.objects list, it should be empty now
+        #fill type field with ccObjectScene
+        pass
+      def load(self, filename):
+        #this will load the scene. There will be a ccObjectSceneFileLoader for this type of scene
+        #it is different from the previous load methods (like ccSprite) because you should instantiate ccObjectSceneFileLoader here and do the loading
+        #This difference is because we have only one ObjectScene in a file and no more so it's more logical to handle the whole loading here
+        #ccObjectSceneFileLoader will have getter methods, you can get the objects, scene props and anything you need from it
+        #__process_config() can be used here (it's in ccScene) to load common attributes
+        pass
+      def draw(self):
+        #go through the objects list and call every object's draw method
+        pass
+      def step(self, time_passed):
+        #call all the object's step method with time_passed
+
+## ccObjectSceneFileLoader
+- loads the whole ccObjectScene
+- check out resources/object_scenes/test.objectscene.json the structure
+- as usual there can be a lot of private support methods what are not written down in this document
+  ### Skeleton
+    class ccObjectSceneFileLoader(ccFileLoader):
+      def __init__(self):
+        #call the ancestor's init
+        #create objects list
+        pass
+      def process_file(self, filename):
+        #handle the whole file (write __process_config and as much methods as you feel is needed)
+        #don't forget to process the files first written in the Config section
+        #store the infos present in the file (process the config part, instantiate objects with ccObjectManager, store scene name etc)
+        pass
+      def get_objects(self):
+        #return with the objects list. If it is empty, log a warning also
+        pass
+      def get_scene_name(self):
+        #gets the scene's name
+
+
+

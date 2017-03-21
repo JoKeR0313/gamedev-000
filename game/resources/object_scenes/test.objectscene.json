@@ -1,0 +1,22 @@
+{
+  "Config": {
+    "filenames": ["objects/test.objects.json"]
+  },
+  "obj_test_00": {
+    "object_name": "obj_test_00",
+    "position_x": 0,
+    "position_y": 0
+  },
+  "obj_test_01": {
+    "object_name": "obj_test_01",
+    "position_x": 100,
+    "position_y": 100,
+    "velocity_x": 10,
+    "velocity_y": 0    
+  },
+  "obj_test_the_third": {
+    "object_name": "obj_test_03",
+    "position_x": 200,
+    "position_y": 0
+  }
+}
