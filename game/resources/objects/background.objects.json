@@ -1,0 +1,11 @@
+{
+    "Config": {
+        "filenames": [
+            "sprites/background.sprites.json"
+        ]
+    },
+    "cute_bcg": {
+        "type": "ccBasicObject",
+        "sprite": "cute_bcg"
+    }
+}
