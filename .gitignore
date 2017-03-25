@@ -3,4 +3,4 @@
 __pycache__/
 game/logs/
 game/tests/logs/
-game/uml/
+game/docs/

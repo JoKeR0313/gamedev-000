@@ -19,14 +19,14 @@ class ccUmlCreator:
 
     @staticmethod
     def create_uml():
-        if not os.path.exists('uml'):
-            os.makedirs('uml')
+        if not os.path.exists('docs/uml'):
+            os.makedirs('docs/uml')
         open('__init__.py', 'a').close()
         date = datetime.datetime.now().strftime('%Y_%m_%d_%H_%m_%S')
         os.system('pyreverse -o png -p '+date+' .')
+        os.rename('classes_'+date+'.png', 'docs/uml/classes_'+date+'.png')
+        os.rename('packages_'+date+'.png', 'docs/uml/packages_'+date+'.png')
         os.remove('__init__.py')
-        os.rename('classes_'+date+'.png', 'uml/classes_'+date+'.png')
-        os.rename('packages_'+date+'.png', 'uml/packages_'+date+'.png')
 
     @classmethod
     def run(cls):
