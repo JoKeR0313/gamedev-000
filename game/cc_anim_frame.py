@@ -1,3 +1,6 @@
+from cc_sprites_file_loader import *
+
+
 class ccAnimFrame:
 
     def __init__(self, sprite, time, next_frame):
@@ -6,13 +9,12 @@ class ccAnimFrame:
         self.next_frame = next_frame
 
     def get_time(self):
-        # self.time
-        pass
+        return self.time
 
     def get_sprite(self):
-        # guess what
-        pass
+        return self.sprite
 
     def get_next_frame(self):
-        # self.next_frame
-        pass
+        return self.next_frame
+
+# sprite = ccSpritesFileLoader.process_file("sprites/test.sprites.json")
