@@ -302,7 +302,7 @@
 - animated object. Has at least one ccAnimSprite, handles the loading as other Object types and makes the animation running
 - the anim
   ### Skeleton
-    class ccAnimObject(BasicObject):
+    class ccAnimObject(ccBasicObject):
       def __init__(self):
           #call the ancestor's __init__()
           #sets the object type to ccAnimObject
@@ -424,10 +424,12 @@ Example:
       def step(self, time_passed):
         #raise an exception. This will contain the scene logic in child classes
         pass
-      def __process_config(self, config):
+#####
+        def __process_config(self, config):
         #config is the config section of the JSON dict. 
         #fill the variables from it what are present in this class
         pass
+#####
 
 ## ccObjectScene
 - a specialized scene type. It holds a list of objects
@@ -444,8 +446,12 @@ Example:
         #it is different from the previous load methods (like ccSprite) because you should instantiate ccObjectSceneFileLoader here and do the loading
         #This difference is because we have only one ObjectScene in a file and no more so it's more logical to handle the whole loading here
         #ccObjectSceneFileLoader will have getter methods, you can get the objects, scene props and anything you need from it
+######        
         #__process_config() can be used here (it's in ccScene) to load common attributes
+######        
+       
         pass
+        
       def draw(self):
         #go through the objects list and call every object's draw method
         pass

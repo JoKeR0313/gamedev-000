@@ -16,7 +16,7 @@ class ccSpritesFileLoader(ccFileLoader):
             self.load_file(filename)
 
         except:
-            ccLogger.error('File could not be loaded.')
+            ccLogger.error( str(filename) + ' file could not be loaded.')
             raise RuntimeError('File could not be loaded.')
         self.__configure()
         self.__process_sprites()
@@ -29,35 +29,32 @@ class ccSpritesFileLoader(ccFileLoader):
         self.__process_sprites()
 
     def __process_sprites(self):
-        for sprite_key in self.current_dict:
-            if sprite_key != 'Config':
-                if 'num_of_sprites' in self.current_dict[sprite_key]:
-                    self.__create_multiple_sprites(sprite_key)
-                else:
-                    self.__create_one_sprite(sprite_key)
+        self.set_first_section()
+        while self.next_section():
+            if 'num_of_sprites' in self.current_section:
+                    self.__create_multiple_sprites()
+            else:
+                self.__create_one_sprite()
 
-    def __create_one_sprite(self, sprite_key):
-        self.name = sprite_key
-        section = self.current_dict[sprite_key]
+    def __create_one_sprite(self):
+        self.name = list(self.current_dict)[self.current_section_id]
+        section = self.current_section
         rect = pygame.Rect(section['offset_x'], section['offset_y'], section['width'], section['height'])
         ccSpriteManager.add_sprite(self.name, ccSprite(self.cc_texture, rect))
 
-    def __create_multiple_sprites(self, sprite_key):
+    def __create_multiple_sprites(self):
         offset_x = 0
         offset_y = 0
         num = 0
 
-        for i in range(self.current_dict[sprite_key]['num_of_sprites']):
+        for i in range(self.current_section['num_of_sprites']):
+            print(self.cc_texture.get_width())
             if offset_x > self.cc_texture.get_width():
-                offset_y += self.current_dict[sprite_key]['height']
+                offset_y += self.current_section['height']
                 offset_x = 0
-            self.name = sprite_key + "%03d" % num
-            section = self.current_dict[sprite_key]
+            self.name = list(self.current_dict)[self.current_section_id] + "%03d" % num
+            section = self.current_section
             rect = pygame.Rect(offset_x, offset_y, section['width'], section['height'])
             ccSpriteManager.add_sprite(self.name, ccSprite(self.cc_texture, rect))
             offset_x += section['width']
             num += 1
-
-
-# # Refactoring
-#   Use current section

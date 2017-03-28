@@ -8,7 +8,7 @@ class ccSprite:
         self.texture = texture
 
     def load(self, sprites_reader):
-        all_sprites = pygame.sprite.Group()
+        all_sprites = pygame.sprite.Group() #TODO this is not pygame.sprite
         all_sprites.add(self.rectangle)
 
     def draw(self, renderer, x, y):

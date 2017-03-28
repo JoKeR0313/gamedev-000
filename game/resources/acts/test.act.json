@@ -1,0 +1,13 @@
+{
+  "Config": {
+    "name": "SampleAct"
+  },
+  "background": {
+    "scene_type": "ccObjectScene",
+    "filename": "background.objectscene.json"
+  },
+  "numbers": {
+    "scene_type": "ccObjectScene",
+    "filename": "test.objectscene.json"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "Config": {
+    "filenames": ["objects/background.objects.json"]
+  },
+  "bcg": {
+    "object_name": "cute_bcg",
+    "position_x": 0,
+    "position_y": 0
+  }
+}
