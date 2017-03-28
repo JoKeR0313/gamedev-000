@@ -21,3 +21,4 @@ class ccObject:
 
     def draw(self):
         ccLogger.error("This is an abstract class, yon can't call this function!")
+        raise NotImplementedError

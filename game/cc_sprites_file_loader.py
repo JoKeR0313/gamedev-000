@@ -16,7 +16,7 @@ class ccSpritesFileLoader(ccFileLoader):
             self.load_file(filename)
 
         except:
-            ccLogger.error('File could not be loaded.')
+            ccLogger.error( str(filename) + ' file could not be loaded.')
             raise RuntimeError('File could not be loaded.')
         self.__configure()
         self.__process_sprites()
