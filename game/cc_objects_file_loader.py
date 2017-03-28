@@ -2,7 +2,7 @@ from cc_fileloader import ccFileLoader
 from cc_sprites_file_loader import ccSpritesFileLoader
 from cc_basic_object import ccBasicObject
 from cc_logger import ccLogger
-
+from cc_object_manager import ccObjectManager
 
 class ccObjectsFileLoader(ccFileLoader):
 
@@ -32,4 +32,4 @@ class ccObjectsFileLoader(ccFileLoader):
             obj = constructor()
             obj.load(self.current_section)
             current_section_name = self.get_current_Section_name()
-            #ccObjectManager.add_object(current_section_name, obj) # ccObjectManager not implemented yet
+            ccObjectManager.add_object(current_section_name, obj)  # gives objects and their name to the ccObjectManager

@@ -1,18 +1,17 @@
 from cc_logger import ccLogger
+from cc_anim_frame import *
 
 
 class ccAnimSprite:
 
     def __init__(self):
-        self.ccAnimFrame = []
+        self.frames = []
 
     def add_frame(self, frame):
-        if frame in self.ccAnimFrame:
-            return ccLogger.error("Frame already exists.")
-        self.ccAnimFrame.append(frame)
+        self.frames.append(frame)
 
     def get_frame(self, frame_number):
         try:
-            return self.ccAnimFrame[frame_number]
+            return self.frames[frame_number]
         except:
             return None
