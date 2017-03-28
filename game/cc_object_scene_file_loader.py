@@ -3,11 +3,11 @@ from cc_fileloader import ccFileLoader
 from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
 
+
 class ccObjectSceneFileLoader(ccFileLoader):
     def __init__(self):
-        # call the ancestor's init
+        super().__init__()
         self.objects_list = []
-        pass
 
     def process_file(self, filename):
         try:
@@ -28,16 +28,14 @@ class ccObjectSceneFileLoader(ccFileLoader):
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
-            obj = ccObjectManager(self.current_section['type'])
+            obj = ccObjectManager.create_object(self.current_section['type'])
             obj.load(self.current_section)
-            self.onject_list.append(obj) # stores the updated object clone provided by the ccObjectManager
+            self.onject_list.append(obj)  # stores the updated object clone provided by the ccObjectManager
 
     def get_objects(self):
         if len(self.objects_list) == 0:
             ccLogger.warning("ccObjectSceneFileLoader's objects_list attribute is empty.")
-            return self.objects_list
-        else:
-            return self.objects_list
+        return self.objects_list
 
     def get_scene_name(self):
         # gets the scene's name
