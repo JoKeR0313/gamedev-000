@@ -7,10 +7,6 @@ class ccSprite:
         self.rectangle = rectangle
         self.texture = texture
 
-    def load(self, sprites_reader):
-        all_sprites = pygame.sprite.Group() #TODO this is not pygame.sprite
-        all_sprites.add(self.rectangle)
-
     def draw(self, renderer, x, y):
         renderer.blit(self.texture.image, (x, y), self.rectangle)
 
