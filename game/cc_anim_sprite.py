@@ -15,5 +15,4 @@ class ccAnimSprite:
         try:
             return self.ccAnimFrame[frame_number]
         except:
-            ccLogger.error("ccAnimFrame not found with the given index.")
             return None
