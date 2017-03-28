@@ -4,17 +4,18 @@ import import_dir_setter
 from cc_texture import ccTexture
 from cc_sprites_file_loader import ccSpritesFileLoader
 from cc_sprite_manager import ccSpriteManager
+from cc_globals import ccGlobals
+
 
 class TestSpriteManager:
-    size = (840, 480)
     sprites = []
-    renderer = None
     num_of_rows = 1
     num_changer = 1
 
     def __init__(self):
         pygame.init()
-        self.renderer = pygame.display.set_mode(self.size)
+        ccGlobals.set_renderer(pygame.display.set_mode(ccGlobals.size))
+        self.renderer = ccGlobals.get_renderer()
 
     def prepare_test(self):
         self.__load_sprites()
@@ -37,10 +38,10 @@ class TestSpriteManager:
             for i in range(len(self.sprites)):
                 width = self.sprites[i].rectangle.width
                 height = self.sprites[i].rectangle.height
-                self.sprites[i].draw(self.renderer, i*width+j*width, i*height)
+                self.sprites[i].draw(self.renderer, i * width + j * width, i * height)
                 self.sprites[i].draw(self.renderer,
-                                     (len(self.sprites)-i-1)*width+j*width,
-                                     len(self.sprites)*height+i*height)
+                                     (len(self.sprites) - i - 1) * width + j * width,
+                                     len(self.sprites) * height + i * height)
         self.__change_num_of_rows()
 
     def __change_num_of_rows(self):
