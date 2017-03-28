@@ -91,12 +91,3 @@ class ccFileLoader:
 
     def get_current_section_name(self):
         return list(self.current_dict.items())[self.current_section_id][0]
-
-#load=ccFileLoader()
-#load.load_file('test.objects.json')
-#print (load.current_dict)
-#print (load.get_section("obj_test_01", mandatory=True))
-#load.set_section('obj_test_03')
-#print(load.get_field("sprite"))
-#print(load.next_section())
-#print (load.current_section)
