@@ -15,10 +15,18 @@ class ccBasicObject(ccObject):
         self.position = pygame.math.Vector2(0, 0)  # use Vector2. It should be able to store float values
         self.velocity = pygame.math.Vector2(0, 0)
 
-    def load(self, obj_file_loader):
+    def load(self, obj_section):
         # call ancestor's load() method and get the sprite from SpriteManager. If
         # sprite is not found, print error and set active_sprite to None
-        super().load(obj_file_loader)
+        super().load(obj_section)
+        if "position_x" in obj_section:
+            self.position.x = obj_section["position_x"]
+        if "position_y" in obj_section:
+            self.position.y = obj_section["position_y"]
+        if "velocity_x" in obj_section:
+            self.velocity.x = obj_section["velocity_x"]
+        if "velocity_y" in obj_section:
+            self.velocity.y = obj_section["velocity_y"]
         # later: set position and velocity from test.objects.json
 
     def draw(self, renderer):
