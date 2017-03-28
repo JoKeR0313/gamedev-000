@@ -8,17 +8,13 @@ class ccSceneProps:
         self.scene_enabled = True
 
     def set_enabled(self, enabled):
-        # set enabled
-        pass
+        self.scene_enabled = enabled
 
     def set_visible(self, visible):
-        # set visible
-        pass
+        self.scene_visible = visible
 
     def get_enabled(self):
-        # return with enabled variable
-        pass
+        return self.scene_enabled
 
     def get_visible(self):
-        # return with visible variable
-        pass
+        return self.scene_visible
