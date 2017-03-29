@@ -13,7 +13,8 @@ class ccActManager:
         # if something was loaded, removes it and initializes before loading
         if len(cls.scenes) > 0:
             cls.scenes = []
-        loader = ccActFileLoader(filename)
+        loader = ccActFileLoader()
+        loader(filename)
         cls.scenes = loader.scenes
 
     @classmethod

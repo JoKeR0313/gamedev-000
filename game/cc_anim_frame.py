@@ -1,4 +1,5 @@
 from cc_sprites_file_loader import *
+from cc_resource_paths import *
 
 
 class ccAnimFrame:
@@ -17,4 +18,4 @@ class ccAnimFrame:
     def get_next_frame(self):
         return self.next_frame
 
-# sprite = ccSpritesFileLoader.process_file("sprites/test.sprites.json")
+#sprite = ccSpritesFileLoader.process_file(ccResourcePaths.get_sprites() + sprites.json")

@@ -4,6 +4,8 @@ from cc_sprite_manager import *
 from cc_texture import *
 from cc_sprite import *
 from pygame import *
+from cc_resource_paths import *
+
 
 
 class ccSpritesFileLoader(ccFileLoader):
@@ -13,7 +15,7 @@ class ccSpritesFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            self.load_file(filename)
+            self.load_file(ccResourePaths.get_sprites() + filename)
 
         except:
             ccLogger.error( str(filename) + ' file could not be loaded.')
@@ -24,8 +26,8 @@ class ccSpritesFileLoader(ccFileLoader):
     def __configure(self):
         self.file_name = self.current_dict['Config']['filename']
         self.cc_texture = ccTexture()
-        self.cc_texture.load_image(self.file_name)
-        ccSpriteManager.add_texture(self.file_name, self.cc_texture)
+        self.cc_texture.load_image(ccResourePaths.get_textures() + self.file_name)
+        ccSpriteManager.add_texture(str(ccResourePaths.get_textures() +self.file_name), self.cc_texture)
         self.__process_sprites()
 
     def __process_sprites(self):

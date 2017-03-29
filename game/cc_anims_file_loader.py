@@ -7,7 +7,6 @@ from cc_anim_sprite import *
 from cc_anim_frame import *
 from cc_sprites_file_loader import *
 
-
 class ccAnimsFileLoader(ccFileLoader):
     def __init__(self):
         pass

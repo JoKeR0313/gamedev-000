@@ -1,6 +1,6 @@
 {
   "Config": {
-    "filename": "sprites/test.sprites.json"
+    "filename": "test.sprites.json"
   },
   "anim_00": {
     "sprites": ["test_00",

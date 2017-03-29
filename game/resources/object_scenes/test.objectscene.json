@@ -1,6 +1,6 @@
 {
   "Config": {
-    "filenames": ["objects/test.objects.json"]
+    "filenames": ["test.objects.json"]
   },
   "obj_test_00": {
     "object_name": "obj_test_00",

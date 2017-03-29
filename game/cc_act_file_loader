@@ -1,0 +1,38 @@
+from cc_fileloader import *
+from cc_logger import *
+from cc_object_scene import *
+from cc_resource_paths import *
+
+class ccActFileLoader(ccFileLoader):
+
+    def __init__(self):
+        super().__init__()
+        self.name = None
+        self.scenes = []
+
+    def load(self, filename):
+        try:
+            self.load_file(filename)
+        except:
+            ccLogger.error((str(filename) + ' file could not be loaded!'))
+            raise RuntimeError
+        self.__process_file()
+
+    def __process_file(self):
+        self.set_first_section()
+        self.next_section()
+        while self.next_section:
+            if self.current_section['scene_type'] == "ccObjectScene":
+                obj_loader = ccObjectScene()
+                scene = obj_loader.load(ccResourcePaths.get_acts() + self.current_section['filename'])
+                for sc in scene.objects:
+                    self.scenes.append(sc)
+
+
+
+
+
+
+loader = ccActFileLoader()
+loader.load('test.act.json')
+print (loader.scenes)

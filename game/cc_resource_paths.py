@@ -11,18 +11,26 @@ class ccResourcePaths:
 
     @classmethod
     def get_resources(cls):
-        return cls.base_path + "/resources"
+        return cls.base_path + "/resources/"
 
     @classmethod
     def get_objects(cls):
-        return cls.base_path + "/resources/objects"
+        return cls.base_path + "/resources/objects/"
 
     @classmethod
     def get_sprites(cls):
-        return cls.base_path + "/resources/sprites"
+        return cls.base_path + "/resources/sprites/"
 
     @classmethod
     def get_anims(cls):
-        return cls.base_path + "/resources/anims"
+        return cls.base_path + "/resources/anims/"
+
+    @classmethod
+    def get_object_scenes(cls):
+        return cls.base_path + "/resources/object_scenes/"
+
+    @classmethod
+    def get_acts(cls):
+        return cls.base_path + "/resources/acts/"
 
 
