@@ -14,5 +14,4 @@ class ccAnimSprite:
         try:
             return self.frames[frame_number]
         except:
-            ccLogger.error(frame_number, "not found with the given index.")
-        return None
+            return None
