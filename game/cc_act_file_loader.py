@@ -3,6 +3,7 @@ from cc_logger import *
 from cc_object_scene import *
 from cc_resource_paths import *
 
+
 class ccActFileLoader(ccFileLoader):
 
     def __init__(self):
@@ -24,5 +25,5 @@ class ccActFileLoader(ccFileLoader):
         while self.next_section():
             if self.current_section['scene_type'] == "ccObjectScene":
                 obj_scene = ccObjectScene()
-                scene = obj_scene.load(ccResourcePaths.get_acts() + self.current_section['filename'])
-                self.scenes += scene.objects
+                obj_scene.load(ccResourcePaths.get_object_scenes() + self.current_section['filename'])
+                self.scenes.append(obj_scene)
