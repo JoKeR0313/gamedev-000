@@ -3,7 +3,7 @@ from cc_anim_frame import ccAnimFrame
 from cc_anim_sprite import ccAnimSprite
 from cc_logger import ccLogger
 from cc_sprite_manager import ccSpriteManager
-from cc_anims_file_loader_ import ccAnimsFileLoader
+from cc_anims_file_loader import ccAnimsFileLoader
 
 class ccAnimObject(ccBasicObject):
     def __init__(self):
@@ -15,14 +15,14 @@ class ccAnimObject(ccBasicObject):
         self.current_frame = None
         self.active_sprite = None
 
-    def load(self, obj_file_loader):
+    def load(self, anim_data):
         # call ancestor's load() method and get the sprite from SpriteManager
         try:
-            super().load(obj_file_loader)
-            for anim_name in obj_file_loader['animations']:
+            super().load(anim_data)
+            for anim_name in anim_data['animations']:
                 anim = ccSpriteManager.get_sprite(anim_name)
                 self.anims.append(anim)
-            self.current_anim = ccSpriteManager.get_sprite(obj_file_loader['start_anim'])
+            self.current_anim = ccSpriteManager.get_sprite(anim_data['start_anim'])
             self.current_frame = self.current_anim.get_frame(0)
             self.active_sprite = self.current_frame.get_sprite()
 
@@ -40,8 +40,9 @@ class ccAnimObject(ccBasicObject):
         else:
             ccLogger.error('Not Anim sprite' + type(anim))
 
-    def draw(self):
-        super().draw() # ccBasicObject should also get "renderer" parameter
+    def draw(self, renderer):
+        # this is not needed, it can use the ancestor's draw method
+        ccBasicObject.draw(self, renderer)
 
     def step(self, time_passed): # time passed = frame's time
         # use the ancestor's step to do moving

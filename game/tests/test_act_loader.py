@@ -1,34 +1,39 @@
 import import_dir_setter
 import pygame
-from act_manager import ccActManager
+import sys
+from cc_resource_paths import ccResourcePaths
+from cc_act_file_loader import ccActFileLoader
+from cc_act_manager import ccActManager
+from cc_globals import ccGlobals
 
 
 class TestActLoader:
     size = (840, 480)
-    sprites = []
-    renderer = None
     num_of_rows = 1
     num_changer = 1
 
     def __init__(self):
         pygame.init()
-        self.renderer = pygame.display.set_mode(self.size)
+        renderer = pygame.display.set_mode(self.size)
+        ccGlobals.set_renderer(renderer)
 
     def test_run(self):
         self.load_act()
         clock = pygame.time.Clock()
+        temp = ccGlobals.get_renderer()
+        print(temp)
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
-            self.renderer.fill((0, 0, 0))
+            ccGlobals.get_renderer().fill((0, 0, 0))
             ccActManager.draw()
             pygame.display.flip()
-    
+            clock.tick(60)
+
     def load_act(self):
-        loader = ccSceneFileLoader()
-        loader.process_file(ccResourcePaths.get_resources() + "object_scenes/background.objectscene.json")
-        ccActManager.scenes.append(scene)
+        ccActManager.load("test.act.json")
+
 
 def main():
     tester = TestActLoader()

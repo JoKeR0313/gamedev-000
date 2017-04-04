@@ -11,19 +11,29 @@ class ccActFileLoader(ccFileLoader):
         self.name = None
         self.scenes = []
 
-    def load(self, filename):
+    def process_file(self, filename):
         try:
-            self.load_file(filename)
-        except:
-            ccLogger.error((str(filename) + ' file could not be loaded!'))
-            raise RuntimeError
-        self.__process_file()
+            self.load_file(ccResourcePaths.get_acts() + filename)
 
-    def __process_file(self):
+        except:
+            ccLogger.error('{} could not be loaded.'.format(filename))
+            raise RuntimeError('{} could not be loaded.'.format(filename))
+        self.__process_config()
+        self.__process_object_sections()
+
+    def __process_config(self):
+        curr_act_name = self.get_field(field_name='name', mandatory=True, section_name='Config')
+        self.name = curr_act_name
+
+    def __process_object_sections(self):
         self.set_first_section()
-        self.name = self.get_field("name", True)
         while self.next_section():
-            if self.current_section['scene_type'] == "ccObjectScene":
-                obj_scene = ccObjectScene()
-                obj_scene.load(ccResourcePaths.get_object_scenes() + self.current_section['filename'])
-                self.scenes.append(obj_scene)
+            constructor = globals()[self.current_section['scene_type']]
+            obj_scene = constructor()
+            obj_scene.load(ccResourcePaths.get_object_scenes() + self.current_section['filename'])
+            self.scenes.append(obj_scene)
+
+    def get_scenes(self):
+        if len(self.scenes) == 0:
+            ccLogger.warning("ccActFileLoader's scenes attribute is empty.")
+        return self.scenes

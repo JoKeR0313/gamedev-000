@@ -4,6 +4,8 @@ from cc_basic_object import ccBasicObject
 from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
 from cc_resource_paths import *
+from cc_anim_object import ccAnimObject
+from cc_anims_file_loader import ccAnimsFileLoader
 
 
 class ccObjectsFileLoader(ccFileLoader):
@@ -15,6 +17,7 @@ class ccObjectsFileLoader(ccFileLoader):
         try:
             self.load_file(filename)
 
+
         except:
             ccLogger.error('{} could not be loaded.'.format(filename))
             raise RuntimeError('{} could not be loaded.'.format(filename))
@@ -24,8 +27,12 @@ class ccObjectsFileLoader(ccFileLoader):
     def __process_config(self):
         sprites_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
         for spr_file in sprites_files:
-            loader = ccSpritesFileLoader()
-            loader.process_file(ccResourcePaths.get_sprites() + spr_file)
+            loader = None
+            if '.sprites.json' in spr_file:
+                loader = ccSpritesFileLoader()
+            elif '.anims.json' in spr_file:
+                loader = ccAnimsFileLoader()
+            loader.process_file(spr_file)
 
     def __process_object_sections(self):
         self.set_first_section()
@@ -33,5 +40,5 @@ class ccObjectsFileLoader(ccFileLoader):
             constructor = globals()[self.current_section['type']]
             obj = constructor()
             obj.load(self.current_section)
-            current_section_name = self.get_current_Section_name()
+            current_section_name = self.get_current_section_name()
             ccObjectManager.add_object(current_section_name, obj)  # gives objects and their name to the ccObjectManager

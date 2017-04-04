@@ -1,4 +1,6 @@
 from cc_logger import *
+from cc_act_file_loader import ccActFileLoader
+
 
 class ccActManager:
     scenes = []
@@ -14,11 +16,13 @@ class ccActManager:
         if len(cls.scenes) > 0:
             cls.scenes = []
         loader = ccActFileLoader()
-        loader(filename)
-        cls.scenes = loader.scenes
+        loader.process_file(filename)
+        cls.scenes = loader.get_scenes()
+
 
     @classmethod
     def draw(cls):
+        print(cls.scenes)
     #loops through all the scenes and calls it's draw method
         for scene in cls.scenes:
             scene.draw()
