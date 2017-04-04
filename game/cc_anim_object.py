@@ -3,7 +3,8 @@ from cc_anim_frame import ccAnimFrame
 from cc_anim_sprite import ccAnimSprite
 from cc_logger import ccLogger
 from cc_sprite_manager import ccSpriteManager
-from cc_anims_file_loader_ import ccAnimsFileLoader
+from cc_anims_file_loader import ccAnimsFileLoader
+from pprint import pprint
 
 class ccAnimObject(ccBasicObject):
     def __init__(self):
@@ -18,14 +19,15 @@ class ccAnimObject(ccBasicObject):
         self.current_frame = None
         # store the current animation/frame in variable(s) so you will know where are you currently and can step to the next frame/anim
 
-    def load(self, obj_file_loader):
+    def load(self, anim_data):
         # call ancestor's load() method and get the sprite from SpriteManager
         try:
-            super().load(obj_file_loader)
-            for anim_name in obj_file_loader['animations']:
+            super().load(anim_data)
+            pprint(ccSpriteManager.sprites)
+            for anim_name in anim_data['animations']:
                 anim = ccSpriteManager.get_sprite(anim_name)
                 self.anims.append(anim)
-            self.current_anim = ccSpriteManager.get_sprite(obj_file_loader['start_anim'])
+            self.current_anim = ccSpriteManager.get_sprite(anim_data['start_anim'])
             self.current_frame = self.current_anim.get_frame(0)
             self.active_sprite = self.current_frame.get_sprite()
 
@@ -65,7 +67,9 @@ class ccAnimObject(ccBasicObject):
         # to a ccSprite object, otherwise the program will crash
         pass
 
-    def play(self, anim_name=current_anim):
+    def play(self, anim_name=None):
+        if not anim_name:
+            anim_name = self.current_anim
         # set and start playing an anim. anim_name is optional, it should play the current animation if the anim_name is not set
         # if an anim was paused, resume from that point where is was
         pass

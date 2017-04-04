@@ -14,18 +14,17 @@ class ccAnimsFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            self.load_file(filename)
-
+            self.load_file(ccResourcePaths.get_anims() + filename)
         except:
-            ccLogger.error('File could not be loaded.')
-            raise RuntimeError('File could not be loaded.')
+            ccLogger.error(filename + ' could not be loaded.')
+            raise RuntimeError(filename + ' could not be loaded.')
         self.__config()
         self.__process_all_anims_sprites()
 
     def __config(self):
 
         self.set_section("Config")
-        self.file_name = ccResourcePaths.get_sprites() + self.get_field("filename")
+        self.file_name = self.get_field("filename")
 
         loader = ccSpritesFileLoader()
         loader.process_file(self.file_name)
@@ -37,6 +36,7 @@ class ccAnimsFileLoader(ccFileLoader):
             self.__process_one_anims_sprite()
 
     def __process_one_anims_sprite(self):
+        print('1')
 
         sprites = self.get_field("sprites")
         for i in range(len(sprites)):
@@ -69,6 +69,6 @@ class ccAnimsFileLoader(ccFileLoader):
             next_frame = int(frames[i][2])
             anim_frame = ccAnimFrame(sprite, time, next_frame)
             anim_sprite.add_frame(anim_frame)
-
+        print(anim_sprite)
         ccSpriteManager.add_sprite(self.get_current_section_name(), anim_sprite)
 

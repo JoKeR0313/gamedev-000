@@ -25,14 +25,14 @@ class ccObjectSceneFileLoader(ccFileLoader):
         object_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
         for obj_file in object_files:
             loader = ccObjectsFileLoader()
-            loader.process_file(ccResourePaths.get_objects() + obj_file)
+            loader.process_file(ccResourcePaths.get_objects() + obj_file)
 
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
-            obj = ccObjectManager.create_object(self.current_section['type'])
+            obj = ccObjectManager.create_object(self.current_section['object_name'])
             obj.load(self.current_section)
-            self.onject_list.append(obj)  # stores the updated object clone provided by the ccObjectManager
+            self.objects_list.append(obj)  # stores the updated object clone provided by the ccObjectManager
 
     def get_objects(self):
         if len(self.objects_list) == 0:

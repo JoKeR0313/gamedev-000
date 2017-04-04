@@ -15,10 +15,11 @@ class ccSpritesFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            self.load_file(ccResourePaths.get_sprites() + filename)
+            self.load_file(ccResourcePaths.get_sprites() + filename)
+
 
         except:
-            ccLogger.error( str(filename) + ' file could not be loaded.')
+            ccLogger.error(str(filename) + ' file could not be loaded.')
             raise RuntimeError('File could not be loaded.')
         self.__configure()
         self.__process_sprites()
@@ -26,10 +27,8 @@ class ccSpritesFileLoader(ccFileLoader):
     def __configure(self):
         self.file_name = self.current_dict['Config']['filename']
         self.cc_texture = ccTexture()
-        resource_path = ccResourePaths.get_textures() + self.file_name
-        self.cc_texture.load_image(resource_path)
-        ccSpriteManager.add_texture(str(resource_path), self.cc_texture)
-        self.__process_sprites()
+        self.cc_texture.load_image(self.file_name)
+        ccSpriteManager.add_texture(self.file_name, self.cc_texture)
 
     def __process_sprites(self):
         self.set_first_section()

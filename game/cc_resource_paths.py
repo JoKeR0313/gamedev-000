@@ -15,6 +15,10 @@ class ccResourcePaths:
         return cls.resource_path
 
     @classmethod
+    def get_textures(cls):
+        return cls.resource_path + "textures/"
+
+    @classmethod
     def get_objects(cls):
         return cls.resource_path  + "objects/"
 
