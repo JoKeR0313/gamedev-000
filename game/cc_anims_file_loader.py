@@ -25,7 +25,7 @@ class ccAnimsFileLoader(ccFileLoader):
     def __config(self):
 
         self.set_section("Config")
-        self.file_name = ccResourcePaths.get_sprites() + self.get_field("filename")[7:] #cutting the "sprites" part of the filename in json
+        self.file_name = ccResourcePaths.get_sprites() + self.get_field("filename")
 
         loader = ccSpritesFileLoader()
         loader.process_file(self.file_name)
