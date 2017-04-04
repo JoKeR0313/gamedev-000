@@ -1,13 +1,15 @@
 import os
-import cc_logger
+from cc_logger import ccLogger
+
 
 class ccResourcePaths:
 
     base_path = os.path.dirname(os.path.realpath(__file__))
-    resource_path = base_path + "/resources/"
+    dir_name = "/resources/"
+    resource_path = base_path + dir_name
 
     def __init__(self):
-        ccLogger.error("ccResourcePath can not be instanted")
+        ccLogger.error("ccResourcePath can not be instantiated")
         raise NotImplementedError
 
     @classmethod
@@ -16,7 +18,7 @@ class ccResourcePaths:
 
     @classmethod
     def get_objects(cls):
-        return cls.resource_path  + "objects/"
+        return cls.resource_path + "objects/"
 
     @classmethod
     def get_sprites(cls):
