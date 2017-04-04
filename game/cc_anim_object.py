@@ -10,13 +10,10 @@ class ccAnimObject(ccBasicObject):
         super().__init__()
         self.type = 'ccAnimObject'
         self.time = 0
-        # and inits everything what's needed to default
-        # NO loading happens here
         self.anims = []
-        # anims list should contain the loaded ccAnimSprites
         self.current_anim = None
         self.current_frame = None
-        # store the current animation/frame in variable(s) so you will know where are you currently and can step to the next frame/anim
+        self.active_sprite = None
 
     def load(self, obj_file_loader):
         # call ancestor's load() method and get the sprite from SpriteManager
@@ -44,30 +41,35 @@ class ccAnimObject(ccBasicObject):
             ccLogger.error('Not Anim sprite' + type(anim))
 
     def draw(self):
-        # this is not needed, it can use the ancestor's draw method
-        ccBasicObject.draw(self)
+        super().draw() # ccBasicObject should also get "renderer" parameter
 
-    def step(self, time_passed):
+    def step(self, time_passed): # time passed = frame's time
         # use the ancestor's step to do moving
         super().step(time_passed)
         self.time += time_passed
-        if self.current_frame.time < time_passed:
+        if self.current_frame.time <= self.time:
+            self.time -= self.current_frame.time
             self.current_frame = self.current_anim.get_frame(self.current_frame.get_next_frame())
             if self.current_frame == None:
                 self.current_frame = self.current_anim.get_frame(0)
                 ccLogger.warning("Animation change should be implemented")
                 #WARNING
             self.active_sprite = self.current_frame.get_sprite()
-        # handle the anim changing. The incoming time_passed has the passed millisecs since last frame.
+        # handle the anim changing. The incoming time_passed
+        # has the passed millisecs since last frame.
         # Use it to move forward in animation
-        # if the displayed sprite should be changed, set the active_sprite with the
-        # currently active ccAnimSprite's sprite. active_sprite should always point
+        # if the displayed sprite should be changed,
+        # set the active_sprite with the
+        # currently active ccAnimSprite's sprite.
+        # active_sprite should always point
         # to a ccSprite object, otherwise the program will crash
         pass
 
     def play(self, anim_name=current_anim):
-        # set and start playing an anim. anim_name is optional, it should play the current animation if the anim_name is not set
-        # if an anim was paused, resume from that point where is was
+
+        # set and start playing an anim. anim_name is optional,
+        # it should play the current animation if the anim_name is not set
+        # if an anim was paused, resume from that point where it was
         pass
 
     def pause(self):
