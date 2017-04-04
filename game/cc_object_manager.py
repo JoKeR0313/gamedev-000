@@ -21,7 +21,7 @@ class ccObjectManager:
     def create_object(cls, object_name):
         try:
             found_object = cls.objects[object_name]
-            return deepcopy(found_object)
+            return found_object.copy()
         except:
             ccLogger.error(object_name, "cannot be found.")
         return None

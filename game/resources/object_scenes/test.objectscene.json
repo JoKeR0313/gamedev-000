@@ -18,5 +18,11 @@
     "object_name": "obj_test_03",
     "position_x": 200,
     "position_y": 0
+  },
+  "obj_test_the_fourth": {
+    "object_name": "obj_test_04",
+    "position_x": 500,
+    "position_y": 300
   }
+
 }

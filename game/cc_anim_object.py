@@ -4,6 +4,7 @@ from cc_anim_sprite import ccAnimSprite
 from cc_logger import ccLogger
 from cc_sprite_manager import ccSpriteManager
 from cc_anims_file_loader import ccAnimsFileLoader
+from copy import deepcopy
 
 class ccAnimObject(ccBasicObject):
     def __init__(self):
@@ -80,3 +81,20 @@ class ccAnimObject(ccBasicObject):
         # don't change the animation but reset it to start
         # pause the animation
         pass
+
+    def copy(self):
+        new_object = ccBasicObject()
+        self.__fill(new_object)
+        return new_object
+
+    def __fill(self, source):
+        source.position = deepcopy(self.position)
+        source.velocity = deepcopy(self.velocity)
+        source.active_sprite = self.active_sprite
+        source.type = self.type
+        source.id = deepcopy(self.id)
+        source.object_props = deepcopy(self.object_props)
+        source.time = 0
+        source.anims = self.anims
+        source.current_anim = deepcopy(self.current_anim)
+        source.current_frame = deepcopy(self.current_frame)

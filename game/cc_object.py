@@ -1,5 +1,6 @@
 from cc_object_props import ccObjectProps
 from cc_logger import ccLogger
+from copy import deepcopy
 
 
 class ccObject:

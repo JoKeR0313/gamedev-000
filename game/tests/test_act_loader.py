@@ -21,7 +21,6 @@ class TestActLoader:
         self.load_act()
         clock = pygame.time.Clock()
         temp = ccGlobals.get_renderer()
-        print(temp)
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

@@ -22,7 +22,6 @@ class ccActManager:
 
     @classmethod
     def draw(cls):
-        print(cls.scenes)
     #loops through all the scenes and calls it's draw method
         for scene in cls.scenes:
             scene.draw()

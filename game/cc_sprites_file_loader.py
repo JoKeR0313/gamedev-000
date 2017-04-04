@@ -50,7 +50,6 @@ class ccSpritesFileLoader(ccFileLoader):
         num = 0
 
         for i in range(self.current_section['num_of_sprites']):
-            print(self.cc_texture.get_width())
             if offset_x > self.cc_texture.get_width():
                 offset_y += self.current_section['height']
                 offset_x = 0
