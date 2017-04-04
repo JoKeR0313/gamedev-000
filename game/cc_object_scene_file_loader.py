@@ -2,6 +2,8 @@ from cc_objects_file_loader import ccObjectsFileLoader
 from cc_fileloader import ccFileLoader
 from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
+from cc_resource_paths import *
+
 
 
 class ccObjectSceneFileLoader(ccFileLoader):
@@ -23,7 +25,7 @@ class ccObjectSceneFileLoader(ccFileLoader):
         object_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
         for obj_file in object_files:
             loader = ccObjectsFileLoader()
-            loader.process_file(obj_file)
+            loader.process_file(ccResourePaths.get_objects() + obj_file)
 
     def __process_object_sections(self):
         self.set_first_section()

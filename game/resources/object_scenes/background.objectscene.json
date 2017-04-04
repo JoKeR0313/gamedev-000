@@ -1,6 +1,6 @@
 {
   "Config": {
-    "filenames": ["objects/background.objects.json"]
+    "filenames": ["background.objects.json"]
   },
   "bcg": {
     "object_name": "cute_bcg",

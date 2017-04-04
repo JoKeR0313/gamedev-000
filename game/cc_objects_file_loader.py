@@ -3,6 +3,8 @@ from cc_sprites_file_loader import ccSpritesFileLoader
 from cc_basic_object import ccBasicObject
 from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
+from cc_resource_paths import *
+
 
 class ccObjectsFileLoader(ccFileLoader):
 
@@ -23,7 +25,7 @@ class ccObjectsFileLoader(ccFileLoader):
         sprites_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
         for spr_file in sprites_files:
             loader = ccSpritesFileLoader()
-            loader.process_file(spr_file)
+            loader.process_file(ccResourcePaths.get_sprites() + spr_file)
 
     def __process_object_sections(self):
         self.set_first_section()

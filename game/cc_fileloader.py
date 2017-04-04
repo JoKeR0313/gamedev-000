@@ -3,6 +3,8 @@
 #- abstract class
 import json
 from collections import OrderedDict
+from cc_logger import *
+from cc_resource_paths import *
 
 
 class ccFileLoader:

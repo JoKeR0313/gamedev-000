@@ -1,7 +1,7 @@
 {
     "Config": {
         "filenames": [
-            "sprites/test.sprites.json"
+            "test.sprites.json"
         ]
     },
     "obj_test_00": {
