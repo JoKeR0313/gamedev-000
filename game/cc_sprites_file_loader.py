@@ -26,8 +26,9 @@ class ccSpritesFileLoader(ccFileLoader):
     def __configure(self):
         self.file_name = self.current_dict['Config']['filename']
         self.cc_texture = ccTexture()
-        self.cc_texture.load_image(ccResourePaths.get_textures() + self.file_name)
-        ccSpriteManager.add_texture(str(ccResourePaths.get_textures() +self.file_name), self.cc_texture)
+        resource_path = ccResourePaths.get_textures() + self.file_name
+        self.cc_texture.load_image(resource_path)
+        ccSpriteManager.add_texture(str(resource_path), self.cc_texture)
         self.__process_sprites()
 
     def __process_sprites(self):
