@@ -36,7 +36,7 @@ class ccAnimsFileLoader(ccFileLoader):
             self.__process_one_anims_sprite()
 
     def __process_one_anims_sprite(self):
-        print('1')
+
 
         sprites = self.get_field("sprites")
         for i in range(len(sprites)):
@@ -69,6 +69,5 @@ class ccAnimsFileLoader(ccFileLoader):
             next_frame = int(frames[i][2])
             anim_frame = ccAnimFrame(sprite, time, next_frame)
             anim_sprite.add_frame(anim_frame)
-        print(anim_sprite)
         ccSpriteManager.add_sprite(self.get_current_section_name(), anim_sprite)
 

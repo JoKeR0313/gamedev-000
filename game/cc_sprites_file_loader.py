@@ -42,7 +42,7 @@ class ccSpritesFileLoader(ccFileLoader):
         self.name = list(self.current_dict)[self.current_section_id]
         section = self.current_section
         rect = pygame.Rect(section['offset_x'], section['offset_y'], section['width'], section['height'])
-        ccSpriteManager.add_sprite(self.name, ccSprite(self.cc_texture, rect))
+        ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect))
 
     def __create_multiple_sprites(self):
         offset_x = 0
@@ -57,6 +57,6 @@ class ccSpritesFileLoader(ccFileLoader):
             self.name = list(self.current_dict)[self.current_section_id] + "%03d" % num
             section = self.current_section
             rect = pygame.Rect(offset_x, offset_y, section['width'], section['height'])
-            ccSpriteManager.add_sprite(self.name, ccSprite(self.cc_texture, rect))
+            ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect))
             offset_x += section['width']
             num += 1

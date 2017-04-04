@@ -13,7 +13,7 @@ class ccActFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            self.load_file(filename)
+            self.load_file(ccResourcePaths.get_acts() + filename)
 
         except:
             ccLogger.error('{} could not be loaded.'.format(filename))

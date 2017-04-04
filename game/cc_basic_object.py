@@ -2,6 +2,7 @@ import sys
 import pygame
 from cc_object import ccObject
 from pygame.locals import *
+from cc_sprite_manager import ccSpriteManager
 
 pygame.init()
 
@@ -27,6 +28,8 @@ class ccBasicObject(ccObject):
             self.velocity.x = obj_section["velocity_x"]
         if "velocity_y" in obj_section:
             self.velocity.y = obj_section["velocity_y"]
+        if "sprite" in obj_section:
+            self.active_sprite = ccSpriteManager.get_sprite(obj_section['sprite'])
         # later: set position and velocity from test.objects.json
 
     def draw(self, renderer):

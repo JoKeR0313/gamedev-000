@@ -8,5 +8,6 @@ class ccSprite:
         self.texture = texture
 
     def draw(self, renderer, x, y):
+        print(self.texture.image)
         renderer.blit(self.texture.image, (x, y), self.rectangle)
 

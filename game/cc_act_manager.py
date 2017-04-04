@@ -19,8 +19,10 @@ class ccActManager:
         loader.process_file(filename)
         cls.scenes = loader.get_scenes()
 
+
     @classmethod
     def draw(cls):
+        print(cls.scenes)
     #loops through all the scenes and calls it's draw method
         for scene in cls.scenes:
             scene.draw()
