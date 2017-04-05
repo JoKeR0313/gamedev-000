@@ -67,7 +67,7 @@ class ccAnimObject(ccBasicObject):
         # to a ccSprite object, otherwise the program will crash
         pass
 
-    def play(self, anim_name=current_anim):
+    def play(self, anim_name=None):
 
         # set and start playing an anim. anim_name is optional,
         # it should play the current animation if the anim_name is not set
