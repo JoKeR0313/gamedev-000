@@ -13,30 +13,30 @@ green_texture = ccTexture()
 green_texture.load_image('green.png')
 
 # essential pygame init
-pygame.init()
+# pygame.init()
 
 # screen
-screen_width = 800
-screen_height = 600
-screen_size = (screen_width, screen_height)
-screen = pygame.display.set_mode(screen_size)
+#screen_width = 800
+#screen_height = 600
+#screen_size = (screen_width, screen_height)
+#screen = pygame.display.set_mode(screen_size)
 
 # List for all sprites
-sprites = pygame.sprite.Group()
+#sprites = pygame.sprite.Group()
 
 
 # Rock
 rock = ccSprite(green_texture.get_texture(),
                 green_texture.get_texture().get_rect())
-sprites.add(rock)
+# sprites.add(rock)
 
 # Create player
 player = ccSprite(blue_texture.get_texture(),
                   blue_texture.get_texture().get_rect())
 
 
-sprites.add(player)
-
+# sprites.add(player)
+"""
 done = False
 
 clock = pygame.time.Clock()
@@ -82,3 +82,4 @@ while not done:
     clock.tick(30)
 
 pygame.quit()
+"""
