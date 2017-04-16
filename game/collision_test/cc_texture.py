@@ -3,7 +3,7 @@ from cc_logger import ccLogger
 
 
 class ccTexture:
-    resource_dir_path = ""
+    resource_dir_path = "./resources/"
 
     def __init__(self):
 
@@ -13,7 +13,7 @@ class ccTexture:
 
     def load_image(self, file_name):
         # load the image as a pygame.Surface and store it
-        self.image = pygame.image.load(os.path.join('green.png'))
+        self.image = pygame.image.load(self.resource_dir_path + file_name)
         self.width = self.image.get_width()
         self.height = self.image.get_height()
 
