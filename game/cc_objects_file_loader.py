@@ -1,4 +1,4 @@
-from cc_fileloader import ccFileLoader
+from cc_file_loader import ccFileLoader
 from cc_sprites_file_loader import ccSpritesFileLoader
 from cc_basic_object import ccBasicObject
 from cc_logger import ccLogger
