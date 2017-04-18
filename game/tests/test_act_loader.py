@@ -26,6 +26,7 @@ class TestActLoader:
                 if event.type == pygame.QUIT:
                     sys.exit()
             ccGlobals.get_renderer().fill((0, 0, 0))
+            ccActManager.step()
             ccActManager.draw()
             pygame.display.flip()
             clock.tick(60)
