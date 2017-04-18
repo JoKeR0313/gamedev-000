@@ -21,14 +21,16 @@ class TestActLoader:
         self.load_act()
         clock = pygame.time.Clock()
         temp = ccGlobals.get_renderer()
+        time_passed = 0
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
             ccGlobals.get_renderer().fill((0, 0, 0))
             ccActManager.draw()
+            ccActManager.step(time_passed)
             pygame.display.flip()
-            clock.tick(60)
+            time_passed = clock.tick(60)
 
     def load_act(self):
         ccActManager.load("test.act.json")
