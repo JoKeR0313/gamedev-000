@@ -40,7 +40,7 @@ class ccBasicObject(ccObject):
     def step(self, time_passed):
         # change Object's position with velocity. Specialized object classes will
         # override this method and do other logic here also
-        current_speed = self.velocity
+        current_speed = pygame.math.Vector2(0, 0)
         current_speed.x = self.velocity.x * time_passed
         current_speed.y = self.velocity.y * time_passed
         self.position.x += current_speed.x
@@ -52,8 +52,8 @@ class ccBasicObject(ccObject):
         return new_object
 
     def __fill(self, source):
-        source.position = deepcopy(self.position)
-        source.velocity = deepcopy(self.velocity)
+        source.position = pygame.math.Vector2(self.position)
+        source.velocity = pygame.math.Vector2(self.velocity)
         source.active_sprite = self.active_sprite
         source.type = self.type
         source.id = deepcopy(self.id)
