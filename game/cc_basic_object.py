@@ -2,6 +2,8 @@ import sys
 import pygame
 from cc_object import ccObject
 from pygame.locals import *
+from cc_sprite_manager import ccSpriteManager
+from copy import deepcopy
 
 pygame.init()
 
@@ -27,6 +29,8 @@ class ccBasicObject(ccObject):
             self.velocity.x = obj_section["velocity_x"]
         if "velocity_y" in obj_section:
             self.velocity.y = obj_section["velocity_y"]
+        if "sprite" in obj_section:
+            self.active_sprite = ccSpriteManager.get_sprite(obj_section['sprite'])
         # later: set position and velocity from test.objects.json
 
     def draw(self, renderer):
@@ -42,5 +46,15 @@ class ccBasicObject(ccObject):
         self.position.x += current_speed.x
         self.position.y += current_speed.y
 
-    def __repr__(self):
-        return self.type
+    def copy(self):
+        new_object = ccBasicObject()
+        self.__fill(new_object)
+        return new_object
+
+    def __fill(self, source):
+        source.position = deepcopy(self.position)
+        source.velocity = deepcopy(self.velocity)
+        source.active_sprite = self.active_sprite
+        source.type = self.type
+        source.id = deepcopy(self.id)
+        source.object_props = deepcopy(self.object_props)

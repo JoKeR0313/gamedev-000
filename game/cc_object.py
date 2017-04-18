@@ -1,5 +1,6 @@
 from cc_object_props import ccObjectProps
 from cc_logger import ccLogger
+from copy import deepcopy
 
 
 class ccObject:
@@ -19,6 +20,6 @@ class ccObject:
         if "id" in obj_section:
             self.id = obj_section["id"]
 
-    def draw(self):
+    def draw(self, renderer):
         ccLogger.error("This is an abstract class, yon can't call this function!")
         raise NotImplementedError
