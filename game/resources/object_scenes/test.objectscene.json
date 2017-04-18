@@ -1,6 +1,8 @@
 {
   "Config": {
-    "filenames": ["test.objects.json"]
+    "filenames": [
+      "test.objects.json"
+    ]
   },
   "obj_test_00": {
     "object_name": "obj_test_00",
@@ -11,8 +13,8 @@
     "object_name": "obj_test_01",
     "position_x": 100,
     "position_y": 100,
-    "velocity_x": 10,
-    "velocity_y": 0    
+    "velocity_x": 0.1,
+    "velocity_y": 0
   },
   "obj_test_the_third": {
     "object_name": "obj_test_03",
@@ -24,5 +26,4 @@
     "position_x": 500,
     "position_y": 300
   }
-
 }

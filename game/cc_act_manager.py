@@ -19,22 +19,21 @@ class ccActManager:
         loader.process_file(filename)
         cls.scenes = loader.get_scenes()
 
-
     @classmethod
     def draw(cls):
-    #loops through all the scenes and calls it's draw method
+        # loops through all the scenes and calls it's draw method
         for scene in cls.scenes:
             scene.draw()
 
     @classmethod
-    def step(cls):
-    #loops through all the scenes and calls it's step method
+    def step(cls, time_passed):
+        # loops through all the scenes and calls it's step method
         for scene in cls.scenes:
-            scene.step()
+            scene.step(time_passed)
 
     @classmethod
     def push_scene(cls, scene):
-    #appends the incoming scene to the end of the scenes list
+        # appends the incoming scene to the end of the scenes list
         cls.scenes.append(scene)
 
     @classmethod

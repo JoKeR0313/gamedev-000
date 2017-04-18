@@ -1,7 +1,7 @@
 import import_dir_setter
 from cc_object import *
 from cc_basic_object import *
-from cc_fileloader import *
+from cc_file_loader import *
 from cc_object_props import *
 from cc_objects_file_loader import *
 
