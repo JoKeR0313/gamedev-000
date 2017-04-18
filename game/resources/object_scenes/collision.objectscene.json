@@ -1,0 +1,113 @@
+{
+    "Config": {
+        "filenames": [
+            "test.objects.json"
+        ]
+    },
+    "obj_test_00": {
+        "object_name": "obj_test_00",
+        "position_x": 200,
+        "position_y": 200
+    },
+    "obj_test_01": {
+        "object_name": "obj_test_00",
+        "position_x": 232,
+        "position_y": 200
+    },
+    "obj_test_02": {
+        "object_name": "obj_test_00",
+        "position_x": 264,
+        "position_y": 200
+    },
+    "obj_test_03": {
+        "object_name": "obj_test_00",
+        "position_x": 296,
+        "position_y": 200
+    },
+    "obj_test_04": {
+        "object_name": "obj_test_00",
+        "position_x": 328,
+        "position_y": 200
+    },
+    "obj_test_05": {
+        "object_name": "obj_test_00",
+        "position_x": 360,
+        "position_y": 200
+    },
+    "obj_test_06": {
+        "object_name": "obj_test_00",
+        "position_x": 200,
+        "position_y": 232
+    },
+    "obj_test_07": {
+        "object_name": "obj_test_00",
+        "position_x": 200,
+        "position_y": 264
+    },
+    "obj_test_08": {
+        "object_name": "obj_test_00",
+        "position_x": 200,
+        "position_y": 296
+    },
+    "obj_test_09": {
+        "object_name": "obj_test_00",
+        "position_x": 200,
+        "position_y": 328
+    },
+    "obj_test_10": {
+        "object_name": "obj_test_00",
+        "position_x": 200,
+        "position_y": 360
+    },
+    "obj_test_11": {
+        "object_name": "obj_test_00",
+        "position_x": 232,
+        "position_y": 360
+    },
+    "obj_test_12": {
+        "object_name": "obj_test_00",
+        "position_x": 264,
+        "position_y": 360
+    },
+    "obj_test_13": {
+        "object_name": "obj_test_00",
+        "position_x": 296,
+        "position_y": 360
+    },
+    "obj_test_14": {
+        "object_name": "obj_test_00",
+        "position_x": 328,
+        "position_y": 360
+    },
+    "obj_test_15": {
+        "object_name": "obj_test_00",
+        "position_x": 360,
+        "position_y": 360
+    },
+    "obj_test_16": {
+        "object_name": "obj_test_00",
+        "position_x": 360,
+        "position_y": 328
+    },
+    "obj_test_17": {
+        "object_name": "obj_test_00",
+        "position_x": 360,
+        "position_y": 296
+    },
+    "obj_test_18": {
+        "object_name": "obj_test_00",
+        "position_x": 360,
+        "position_y": 264
+    },
+    "obj_test_19": {
+        "object_name": "obj_test_00",
+        "position_x": 360,
+        "position_y": 232
+    },
+    "player_test": {
+        "object_name": "obj_test_01",
+        "position_x": 300,
+        "position_y": 300,
+        "id": 200
+    }
+}
