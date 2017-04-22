@@ -1,5 +1,5 @@
 from cc_objects_file_loader import ccObjectsFileLoader
-from cc_fileloader import ccFileLoader
+from cc_file_loader import ccFileLoader
 from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
 from cc_resource_paths import *

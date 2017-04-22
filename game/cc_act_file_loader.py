@@ -1,4 +1,4 @@
-from cc_fileloader import *
+from cc_file_loader import *
 from cc_logger import *
 from cc_object_scene import *
 from cc_resource_paths import *
