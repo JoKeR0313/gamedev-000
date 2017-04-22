@@ -108,6 +108,8 @@
         "object_name": "obj_test_01",
         "position_x": 300,
         "position_y": 300,
+        "velocity_x": 0,
+        "velocity_y": 0,
         "id": 200
     }
 }
