@@ -1,6 +1,8 @@
 from cc_object_scene import ccObjectScene
 from cc_object_scene_file_loader import ccObjectSceneFileLoader
 from cc_globals import ccGlobals
+import pygame
+from pprint import pprint
 
 
 class ccCollisionObjectScene(ccObjectScene):
@@ -19,13 +21,14 @@ class ccCollisionObjectScene(ccObjectScene):
             obj.draw(ccGlobals.get_renderer())
 
     def step(self, time_passed):
-        player = None
         pressed = pygame.key.get_pressed()
         for obj in self.object_list:
             if obj.id == 200:
-                print("yes")
-                player = obj
-            else:
-                print("no")
-        if pressed[pygame.K_LEFT]:
-            player.velocity_x = 0.1
+                if pressed[pygame.K_LEFT]:
+                    obj.position[0] -= 1
+                if pressed[pygame.K_RIGHT]:
+                    obj.position[0] += 1
+                if pressed[pygame.K_UP]:
+                    obj.position[1] -= 1
+                if pressed[pygame.K_DOWN]:
+                    obj.position[1] += 1
