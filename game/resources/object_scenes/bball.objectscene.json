@@ -1,0 +1,40 @@
+{
+  "Config": {
+    "filenames": ["test.objects.json"]
+  },
+  "square_ball_0": {
+    "object_name": "obj_test_03",
+    "position_x": 300,
+    "position_y": 300,
+    "velocity_x": 0.1,
+    "velocity_y": 0.07    
+  },
+  "square_ball_1": {
+    "object_name": "obj_test_03",
+    "position_x": 300,
+    "position_y": 300,
+    "velocity_x": 0.1,
+    "velocity_y": 0.09    
+  },
+  "square_ball_2": {
+    "object_name": "obj_test_03",
+    "position_x": 300,
+    "position_y": 300,
+    "velocity_x": 0.01,
+    "velocity_y": 0.07    
+  },
+  "square_ball_3": {
+    "object_name": "obj_test_03",
+    "position_x": 300,
+    "position_y": 300,
+    "velocity_x": 0.1,
+    "velocity_y": -0.07    
+  },
+  "square_ball_4": {
+    "object_name": "obj_test_03",
+    "position_x": 300,
+    "position_y": 300,
+    "velocity_x": -0.1,
+    "velocity_y": 0.07    
+  }  
+}
