@@ -2,7 +2,7 @@ from cc_file_loader import *
 from cc_logger import *
 from cc_object_scene import *
 from cc_resource_paths import *
-from cc_import_scene import *
+from cc_bouncing_ball_scene_test import *
 
 
 class ccActFileLoader(ccFileLoader):

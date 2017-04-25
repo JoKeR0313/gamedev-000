@@ -9,5 +9,9 @@
   "numbers": {
     "scene_type": "ccObjectScene",
     "filename": "test.objectscene.json"
+  },
+  "bouncing_balls": {
+    "scene_type": "ccBouncingBallScene",
+    "filename": "bball.objectscene.json"
   }
 }

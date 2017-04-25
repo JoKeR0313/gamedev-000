@@ -1,4 +1,5 @@
 from cc_object_scene import ccObjectScene
+from cc_globals import ccGlobals
 
 
 class ccBouncingBallScene(ccObjectScene):
