@@ -46,9 +46,17 @@ class ccCollisionObjectScene(ccObjectScene):
         """Function that returns a deepcopy of the scene's object list, exluding the player object.
         This step is needed because if the player object is in the list, then the collision
         detection always returns true, because we are checking if the player is colliding
-        with itself."""
+        with itself.
+        pygame's VECTOR maybe is not working for us?"""
 
         obstacles = copy.deepcopy(self.object_list)
+        for obj in obstacles:
+            print("y position: ", obj.position.y)
+            obj.active_sprite.rectangle.top = obj.position.y
+            print(obj.active_sprite.rectangle.top)
+            print("x position: ", obj.position.x)
+            obj.active_sprite.rectangle.left = obj.position.x
+            print(obj.active_sprite.rectangle.left)
         for obj in obstacles:
             if obj.id == 200:  # The object with the id of 200 will be the movable player object
                 obstacles.remove(obj)
@@ -65,7 +73,8 @@ class ccCollisionObjectScene(ccObjectScene):
         are 0 on every object's rectangles. I think these attributes have to be implemented from the
         object's similary named attributes. Also they needed to be upgraded on every step,
         if the object is moving on the game screen.
-        The lots of prints in this method is for testing of course."""
+        The lots of prints in this method is for testing of course.
+        pygame's VECTOR maybe is not working for us?"""
 
         print("##########################################################")
         print("STARTING COLLISION CHECK FOR ", direction.upper(), " DIRECTION!")
@@ -82,6 +91,7 @@ class ccCollisionObjectScene(ccObjectScene):
             print(x, ". obstacle object and rectangle coordinates")
             print("obstacle rectangle: ", obj.active_sprite.rectangle)
             print("obstacle position: ", obj.position)
+            print(type(obj.position))
             print("-----------------------------------------")
 
             if player.active_sprite.rectangle.colliderect(obj.active_sprite.rectangle):
