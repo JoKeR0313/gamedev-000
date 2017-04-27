@@ -40,31 +40,20 @@ class ccCollisionObjectScene(ccObjectScene):
         obj.active_sprite.rectangle.x = obj.position.x
 
     def collision_check(self, player, direction):
-
-        print("##########################################################")
-        print("STARTING COLLISION CHECK FOR ", direction.upper(), " DIRECTION!")
-        print("-----------------------------------------")
-        print("player object and rectangle coordinates")
-        print("player position: ", player.position)
-        print("player rectangle: ", player.active_sprite.rectangle)
-        print("-----------------------------------------")
         x = 0
         for obj in self.object_list:
-            # self.get_object_position(obj)
+            self.get_object_position(obj)
             if obj.id != 200:
-
-                print("-----------------------------------------")
-                print(x, ". obstacle object and rectangle coordinates")
-                print("obstacle position: ", obj.position)
-                print("obstacle rectangle: ", obj.active_sprite.rectangle)
-                print(type(obj.position))
-                print("-----------------------------------------")
-
                 if player.active_sprite.rectangle.colliderect(obj.active_sprite.rectangle):
-                    print(direction + ": collision true")
-                else:
-                    print(direction + ": collision false")
-                x += 1
-
-        print("ENDING COLLISION CHECK FOR ", direction.upper(), " DIRECTION!")
-        print("##########################################################")
+                    print(direction + ":\033[91mcollision true\033[0m")
+                    print("-----------------------------------------")
+                    print("player object and rectangle coordinates")
+                    print("player position: ", player.position)
+                    print("player rectangle: ", player.active_sprite.rectangle)
+                    print("-----------------------------------------")
+                    print("-----------------------------------------")
+                    print(x, ". obstacle object and rectangle coordinates")
+                    print("obstacle position: ", obj.position)
+                    print("obstacle rectangle: ", obj.active_sprite.rectangle)
+                    print("-----------------------------------------")
+            x += 1
