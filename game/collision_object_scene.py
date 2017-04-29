@@ -1,15 +1,30 @@
-from cc_object_scene import ccObjectScene
+from cc_scene import ccScene
+from cc_object_scene_file_loader import ccObjectSceneFileLoader
 from cc_globals import ccGlobals
 import pygame
 from pprint import pprint
 import copy
 
 
-class ccCollisionObjectScene(ccObjectScene):
+class ccCollisionObjectScene(ccScene):
 
     def __init__(self):
         super().__init__()
+        self.object_list = []
+        self.rect_list = []
+        self.player = None
         self.type = "ccCollisionObjectScene"
+
+    def load(self, filename):
+        loader = ccObjectSceneFileLoader()
+        loader.process_file(filename)
+        self.object_list = loader.get_objects()
+        self.rect_list = self.get_rects()
+        self.player = self.get_player()
+
+    def draw(self):
+        for obj in self.object_list:
+            obj.draw(ccGlobals.get_renderer())
 
     def step(self, time_passed):
         pressed = pygame.key.get_pressed()
@@ -19,41 +34,50 @@ class ccCollisionObjectScene(ccObjectScene):
                 player = obj
                 if pressed[pygame.K_LEFT]:
                     player.position[0] -= 1
-                    self.collision_check(player, "left")
+                    self.update_player()
+                    if self.collision_check():
+                        player.position[0] += 1
                 if pressed[pygame.K_RIGHT]:
                     player.position[0] += 1
-                    self.collision_check(player, "right")
+                    self.update_player()
+                    if self.collision_check():
+                        player.position[0] -= 1
                 if pressed[pygame.K_UP]:
                     player.position[1] -= 1
-                    self.collision_check(player, "up")
+                    self.update_player()
+                    if self.collision_check():
+                        player.position[1] += 1
                 if pressed[pygame.K_DOWN]:
                     obj.position[1] += 1
-                    self.collision_check(player, "down")
+                    self.update_player()
+                    if self.collision_check():
+                        player.position[1] -= 1
 
-    def get_positions(self):
+    def get_rects(self):
+        rects = []
         for obj in self.object_list:
-            obj.active_sprite.rectangle.y = obj.position.y
-            obj.active_sprite.rectangle.x = obj.position.x
-
-    def get_object_position(self, obj):
-        obj.active_sprite.rectangle.y = obj.position.y
-        obj.active_sprite.rectangle.x = obj.position.x
-
-    def collision_check(self, player, direction):
-        x = 0
-        for obj in self.object_list:
-            self.get_object_position(obj)
             if obj.id != 200:
-                if player.active_sprite.rectangle.colliderect(obj.active_sprite.rectangle):
-                    print(direction + ":\033[91mcollision true\033[0m")
-                    print("-----------------------------------------")
-                    print("player object and rectangle coordinates")
-                    print("player position: ", player.position)
-                    print("player rectangle: ", player.active_sprite.rectangle)
-                    print("-----------------------------------------")
-                    print("-----------------------------------------")
-                    print(x, ". obstacle object and rectangle coordinates")
-                    print("obstacle position: ", obj.position)
-                    print("obstacle rectangle: ", obj.active_sprite.rectangle)
-                    print("-----------------------------------------")
-            x += 1
+                rect = copy.deepcopy(obj.active_sprite.rectangle)
+                rect.x = obj.position.x
+                rect.y = obj.position.y
+                rects.append(rect)
+        return rects
+
+    def get_player(self):
+        for obj in self.object_list:
+            if obj.id == 200:
+                player = copy.deepcopy(obj.active_sprite.rectangle)
+                player.x = obj.position.x
+                player.y = obj.position.y
+                return player
+
+    def update_player(self):
+        for obj in self.object_list:
+            if obj.id == 200:
+                self.player.x = obj.position.x
+                self.player.y = obj.position.y
+
+    def collision_check(self):
+        for rect in self.rect_list:
+            if self.player.colliderect(rect):
+                return True
