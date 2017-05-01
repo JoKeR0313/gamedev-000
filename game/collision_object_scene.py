@@ -2,7 +2,6 @@ from cc_scene import ccScene
 from cc_object_scene_file_loader import ccObjectSceneFileLoader
 from cc_globals import ccGlobals
 import pygame
-from pprint import pprint
 import copy
 
 
