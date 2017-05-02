@@ -1,6 +1,3 @@
-# ccFileLoader
-#- ccFileLoader class to parse JSON files. It is needed to decorate the JSON loader so we can use another format if we need to. Pick a JSON loader module what can parse JSON files, a simple one will do
-#- abstract class
 import json
 from collections import OrderedDict
 from cc_logger import *
@@ -32,7 +29,7 @@ class ccFileLoader:
         try:
             named_section = self.current_dict[section_name]
         except KeyError:
-            if mandatory == True:
+            if mandatory is True:
                 print("Error! This section does not exist!")
             return None
         named_section = dict(OrderedDict(named_section))
@@ -53,11 +50,11 @@ class ccFileLoader:
                 section = self.get_section(section_name, True)
             field_data = section[field_name]
         except KeyError:
-            if mandatory == True:
+            if mandatory is True:
                 print("Error! This field does not exist!")
             return None
         except NameError:
-            if mandatory == True:
+            if mandatory is True:
                 print("Error! Invalid current_section!")
             return None
         return field_data

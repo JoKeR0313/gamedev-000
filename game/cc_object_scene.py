@@ -4,6 +4,7 @@ from cc_globals import ccGlobals
 
 
 class ccObjectScene(ccScene):
+
     def __init__(self):
         super().__init__()
         self.object_list = []  # gets objects from load function

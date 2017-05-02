@@ -5,6 +5,7 @@ from cc_file_loader import *
 from cc_object_props import *
 from cc_objects_file_loader import *
 
+
 def test_cc_object_create():
     obj = ccObject()
     try:
@@ -12,6 +13,7 @@ def test_cc_object_create():
             print("ccObject creation works!")
     except:
         print("Something off with creating ccObject instance!")
+
 
 def test_cc_object_load():
     obj = ccObject()
@@ -24,6 +26,7 @@ def test_cc_object_load():
     except:
         print("FAIL! Something off with ccObject.load function!")
 
+
 def test_cc_object_draw():
     obj = ccObject()
     try:
@@ -31,6 +34,7 @@ def test_cc_object_draw():
         print(" FAIL! The draw function didn't raise a proper error!")
     except:
         print(" OK! The ccObject draw function raise a proper error!")
+
 
 def test_basic_obj_init():
     b_obj = ccBasicObject()

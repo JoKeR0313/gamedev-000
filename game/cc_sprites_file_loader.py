@@ -7,7 +7,6 @@ from pygame import *
 from cc_resource_paths import *
 
 
-
 class ccSpritesFileLoader(ccFileLoader):
 
     def __init__(self):
@@ -16,8 +15,6 @@ class ccSpritesFileLoader(ccFileLoader):
     def process_file(self, filename):
         try:
             self.load_file(ccResourcePaths.get_sprites() + filename)
-
-
         except:
             ccLogger.error(str(filename) + ' file could not be loaded.')
             raise RuntimeError('File could not be loaded.')

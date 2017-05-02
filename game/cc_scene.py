@@ -21,7 +21,6 @@ class ccScene:
         time = time_passed
         ccLogger.error("Step currently not working!")
         error_message = ccLogger("Step currently not working!")
-#####
 
     def __process_config(self, config):
         # config is the config section of the JSON dict.

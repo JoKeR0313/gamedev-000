@@ -1,4 +1,3 @@
-# ccGlobals
 import pygame
 # this name is temporary (or not if we can't find a better one)
 

@@ -5,8 +5,8 @@ from cc_object_manager import ccObjectManager
 from cc_resource_paths import *
 
 
-
 class ccObjectSceneFileLoader(ccFileLoader):
+
     def __init__(self):
         super().__init__()
         self.objects_list = []

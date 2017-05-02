@@ -6,7 +6,9 @@ from cc_sprite_manager import ccSpriteManager
 from cc_anims_file_loader import ccAnimsFileLoader
 from copy import deepcopy
 
+
 class ccAnimObject(ccBasicObject):
+
     def __init__(self):
         super().__init__()
         self.type = 'ccAnimObject'
@@ -45,17 +47,17 @@ class ccAnimObject(ccBasicObject):
         # this is not needed, it can use the ancestor's draw method
         ccBasicObject.draw(self, renderer)
 
-    def step(self, time_passed): # time passed = frame's time
+    def step(self, time_passed):  # time passed = frame's time
         # use the ancestor's step to do moving
         super().step(time_passed)
         self.time += time_passed
         if self.current_frame.time <= self.time:
             self.time -= self.current_frame.time
             self.current_frame = self.current_anim.get_frame(self.current_frame.get_next_frame())
-            if self.current_frame == None:
+            if self.current_frame is None:
                 self.current_frame = self.current_anim.get_frame(0)
                 ccLogger.warning("Animation change should be implemented")
-                #WARNING
+                # WARNING
             self.active_sprite = self.current_frame.get_sprite()
         # handle the anim changing. The incoming time_passed
         # has the passed millisecs since last frame.

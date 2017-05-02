@@ -3,6 +3,7 @@ from cc_act_file_loader import ccActFileLoader
 
 
 class ccActManager:
+
     scenes = []
 
     def __init__(self):

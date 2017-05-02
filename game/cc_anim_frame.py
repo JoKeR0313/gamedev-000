@@ -17,5 +17,3 @@ class ccAnimFrame:
 
     def get_next_frame(self):
         return self.next_frame
-
-#sprite = ccSpritesFileLoader.process_file(ccResourcePaths.get_sprites() + sprites.json")

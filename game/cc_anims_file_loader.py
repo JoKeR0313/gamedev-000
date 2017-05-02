@@ -8,7 +8,9 @@ from cc_anim_frame import *
 from cc_sprites_file_loader import *
 from cc_resource_paths import *
 
+
 class ccAnimsFileLoader(ccFileLoader):
+
     def __init__(self):
         pass
 
@@ -36,8 +38,6 @@ class ccAnimsFileLoader(ccFileLoader):
             self.__process_one_anims_sprite()
 
     def __process_one_anims_sprite(self):
-
-
         sprites = self.get_field("sprites")
         for i in range(len(sprites)):
             sprites[i] = ccSpriteManager.get_sprite(sprites[i])
