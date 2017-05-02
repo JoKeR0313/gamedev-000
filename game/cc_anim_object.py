@@ -19,7 +19,6 @@ class ccAnimObject(ccBasicObject):
         self.active_sprite = None
 
     def load(self, anim_data):
-        # call ancestor's load() method and get the sprite from SpriteManager
         try:
             super().load(anim_data)
             for anim_name in anim_data['animations']:
@@ -32,23 +31,17 @@ class ccAnimObject(ccBasicObject):
         except:
             ccLogger.error('Sprite could not be loaded.')
             raise RuntimeError('Sprite could not be loaded.')
-        # print error if something bad happens
-        # load the data. All the anim should already be in SpriteManager so get it from there!
-        # check the last object in test.objects.json file
 
     def add_anim(self, anim):
-        # add an animation to anims list. anim should be ccAnimSprite
         if type(anim) == 'ccAnimSprite':
             self.anims.append(anim)
         else:
             ccLogger.error('Not Anim sprite' + type(anim))
 
     def draw(self, renderer):
-        # this is not needed, it can use the ancestor's draw method
         ccBasicObject.draw(self, renderer)
 
     def step(self, time_passed):  # time passed = frame's time
-        # use the ancestor's step to do moving
         super().step(time_passed)
         self.time += time_passed
         if self.current_frame.time <= self.time:
@@ -59,18 +52,8 @@ class ccAnimObject(ccBasicObject):
                 ccLogger.warning("Animation change should be implemented")
                 # WARNING
             self.active_sprite = self.current_frame.get_sprite()
-        # handle the anim changing. The incoming time_passed
-        # has the passed millisecs since last frame.
-        # Use it to move forward in animation
-        # if the displayed sprite should be changed,
-        # set the active_sprite with the
-        # currently active ccAnimSprite's sprite.
-        # active_sprite should always point
-        # to a ccSprite object, otherwise the program will crash
-        pass
 
     def play(self, anim_name=None):
-
         # set and start playing an anim. anim_name is optional,
         # it should play the current animation if the anim_name is not set
         # if an anim was paused, resume from that point where it was

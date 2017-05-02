@@ -32,7 +32,7 @@ class ccObjectSceneFileLoader(ccFileLoader):
         while self.next_section():
             obj = ccObjectManager.create_object(self.current_section['object_name'])
             obj.load(self.current_section)
-            self.objects_list.append(obj)  # stores the updated object clone provided by the ccObjectManager
+            self.objects_list.append(obj)
 
     def get_objects(self):
         if len(self.objects_list) == 0:
