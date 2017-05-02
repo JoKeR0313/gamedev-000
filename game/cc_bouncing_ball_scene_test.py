@@ -17,6 +17,7 @@ class ccBouncingBallScene(ccObjectScene):
 
     def step(self, time_passed):
         self.update_rects()
+        self.collision_check()
         for obj in self.object_list:
             obj.step(time_passed)
             if obj.position.x + obj.active_sprite.rectangle.width >= ccGlobals.size[0]:
@@ -27,8 +28,6 @@ class ccBouncingBallScene(ccObjectScene):
                 obj.velocity.y = -obj.velocity.y
             elif obj.position.y <= 0:
                 obj.velocity.y = -obj.velocity.y
-
-        self.collision_check()
 
     def get_rects(self):
         rects = []
