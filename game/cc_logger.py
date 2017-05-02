@@ -18,7 +18,7 @@ class ccLogger:
     def error(cls, *args):
         log = (str(datetime.now())[:-3], " !E! ",
                ' '.join(str(arg)for arg in args), "\n")
-        with open(ccLogger.filename, 'a') as writefile:
+        with open(cls.filename, 'a') as writefile:
             writefile.write(''.join(log))
         print(''.join(log))
 
@@ -26,7 +26,7 @@ class ccLogger:
     def warning(cls, *args):
         log = (str(datetime.now())[:-3], " !W! ",
                ' '.join(str(arg)for arg in args), "\n")
-        with open(ccLogger.filename, 'a') as writefile:
+        with open(cls.filename, 'a') as writefile:
             writefile.write(''.join(log))
         print(''.join(log))
 
@@ -34,5 +34,5 @@ class ccLogger:
     def trace(cls, *args):
         log = (str(datetime.now())[:-3], " !T! ",
                ' '.join(str(arg)for arg in args), "\n")
-        with open(ccLogger.filename, 'a') as writefile:
+        with open(cls.filename, 'a') as writefile:
             writefile.write(''.join(log))
