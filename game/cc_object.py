@@ -21,5 +21,5 @@ class ccObject:
             self.id = obj_section["id"]
 
     def draw(self, renderer):
-        ccLogger.error("This is an abstract class, yon can't call this function!")
+        ccLogger.error("ccObject is an abstract class, yon can't call the draw function!")
         raise NotImplementedError

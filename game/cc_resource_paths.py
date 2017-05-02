@@ -9,7 +9,7 @@ class ccResourcePaths:
     resource_path = base_path + dir_name
 
     def __init__(self):
-        ccLogger.error("ccResourcePath can not be instantiated")
+        ccLogger.error("ccResourcePath is an abstract class, can't call __init__!")
         raise NotImplementedError
 
     @classmethod

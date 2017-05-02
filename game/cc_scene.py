@@ -10,17 +10,17 @@ class ccScene:
         self.scene_props = ccSceneProps()
 
     def load(self, filename):
-        ccLogger.error("File not loaded!")
-        error_message = ccLogger("File not loaded!")
+        ccLogger.error("Error: file not loaded.")
+        error_message = ccLogger("Error: file not loaded.")
 
     def draw(self):
-        ccLogger.error("Scene not drawed!")
-        error_message = ccLogger("Scene not drawed!")
+        ccLogger.error("Error: could not draw scene.")
+        error_message = ccLogger("Error: could not draw scene.")
 
     def step(self, time_passed):
         time = time_passed
-        ccLogger.error("Step currently not working!")
-        error_message = ccLogger("Step currently not working!")
+        ccLogger.error("Error: step does not work at the moment.")
+        error_message = ccLogger("Error: step does not work at the moment.")
 
     def __process_config(self, config):
         # config is the config section of the JSON dict.

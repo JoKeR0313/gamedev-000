@@ -20,17 +20,17 @@ class ccTexture:
     def get_width(self):
         # give back loaded texture's width. print error if no texture is loaded and give back 0
         if self.width == 0:
-            ccLogger.error("Width is zero!")
+            ccLogger.error("Error: width is zero.")
         return self.width
 
     def get_height(self):
         # give back loaded texture's height. print error if no texture is loaded and give back 0
         if self.height == 0:
-            ccLogger.error("Height is zero!")
+            ccLogger.error("Error: height is zero.")
         return self.height
 
     def get_texture(self):
         # give back the texture stored. If no texture, give back None and print error msg
         if self.image is None:
-            ccLogger.error("There is no image!")
+            ccLogger.error("Error: there is no image stored.")
         return self.image

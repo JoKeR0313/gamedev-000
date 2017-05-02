@@ -7,8 +7,8 @@ class ccObjectManager:
     objects = {}
 
     def __init__(self):
-        stop_being_a_noob = "You cannot instantiate this class. Now go cry in the corner."
-        raise Exception(stop_being_a_noob)
+        error = "ccObjectManager is an abstract class, can't call __init__!"
+        raise Exception(error)
 
     @classmethod
     def add_object(cls, object_name, obj):
