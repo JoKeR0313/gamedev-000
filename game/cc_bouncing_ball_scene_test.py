@@ -32,11 +32,10 @@ class ccBouncingBallScene(ccObjectScene):
     def get_rects(self):
         rects = []
         for obj in self.object_list:
-            if obj.id != 200:
-                rect = copy.deepcopy(obj.active_sprite.rectangle)
-                rect.x = obj.position.x
-                rect.y = obj.position.y
-                rects.append(rect)
+            rect = copy.deepcopy(obj.active_sprite.rectangle)
+            rect.x = obj.position.x
+            rect.y = obj.position.y
+            rects.append(rect)
         return rects
 
     def update_rects(self):
