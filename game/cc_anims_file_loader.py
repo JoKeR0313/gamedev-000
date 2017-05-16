@@ -50,7 +50,7 @@ class ccAnimsFileLoader(ccFileLoader):
             frame_list.append(splitted_frame)
 
         for i in range(len(frame_list)):
-            if frame_list[i][0] != 'goto':
+            if frame_list[i][0] != 'goto': #need to be checked
                 if len(frame_list[i]) == 1:
                     frame_list[i].append(frame_list[i - 1][1])
                 if frame_list[i+1][0] != 'goto':
