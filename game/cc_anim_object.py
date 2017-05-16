@@ -21,15 +21,17 @@ class ccAnimObject(ccBasicObject):
     def load(self, anim_data):
         try:
             super().load(anim_data)
-            for anim_name in anim_data['animations']:
-                anim = ccSpriteManager.get_sprite(anim_name)
-                self.anims.append(anim)
-            self.current_anim = ccSpriteManager.get_sprite(anim_data['start_anim'])
-            self.current_frame = self.current_anim.get_frame(0)
-            self.active_sprite = self.current_frame.get_sprite()
+            if 'animations' in anim_data:
+                for anim_name in anim_data['animations']:
+                    anim = ccSpriteManager.get_sprite(anim_name)
+                    self.anims.append(anim)
+            if 'start_anim' in anim_data:
+                self.current_anim = ccSpriteManager.get_sprite(anim_data['start_anim'])
+                self.current_frame = self.current_anim.get_frame(0)
+                self.active_sprite = self.current_frame.get_sprite()
 
         except:
-            ccLogger.error('Sprite could not be loaded.')
+            ccLogger.error('Sprite could not be loaded.: ')
             raise RuntimeError('Sprite could not be loaded.')
 
     def add_anim(self, anim):
@@ -69,7 +71,7 @@ class ccAnimObject(ccBasicObject):
         pass
 
     def copy(self):
-        new_object = ccBasicObject()
+        new_object = ccAnimObject()
         self.__fill(new_object)
         return new_object
 
