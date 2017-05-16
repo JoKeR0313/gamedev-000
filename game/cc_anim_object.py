@@ -1,3 +1,4 @@
+import pygame
 from cc_basic_object import ccBasicObject
 from cc_anim_frame import ccAnimFrame
 from cc_anim_sprite import ccAnimSprite
@@ -76,13 +77,13 @@ class ccAnimObject(ccBasicObject):
         return new_object
 
     def __fill(self, source):
-        source.position = deepcopy(self.position)
-        source.velocity = deepcopy(self.velocity)
+        source.position = pygame.math.Vector2(self.position)
+        source.velocity = pygame.math.Vector2(self.velocity)
         source.active_sprite = self.active_sprite
         source.type = self.type
         source.id = deepcopy(self.id)
         source.object_props = deepcopy(self.object_props)
         source.time = 0
         source.anims = self.anims
-        source.current_anim = deepcopy(self.current_anim)
-        source.current_frame = deepcopy(self.current_frame)
+        source.current_anim = self.current_anim
+        source.current_frame = self.current_frame
