@@ -6,7 +6,7 @@
   },
   "anim_test": {
     "object_name": "anim_object_00",
-    "position_x": 500,
-    "position_y": 300
+    "position_x": 100,
+    "position_y": 100
   }
 }
