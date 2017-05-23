@@ -4,6 +4,8 @@ from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
 from cc_resource_paths import *
 
+from game.cc_resource_paths import ccResourcePaths
+
 
 class ccTileSceneFileLoader(ccFileLoader):
 
@@ -14,7 +16,7 @@ class ccTileSceneFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            self.load_file(ccResourcePaths.get_tiles_scenes() + filename)
+            self.load_file(filename)
 
         except:
             ccLogger.error('{} could not be loaded.'.format(filename))
@@ -31,7 +33,6 @@ class ccTileSceneFileLoader(ccFileLoader):
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
-            print("get", self.get_section("Map"))
 
             if self.current_section == self.get_section("Map"):
                 for row in self.current_section["map"]:
@@ -43,3 +44,6 @@ class ccTileSceneFileLoader(ccFileLoader):
                 for name in self.current_section:
                     if name != "map":
                         self.objects_dict[name] = ccObjectManager.create_object(self.current_section[name])
+
+    def get_map(self):
+        return self.map
