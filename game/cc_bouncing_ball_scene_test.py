@@ -8,13 +8,11 @@ class ccBouncingBallScene(ccObjectScene):
 
     def __init__(self):
         super().__init__()
-        self.rect_list = []
         self.type = "ccBouncingBallScene"
 
     def load(self, filename):
         super().load(filename)
         self.load_hitboxes()
-        print(self.rect_list)
 
     def step(self, time_passed):
         self.update_hitbox()
@@ -29,15 +27,6 @@ class ccBouncingBallScene(ccObjectScene):
                 obj.velocity.y = -obj.velocity.y
             elif obj.position.y <= 0:
                 obj.velocity.y = -obj.velocity.y
-
-    def get_rects(self):
-        rects = []
-        for obj in self.object_list:
-            rect = copy.deepcopy(obj.active_sprite.rectangle)
-            rect.x = obj.position.x
-            rect.y = obj.position.y
-            rects.append(rect)
-        return rects
 
     def load_hitboxes(self):
         for obj in self.object_list:
