@@ -13,5 +13,9 @@
   "bouncing_balls": {
     "scene_type": "ccBouncingBallScene",
     "filename": "bball.objectscene.json"
+  },
+  "tile_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "test.tilescene.json"
   }
 }
