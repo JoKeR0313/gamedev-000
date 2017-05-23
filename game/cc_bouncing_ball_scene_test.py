@@ -31,8 +31,8 @@ class ccBouncingBallScene(ccObjectScene):
     def load_hitboxes(self):
         for obj in self.object_list:
             obj.hitbox = pygame.Rect(obj.position.x, obj.position.y,
-                                     obj.active_sprite.rectangle.width,
-                                     obj.active_sprite.rectangle.height)
+                                     obj.active_sprite.hitbox.width,
+                                     obj.active_sprite.hitbox.height)
 
     def update_hitbox(self):
         for obj in self.object_list:
