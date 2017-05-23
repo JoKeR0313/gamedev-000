@@ -1,0 +1,16 @@
+{
+  "Config": {
+    "filenames": ["test.objects.json"]
+  },
+  "tile_objects": {
+    "00": "obj_test_00",
+    "01": "obj_test_01",
+    "02": "obj_test_02",
+    "03": "obj_test_03"
+    },
+  "Map": {
+    "map": [["00","01"],
+            ["00","02"],
+            ["00","03"]]
+  }
+}
