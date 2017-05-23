@@ -50,11 +50,11 @@ class ccAnimsFileLoader(ccFileLoader):
             frame_list.append(splitted_frame)
 
         for i in range(len(frame_list)):
-            if frame_list[i][0] != 'goto':
+            if frame_list[i][0] != 'goto': #need to be checked
                 if len(frame_list[i]) == 1:
                     frame_list[i].append(frame_list[i - 1][1])
                 if frame_list[i+1][0] != 'goto':
-                    frame_list[i].append(frame_list[i+1][0])
+                    frame_list[i].append(str(i+1))
                 else:
                     frame_list[i].append(frame_list[i+1][1])
             else:
@@ -69,5 +69,6 @@ class ccAnimsFileLoader(ccFileLoader):
             next_frame = int(frames[i][2])
             anim_frame = ccAnimFrame(sprite, time, next_frame)
             anim_sprite.add_frame(anim_frame)
+
         ccSpriteManager.add_sprite(self.get_current_section_name(), anim_sprite)
 
