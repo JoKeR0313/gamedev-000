@@ -1,6 +1,7 @@
 from cc_object_scene import ccObjectScene
 from cc_globals import ccGlobals
 import copy
+import pygame
 
 
 class ccBouncingBallScene(ccObjectScene):
@@ -12,12 +13,12 @@ class ccBouncingBallScene(ccObjectScene):
 
     def load(self, filename):
         super().load(filename)
-        self.rect_list = self.get_rects()
+        self.load_hitboxes()
         print(self.rect_list)
 
     def step(self, time_passed):
-        self.update_rects()
-        self.collision_check()
+        self.update_hitbox()
+        self.hitbox_collision_check()
         for obj in self.object_list:
             obj.step(time_passed)
             if obj.position.x + obj.active_sprite.rectangle.width >= ccGlobals.size[0]:
@@ -38,15 +39,24 @@ class ccBouncingBallScene(ccObjectScene):
             rects.append(rect)
         return rects
 
-    def update_rects(self):
-        for rect, obj in zip(self.rect_list, self.object_list):
-            rect.x = obj.position.x
-            rect.y = obj.position.y
+    def load_hitboxes(self):
+        for obj in self.object_list:
+            obj.hitbox = pygame.Rect(obj.position.x, obj.position.y,
+                                     obj.active_sprite.rectangle.width,
+                                     obj.active_sprite.rectangle.height)
 
-    def collision_check(self):
-        for rect, obj in zip(self.rect_list, self.object_list):
-            for check_rect in self.rect_list:
-                if rect != check_rect:
-                    if rect.colliderect(check_rect):
-                        obj.velocity.x = -obj.velocity.x
-                        obj.velocity.y = -obj.velocity.y
+    def update_hitbox(self):
+        for obj in self.object_list:
+            if obj.hitbox is not None:
+                obj.hitbox.x = obj.position.x
+                obj.hitbox.y = obj.position.y
+
+    def hitbox_collision_check(self):
+        for obj in self.object_list:
+            if obj.hitbox is not None:
+                for check_obj in self.object_list:
+                    if check_obj.hitbox is not None:
+                        if obj != check_obj:
+                            if obj.hitbox.colliderect(check_obj.hitbox):
+                                obj.velocity.x = -obj.velocity.x
+                                obj.velocity.y = -obj.velocity.y

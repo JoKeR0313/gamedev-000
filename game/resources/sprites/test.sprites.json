@@ -18,13 +18,17 @@
     "offset_x": 64,
     "offset_y": 0,
     "width": 32,
-    "height": 32
+    "height": 32,
+    "hitbox_width": 32,
+    "hitbox_height": 32
   },
   "test_03": {
     "offset_x": 96,
     "offset_y": 0,
     "width": 32,
-    "height": 32
+    "height": 32,
+    "hitbox_width": 32,
+    "hitbox_height": 32
   },
   "test_04": {
     "offset_x": 128,

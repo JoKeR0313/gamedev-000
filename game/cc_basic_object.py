@@ -16,6 +16,7 @@ class ccBasicObject(ccObject):
         self.type = "ccBasicObject"  # probably should use python's type(), so set that up with magic method(?)
         self.position = pygame.math.Vector2(0, 0)  # use Vector2. It should be able to store float values
         self.velocity = pygame.math.Vector2(0, 0)
+        self.hitbox = None
 
     def load(self, obj_section):
         # call ancestor's load() method and get the sprite from SpriteManager. If

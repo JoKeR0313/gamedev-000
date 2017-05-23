@@ -7,7 +7,7 @@ class ccObject:
 
     def __init__(self):
         # initialize instance variables
-        self.type = 'ccObject' # not sure this will be needed because python has type() function
+        self.type = 'ccObject'  # not sure this will be needed because python has type() function
         self.id = None
         self.active_sprite = None
         self.object_props = ccObjectProps()
