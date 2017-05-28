@@ -1,5 +1,6 @@
 from cc_object_scene import ccObjectScene
 from cc_globals import ccGlobals
+from cc_bball_coll_detector import BouncingBallCollisionDetector
 import copy
 import pygame
 
@@ -15,8 +16,8 @@ class ccBouncingBallScene(ccObjectScene):
         self.load_hitboxes()
 
     def step(self, time_passed):
-        self.update_hitbox()
-        self.hitbox_collision_check()
+        BouncingBallCollisionDetector.update_list_hitbox(self.object_list)
+        BouncingBallCollisionDetector.check_list_collision(self.object_list)
         for obj in self.object_list:
             obj.step(time_passed)
             if obj.position.x + obj.active_sprite.rectangle.width >= ccGlobals.size[0]:
@@ -34,6 +35,8 @@ class ccBouncingBallScene(ccObjectScene):
                                      obj.active_sprite.hitbox.width,
                                      obj.active_sprite.hitbox.height)
 
+
+"""
     def update_hitbox(self):
         for obj in self.object_list:
             if obj.hitbox is not None:
@@ -49,3 +52,4 @@ class ccBouncingBallScene(ccObjectScene):
                             if obj.hitbox.colliderect(check_obj.hitbox):
                                 obj.velocity.x = -obj.velocity.x
                                 obj.velocity.y = -obj.velocity.y
+"""

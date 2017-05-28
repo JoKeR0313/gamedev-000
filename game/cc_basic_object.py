@@ -32,6 +32,7 @@ class ccBasicObject(ccObject):
             self.velocity.y = obj_section["velocity_y"]
         if "sprite" in obj_section:
             self.active_sprite = ccSpriteManager.get_sprite(obj_section['sprite'])
+            #self.hitbox = pygame.Rect(self.position.x, self.position.y,self.active_sprite.hitbox.width,self.active_sprite.hitbox.height)
         # later: set position and velocity from test.objects.json
 
     def draw(self, renderer):
