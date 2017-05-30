@@ -22,9 +22,7 @@ class ccTileMapScene(ccScene):
     def draw(self):
         x = 0
         y = 0
-        print(self.map)
         for row in self.map:
-            print("Row:" + row)
             for obj in row:
                 obj.position = pygame.math.Vector2(x, y)
                 x += 32
