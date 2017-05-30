@@ -16,7 +16,7 @@ class ccTileSceneFileLoader(ccFileLoader):
 
     def process_file(self, filename):
         try:
-            self.load_file(filename)
+            self.load_file(ccResourcePaths.get_tile_scenes() + filename)
 
         except:
             ccLogger.error('{} could not be loaded.'.format(filename))
