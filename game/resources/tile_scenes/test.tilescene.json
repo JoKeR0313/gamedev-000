@@ -2,6 +2,10 @@
   "Config": {
     "filenames": ["test.objects.json"]
   },
+  "Offset": {
+    "x": 0,
+    "y": 350
+  },
   "tile_objects": {
     "00": "obj_test_00",
     "01": "obj_test_01",
