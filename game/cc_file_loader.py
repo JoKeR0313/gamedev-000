@@ -1,6 +1,3 @@
-# ccFileLoader
-#- ccFileLoader class to parse JSON files. It is needed to decorate the JSON loader so we can use another format if we need to. Pick a JSON loader module what can parse JSON files, a simple one will do
-#- abstract class
 import json
 from collections import OrderedDict
 from cc_logger import *
@@ -15,7 +12,7 @@ class ccFileLoader:
         self.current_dict = {}
 
     def process_file(self, filename):
-        raise NotImplementedError("This is an abstract class!")
+        raise NotImplementedError("ccFileLoader is an abstract class, can't call __init__!")
 
     def load_file(self, filename):
         # make the json loading here and set an instance variable what will hold
@@ -32,8 +29,8 @@ class ccFileLoader:
         try:
             named_section = self.current_dict[section_name]
         except KeyError:
-            if mandatory == True:
-                print("Error! This section does not exist!")
+            if mandatory is True:
+                print("Error: this section does not exist.")
             return None
         named_section = dict(OrderedDict(named_section))
         return named_section
@@ -53,12 +50,12 @@ class ccFileLoader:
                 section = self.get_section(section_name, True)
             field_data = section[field_name]
         except KeyError:
-            if mandatory == True:
-                print("Error! This field does not exist!")
+            if mandatory is True:
+                print("Error: this field does not exist.")
             return None
         except NameError:
-            if mandatory == True:
-                print("Error! Invalid current_section!")
+            if mandatory is True:
+                print("Error: invalid current_section.")
             return None
         return field_data
 
@@ -73,7 +70,7 @@ class ccFileLoader:
                     self.current_section_id = i - 1
                     break
             else:
-                print("The section does not exists!")
+                print("Error: the section does not exist.")
 
     def set_first_section(self):
         # set self.current_section to the first section in the file. print error
@@ -94,12 +91,12 @@ class ccFileLoader:
                 self.current_section_id += 1
                 return True
             except IndexError:
-                print('There is no more section!')
+                print('Error: there are no more sections.')
                 return False
 
     def file_is_loaded(self):
         if len(self.current_dict) == 0:
-            print("Error! File is not loaded, or don't have any section!")
+            print("Error: file is not loaded, or does not have any sections.")
             return False
         return True
 

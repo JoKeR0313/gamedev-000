@@ -65,4 +65,5 @@ class ccBasicObject(ccObject):
         source.id = deepcopy(self.id)
         source.hitbox = pygame.Rect(self.hitbox.x, self.hitbox.y,
                                     self.hitbox.width, self.hitbox.height)
+        print(source.hitbox)
         source.object_props = deepcopy(self.object_props)

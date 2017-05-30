@@ -15,8 +15,8 @@ class ccBouncingBallScene(ccObjectScene):
         super().load(filename)
 
     def step(self, time_passed):
-        # BouncingBallCollisionDetector.update_list_hitbox(self.object_list)
-
+        # This line should be moved into the act loader in the future!""
+        BouncingBallCollisionDetector.check_list_collision(self.object_list)
         for obj in self.object_list:
             obj.step(time_passed)
             if obj.position.x + obj.active_sprite.rectangle.width >= ccGlobals.size[0]:

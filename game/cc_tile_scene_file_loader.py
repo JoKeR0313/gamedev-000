@@ -4,12 +4,15 @@ from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
 from cc_resource_paths import *
 
+from cc_resource_paths import ccResourcePaths
 
-class ccObjectSceneFileLoader(ccFileLoader):
+
+class ccTileSceneFileLoader(ccFileLoader):
 
     def __init__(self):
         super().__init__()
-        self.objects_list = []
+        self.objects_dict = {}
+        self.map = []
 
     def process_file(self, filename):
         try:
@@ -30,15 +33,17 @@ class ccObjectSceneFileLoader(ccFileLoader):
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
-            obj = ccObjectManager.create_object(self.current_section['object_name'])
-            obj.load(self.current_section)
-            self.objects_list.append(obj)
 
-    def get_objects(self):
-        if len(self.objects_list) == 0:
-            ccLogger.warning("ccObjectSceneFileLoader's objects_list attribute is empty.")
-        return self.objects_list
+            if self.current_section == self.get_section("Map"):
+                for row in self.current_section["map"]:
+                    object_row = []
+                    for object_name in row:
+                        object_row.append(self.objects_dict[object_name])
+                    self.map.append(object_row)
+            else:
+                for name in self.current_section:
+                    if name != "map":
+                        self.objects_dict[name] = ccObjectManager.create_object(self.current_section[name])
 
-    def get_scene_name(self):
-        # gets the scene's name
-        pass
+    def get_map(self):
+        return self.map

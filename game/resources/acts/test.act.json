@@ -2,16 +2,12 @@
   "Config": {
     "name": "SampleAct"
   },
-  "background": {
-    "scene_type": "ccObjectScene",
-    "filename": "background.objectscene.json"
-  },
   "numbers": {
     "scene_type": "ccObjectScene",
     "filename": "test.objectscene.json"
   },
-  "bouncing_balls": {
-    "scene_type": "ccBouncingBallScene",
-    "filename": "bball.objectscene.json"
+  "tile_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "test.tilescene.json"
   }
 }

@@ -8,7 +8,9 @@ from cc_anim_frame import *
 from cc_sprites_file_loader import *
 from cc_resource_paths import *
 
+
 class ccAnimsFileLoader(ccFileLoader):
+
     def __init__(self):
         pass
 
@@ -36,8 +38,6 @@ class ccAnimsFileLoader(ccFileLoader):
             self.__process_one_anims_sprite()
 
     def __process_one_anims_sprite(self):
-
-
         sprites = self.get_field("sprites")
         for i in range(len(sprites)):
             sprites[i] = ccSpriteManager.get_sprite(sprites[i])
@@ -50,7 +50,7 @@ class ccAnimsFileLoader(ccFileLoader):
             frame_list.append(splitted_frame)
 
         for i in range(len(frame_list)):
-            if frame_list[i][0] != 'goto':
+            if frame_list[i][0] != 'goto': #need to be checked
                 if len(frame_list[i]) == 1:
                     frame_list[i].append(frame_list[i - 1][1])
                 if frame_list[i+1][0] != 'goto':

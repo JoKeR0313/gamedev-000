@@ -7,8 +7,8 @@ class ccSpriteManager:
     sprites = {}
 
     def __init__(cls):
-        stop_being_a_noob = "You cannot instantiate this class. Now go cry in the corner."
-        raise Exception(stop_being_a_noob)
+        error = "ccSpriteManager is an abstract class, can't call __init__!"
+        raise Exception(error)
 
     @classmethod
     def add_texture(cls, texture_name, texture):

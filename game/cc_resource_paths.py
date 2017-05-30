@@ -1,5 +1,10 @@
 import os
+import sys
 from cc_logger import ccLogger
+
+import inspect
+if not hasattr(sys.modules[__name__], '__file__'):
+    __file__ = inspect.getfile(inspect.currentframe())
 
 
 class ccResourcePaths:
@@ -9,7 +14,7 @@ class ccResourcePaths:
     resource_path = base_path + dir_name
 
     def __init__(self):
-        ccLogger.error("ccResourcePath can not be instantiated")
+        ccLogger.error("ccResourcePath is an abstract class, can't call __init__!")
         raise NotImplementedError
 
     @classmethod
@@ -39,5 +44,9 @@ class ccResourcePaths:
     @classmethod
     def get_acts(cls):
         return cls.resource_path + "acts/"
+
+    @classmethod
+    def get_tiles_scenes(cls):
+        return cls.resource_path + "tile_scenes/"
 
 

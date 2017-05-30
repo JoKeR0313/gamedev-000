@@ -2,8 +2,8 @@ import import_dir_setter
 import cc_resource_paths
 
 
-
 def test_resource_path():
+
     try:
         if cc_resource_paths.ccResourcePaths.get_resources().find("/game/resources") == -1:
             raise Exception

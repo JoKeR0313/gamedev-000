@@ -6,8 +6,7 @@ from copy import deepcopy
 class ccObject:
 
     def __init__(self):
-        # initialize instance variables
-        self.type = 'ccObject'  # not sure this will be needed because python has type() function
+        self.type = 'ccObject'
         self.id = None
         self.active_sprite = None
         self.object_props = ccObjectProps()
@@ -21,5 +20,5 @@ class ccObject:
             self.id = obj_section["id"]
 
     def draw(self, renderer):
-        ccLogger.error("This is an abstract class, yon can't call this function!")
+        ccLogger.error("ccObject is an abstract class, yon can't call the draw function!")
         raise NotImplementedError
