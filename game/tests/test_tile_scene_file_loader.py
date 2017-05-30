@@ -1,12 +1,12 @@
 import import_dir_setter
 from cc_tile_scene_file_loader import ccTileSceneFileLoader
+from cc_resource_paths import ccResourcePaths
 
-from cc_tile_map_scene import ccTileMapScene
 
 
 def TestTileSceneLoader():
     loader = ccTileSceneFileLoader()
-    loader.process_file("test.tilescene.json")
+    loader.process_file(ccResourcePaths.get_tile_scenes() + "test.tilescene.json")
     print("gdasvd", loader.objects_dict)
     print("map: ", loader.map)
 
