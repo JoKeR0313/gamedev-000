@@ -27,7 +27,9 @@ class TestKeyEventHandler:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
-            keylistener.update()
+            for scene in ccActManager.scenes:
+                for obj in scene.object_list:
+                    keylistener.update(obj)
             ccActManager.step(time_passed)
             ccGlobals.get_renderer().fill((0, 0, 0))
             ccActManager.draw()
