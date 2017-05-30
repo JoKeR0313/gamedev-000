@@ -1,7 +1,7 @@
 import import_dir_setter
 from cc_tile_scene_file_loader import ccTileSceneFileLoader
 
-from game.cc_tile_map_scene import ccTileMapScene
+from cc_tile_map_scene import ccTileMapScene
 
 
 def TestTileSceneLoader():

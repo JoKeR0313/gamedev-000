@@ -5,7 +5,7 @@ from cc_tile_map_scene import *
 from cc_resource_paths import *
 from cc_bouncing_ball_scene_test import *
 
-from game.cc_resource_paths import ccResourcePaths
+from cc_resource_paths import ccResourcePaths
 
 
 class ccActFileLoader(ccFileLoader):
@@ -34,7 +34,7 @@ class ccActFileLoader(ccFileLoader):
             constructor = globals()[self.current_section['scene_type']]
             obj_scene = constructor()
             if self.current_section['scene_type'] == 'ccTileMapScene':
-                obj_scene.load(ccResourcePaths.get_tiles_scenes() + self.current_section['filename'])
+                obj_scene.load(ccResourcePaths.get_tile_scenes() + self.current_section['filename'])
             else:
                 obj_scene.load(ccResourcePaths.get_object_scenes() + self.current_section['filename'])
             self.scenes.append(obj_scene)
