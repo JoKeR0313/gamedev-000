@@ -13,6 +13,7 @@ class ccTileSceneFileLoader(ccFileLoader):
         super().__init__()
         self.objects_dict = {}
         self.map = []
+        self.offset = []
 
     def process_file(self, filename):
         try:
@@ -33,8 +34,11 @@ class ccTileSceneFileLoader(ccFileLoader):
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
+            if self.current_section == self.get_section("Offset"):
+                self.offset.append(self.current_section["x"])
+                self.offset.append(self.current_section["y"])
 
-            if self.current_section == self.get_section("Map"):
+            elif self.current_section == self.get_section("Map"):
                 for row in self.current_section["map"]:
                     object_row = []
                     for object_name in row:
@@ -47,3 +51,7 @@ class ccTileSceneFileLoader(ccFileLoader):
 
     def get_map(self):
         return self.map
+
+    def get_offset(self):
+        return self.offset
+
