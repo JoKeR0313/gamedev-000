@@ -3,9 +3,10 @@ import pygame
 from cc_act_manager import ccActManager
 from cc_globals import ccGlobals
 from cc_key_event_handler import ccKeyEventHandler
+from cc_key_event_loader import ccKeyEventLoader
 
 
-class TestActLoader:
+class TestKeyEventHandler:
     size = (440, 480)
     num_of_rows = 1
     num_changer = 1
@@ -18,6 +19,7 @@ class TestActLoader:
 
     def test_run(self):
         keylistener = ccKeyEventHandler()
+        keylistener.load("test.keys.json")
         ccActManager.load("test.act.json")
         clock = pygame.time.Clock()
         time_passed = 0
@@ -34,7 +36,7 @@ class TestActLoader:
 
 
 def main():
-    tester = TestActLoader()
+    tester = TestKeyEventHandler()
     tester.test_run()
 
 main()

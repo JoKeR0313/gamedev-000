@@ -1,0 +1,11 @@
+{
+    "Config": {
+    },
+    "keys": {
+        "right": "pygame.K_SPACE",
+        "left":  "pygame.K_SPACE",
+        "up": "pygame.K_SPACE",
+        "down" : "pygame.K_SPACE",
+        "fire" : "pygame.K_SPACE"
+    }
+}

@@ -40,4 +40,8 @@ class ccResourcePaths:
     def get_acts(cls):
         return cls.resource_path + "acts/"
 
+    @classmethod
+    def get_keys(cls):
+        return cls.resource_path + "keys/"
+
 
