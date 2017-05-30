@@ -13,15 +13,18 @@ class ccTileMapScene(ccScene):
         # self.object_list = []
         self.map = []
         self.type = "ccTileMapScene"
+        self.offset = []
 
     def load(self, filename):
         loader = ccTileSceneFileLoader()
         loader.process_file(filename)
         self.map = loader.get_map()
+        self.offset = loader.get_offset()
 
     def draw(self):
-        x = 0
-        y = 0
+        x = self.offset[0]
+        y = self.offset[1]
+
         for row in self.map:
             for obj in row:
                 obj.position = pygame.math.Vector2(x, y)
