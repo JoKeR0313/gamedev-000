@@ -6,6 +6,7 @@ from cc_object_manager import ccObjectManager
 from cc_resource_paths import *
 from cc_anim_object import ccAnimObject
 from cc_anims_file_loader import ccAnimsFileLoader
+from cc_tile_object import ccTileObject
 
 
 class ccObjectsFileLoader(ccFileLoader):
@@ -16,6 +17,7 @@ class ccObjectsFileLoader(ccFileLoader):
     def process_file(self, filename):
         try:
             self.load_file(filename)
+            print(filename)
         except:
             ccLogger.error('{} could not be loaded.'.format(filename))
             raise RuntimeError('{} could not be loaded.'.format(filename))
@@ -24,6 +26,7 @@ class ccObjectsFileLoader(ccFileLoader):
 
     def __process_config(self):
         sprites_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
+        print("sprites_files: ",sprites_files)
         for spr_file in sprites_files:
             loader = None
             if '.sprites.json' in spr_file:

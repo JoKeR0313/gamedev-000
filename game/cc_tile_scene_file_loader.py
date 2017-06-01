@@ -27,28 +27,35 @@ class ccTileSceneFileLoader(ccFileLoader):
 
     def __process_config(self):
         object_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
+        print("object_files: " + object_files[0])
+        self.offset.clear()
+        self.offset.append(self.get_field(field_name='offset_x', mandatory=True, section_name='Config'))
+        self.offset.append(self.get_field(field_name='offset_y', mandatory=True, section_name='Config'))
+        print("offset: " , self.offset)
         for obj_file in object_files:
             loader = ccObjectsFileLoader()
+
+            print("obj_file: " ,obj_file)
             loader.process_file(ccResourcePaths.get_objects() + obj_file)
 
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
-            if self.current_section == self.get_section("Offset"):
-                self.offset.append(self.current_section["x"])
-                self.offset.append(self.current_section["y"])
-
-            elif self.current_section == self.get_section("Map"):
+            print("Current_section: ",self.current_section)
+            if self.current_section == self.get_section("Map"):
                 for row in self.current_section["map"]:
                     object_row = []
                     for object_name in row:
-                        object_row.append(self.objects_dict[object_name])
+                        print("Object_name: ", object_name)
+                #        set object pos based on where you are in the map
+                        object_row.append(self.objects_dict[object_name].copy())
+                    print("object_row: ",object_row)
                     self.map.append(object_row)
             else:
                 for name in self.current_section:
                     if name != "map":
                         self.objects_dict[name] = ccObjectManager.create_object(self.current_section[name])
-
+                        print("objects_dict: ",self.objects_dict)
     def get_map(self):
         return self.map
 

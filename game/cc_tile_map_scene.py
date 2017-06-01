@@ -24,13 +24,12 @@ class ccTileMapScene(ccScene):
     def draw(self):
         x = self.offset[0]
         y = self.offset[1]
-
+        print("map:", self.map)
         for row in self.map:
             for obj in row:
-                obj.position = pygame.math.Vector2(x, y)
-                x += 32
-                obj.draw(ccGlobals.get_renderer())
-            y += 32
+                x += obj.active_sprite.rectangle.width
+                obj.draw(ccGlobals.get_renderer(), x, y)
+            y += obj.active_sprite.rectangle.height
             x = 0
 
     def step(self, time_passed):

@@ -2,33 +2,23 @@ from cc_object_props import ccObjectProps
 from cc_logger import ccLogger
 from copy import deepcopy
 
+from cc_sprite_manager import ccSpriteManager
+from cc_basic_object import ccBasicObject
 
-class ccTileObject(ccObject):
+
+class ccTileObject(ccBasicObject):
 
     def __init__(self):
         super().__init__()
         self.type = 'ccTileObject'
-        self.position = pygame.math.Vector2(0, 0)
 
     def load(self, obj_section):
-        super.load()
+        super().load(obj_section)
 
-    def draw(self, renderer):
-        self.active_sprite.draw(renderer, self.position.x, self.position.y)
+    def draw(self, renderer, x, y):
+        self.active_sprite.draw(renderer, x, y)
 
-        # print(self.active_sprite.image.get_rect().size)
-
-        # x = 0
-        # y = 0
-        # for row in self.map:
-        #     for obj in row:
-        #         obj.position = pygame.math.Vector2(x, y)
-        #         x += 32
-        #         obj.draw(ccGlobals.get_renderer())
-        #     y += 32
-        #     x = 0
-
-        # ccGlobals.get_renderer()
-
-    def set_position(self, new_position):
-        self.position = new_position
+    def copy(self):
+        new_object = ccTileObject()
+        self.fill(new_object)
+        return new_object
