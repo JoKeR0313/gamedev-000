@@ -1,0 +1,9 @@
+{
+  "Config": {
+    "name": "SampleAct"
+  },
+  "tile_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_tile_scene.tilescene.json"
+  }
+}

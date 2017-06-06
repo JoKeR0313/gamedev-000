@@ -14,6 +14,7 @@ class ccTileMapScene(ccScene):
         self.map = []
         self.type = "ccTileMapScene"
         self.offset = []
+        self.velocity = pygame.math.Vector2(0, 0)
 
     def load(self, filename):
         loader = ccTileSceneFileLoader()
