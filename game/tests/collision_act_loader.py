@@ -2,13 +2,13 @@ import import_dir_setter
 import pygame
 import sys
 from cc_resource_paths import ccResourcePaths
-from cc_act_file_loader import ccActFileLoader
-from cc_act_manager import ccActManager
+from collision_act_file_loader import ccActFileLoader
+from collision_act_manager import ccActManager
 from cc_globals import ccGlobals
 
 
 class TestActLoader:
-    size = (440, 480)
+    size = (840, 480)
     num_of_rows = 1
     num_changer = 1
 
@@ -19,7 +19,7 @@ class TestActLoader:
         ccGlobals.size = self.size
 
     def test_run(self):
-        ccActManager.load("test.act.json")
+        ccActManager.load("collision.act.json")
         clock = pygame.time.Clock()
         time_passed = 0
         while True:
@@ -30,7 +30,7 @@ class TestActLoader:
             ccGlobals.get_renderer().fill((0, 0, 0))
             ccActManager.draw()
             pygame.display.flip()
-            time_passed = clock.tick(60)
+            time_passed = clock.tick(30)
 
 
 def main():

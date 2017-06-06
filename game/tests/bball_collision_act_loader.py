@@ -19,7 +19,7 @@ class TestActLoader:
         ccGlobals.size = self.size
 
     def test_run(self):
-        ccActManager.load("test.act.json")
+        ccActManager.load("bball.act.json")
         clock = pygame.time.Clock()
         time_passed = 0
         while True:

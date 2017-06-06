@@ -5,6 +5,43 @@
             "test.anims.json"
         ]
     },
+    "obj_test_00": {
+        "type": "ccBasicObject",
+        "id_tag": 1,
+        "sprite": "test_00",
+        "visible": true,
+        "enabled": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_01": {
+        "type": "ccBasicObject",
+        "sprite": "test_01",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_02": {
+        "type": "ccBasicObject",
+        "sprite": "test_02",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_03": {
+        "type": "ccBasicObject",
+        "sprite": "test_03",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
+    "obj_test_04": {
+        "type": "ccBasicObject",
+        "sprite": "test_04",
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    },
     "anim_object_00": {
         "type": "ccAnimObject",
         "animations": [

@@ -15,6 +15,7 @@ class ccSpritesFileLoader(ccFileLoader):
     def process_file(self, filename):
         try:
             self.load_file(ccResourcePaths.get_sprites() + filename)
+
         except:
             ccLogger.error(str(filename) + ' file could not be loaded.')
             raise RuntimeError('File could not be loaded.')
@@ -31,15 +32,20 @@ class ccSpritesFileLoader(ccFileLoader):
         self.set_first_section()
         while self.next_section():
             if 'num_of_sprites' in self.current_section:
-                    self.__create_multiple_sprites()
+                self.__create_multiple_sprites()
             else:
                 self.__create_one_sprite()
 
     def __create_one_sprite(self):
         self.name = list(self.current_dict)[self.current_section_id]
         section = self.current_section
+        if 'hitbox_width' in section:
+            hitbox = pygame.Rect(0, 0,
+                                 section['hitbox_width'], section['hitbox_height'])
+        else:
+            hitbox = None
         rect = pygame.Rect(section['offset_x'], section['offset_y'], section['width'], section['height'])
-        ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect))
+        ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect, hitbox))
 
     def __create_multiple_sprites(self):
         offset_x = 0
@@ -52,7 +58,12 @@ class ccSpritesFileLoader(ccFileLoader):
                 offset_x = 0
             self.name = list(self.current_dict)[self.current_section_id] + "%03d" % num
             section = self.current_section
+            if 'hitbox_width' in section:
+                hitbox = pygame.Rect(section['offset_x'], section['offset_y'],
+                                     section['hitbox_width'], section['hitbox_height'])
+            else:
+                hitbox = None
             rect = pygame.Rect(offset_x, offset_y, section['width'], section['height'])
-            ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect))
+            ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect, hitbox))
             offset_x += section['width']
             num += 1

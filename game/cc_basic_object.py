@@ -16,6 +16,7 @@ class ccBasicObject(ccObject):
         self.type = "ccBasicObject"  # probably should use python's type(), so set that up with magic method(?)
         self.position = pygame.math.Vector2(0, 0)  # use Vector2. It should be able to store float values
         self.velocity = pygame.math.Vector2(0, 0)
+        self.hitbox = None
 
     def load(self, obj_section):
         # call ancestor's load() method and get the sprite from SpriteManager. If
@@ -31,6 +32,9 @@ class ccBasicObject(ccObject):
             self.velocity.y = obj_section["velocity_y"]
         if "sprite" in obj_section:
             self.active_sprite = ccSpriteManager.get_sprite(obj_section['sprite'])
+            self.hitbox = pygame.Rect(self.position.x, self.position.y,
+                                      self.active_sprite.hitbox.width, self.active_sprite.hitbox.height)
+
         # later: set position and velocity from test.objects.json
 
     def draw(self, renderer):
@@ -45,6 +49,8 @@ class ccBasicObject(ccObject):
         current_speed.y = self.velocity.y * time_passed
         self.position.x += current_speed.x
         self.position.y += current_speed.y
+        self.hitbox.x = self.position.x
+        self.hitbox.y = self.position.y
 
     def copy(self):
         new_object = ccBasicObject()
@@ -57,4 +63,7 @@ class ccBasicObject(ccObject):
         source.active_sprite = self.active_sprite
         source.type = self.type
         source.id = deepcopy(self.id)
+        source.hitbox = pygame.Rect(self.hitbox.x, self.hitbox.y,
+                                    self.hitbox.width, self.hitbox.height)
+        print(source.hitbox)
         source.object_props = deepcopy(self.object_props)
