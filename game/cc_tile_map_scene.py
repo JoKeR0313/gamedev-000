@@ -22,15 +22,9 @@ class ccTileMapScene(ccScene):
         self.offset = loader.get_offset()
 
     def draw(self):
-        x = self.offset[0]
-        y = self.offset[1]
-        print("map:", self.map)
         for row in self.map:
             for obj in row:
-                x += obj.active_sprite.rectangle.width
-                obj.draw(ccGlobals.get_renderer(), x, y)
-            y += obj.active_sprite.rectangle.height
-            x = 0
+                obj.draw(ccGlobals.get_renderer())
 
     def step(self, time_passed):
         # for obj in self.object_list:

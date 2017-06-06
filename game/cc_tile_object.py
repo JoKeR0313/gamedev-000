@@ -15,9 +15,6 @@ class ccTileObject(ccBasicObject):
     def load(self, obj_section):
         super().load(obj_section)
 
-    def draw(self, renderer, x, y):
-        self.active_sprite.draw(renderer, x, y)
-
     def copy(self):
         new_object = ccTileObject()
         self.fill(new_object)

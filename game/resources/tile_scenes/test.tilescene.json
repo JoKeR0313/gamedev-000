@@ -1,7 +1,7 @@
 {
   "Config": {
     "filenames": ["test.newobjects.json"],
-    "offset_x": 0,
+    "offset_x": 100,
     "offset_y": 350
   },
   "tile_objects": {

@@ -41,21 +41,22 @@ class ccTileSceneFileLoader(ccFileLoader):
     def __process_object_sections(self):
         self.set_first_section()
         while self.next_section():
-            print("Current_section: ",self.current_section)
             if self.current_section == self.get_section("Map"):
-                for row in self.current_section["map"]:
+                raw_map = self.current_section["map"]
+                for y in range(len(raw_map)):
                     object_row = []
-                    for object_name in row:
-                        print("Object_name: ", object_name)
-                #        set object pos based on where you are in the map
-                        object_row.append(self.objects_dict[object_name].copy())
-                    print("object_row: ",object_row)
+                    for x in range(len(raw_map[y])):
+                        obj = self.objects_dict[raw_map[y][x]].copy()
+                        sprite_width = obj.active_sprite.rectangle.width
+                        sprite_height = obj.active_sprite.rectangle.height
+                        obj.position.x = x * sprite_width + self.offset[0]
+                        obj.position.y = y * sprite_height + self.offset[1]
+                        object_row.append(obj)
                     self.map.append(object_row)
             else:
                 for name in self.current_section:
                     if name != "map":
                         self.objects_dict[name] = ccObjectManager.create_object(self.current_section[name])
-                        print("objects_dict: ",self.objects_dict)
     def get_map(self):
         return self.map
 
