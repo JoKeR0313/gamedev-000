@@ -15,6 +15,7 @@ class ccAnimObject(ccBasicObject):
         self.type = 'ccAnimObject'
         self.time = 0
         self.anims = []
+        self.paused = False
         self.current_anim = None
         self.current_frame = None
         self.active_sprite = None
@@ -46,30 +47,33 @@ class ccAnimObject(ccBasicObject):
 
     def step(self, time_passed):  # time passed = frame's time
         super().step(time_passed)
-        self.time += time_passed
-        if self.current_frame.time <= self.time:
-            self.time -= self.current_frame.time
-            self.current_frame = self.current_anim.get_frame(self.current_frame.get_next_frame())
-            if self.current_frame is None:
-                self.current_frame = self.current_anim.get_frame(0)
-                ccLogger.warning("Animation change should be implemented")
-                # WARNING
-            self.active_sprite = self.current_frame.get_sprite()
+        if not self.paused:
+            self.time += time_passed
+            if self.current_frame.time <= self.time:
+                self.time -= self.current_frame.time
+                self.current_frame = self.current_anim.get_frame(self.current_frame.get_next_frame())
+                if self.current_frame is None:
+                    self.current_frame = self.current_anim.get_frame(0)
+                    ccLogger.warning("Animation change should be implemented")
+                    # WARNING
+                self.active_sprite = self.current_frame.get_sprite()
 
     def play(self, anim_name=None):
+        if self.current_anim == ccSpriteManager.get_sprite(anim_name):
+            self.paused = False
+        else:
+            self.current_anim = ccSpriteManager.get_sprite(anim_name)
+            self.current_frame = self.current_anim.get_frame(0)
+            self.paused = False
         # set and start playing an anim. anim_name is optional,
         # it should play the current animation if the anim_name is not set
         # if an anim was paused, resume from that point where it was
-        pass
 
     def pause(self):
-        # pause the current animation
-        pass
+        self.paused = True
 
     def reset(self):
-        # don't change the animation but reset it to start
-        # pause the animation
-        pass
+        self.current_frame = self.current_anim.get_frame(0)
 
     def copy(self):
         new_object = ccAnimObject()
