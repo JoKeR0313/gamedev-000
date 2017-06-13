@@ -1,4 +1,6 @@
+import import_dir_setter
 import pygame
+import sys
 
 from cc_act_manager import ccActManager
 from cc_globals import ccGlobals
