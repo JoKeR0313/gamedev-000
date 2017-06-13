@@ -37,7 +37,12 @@ class ccTileMapScene(ccScene):
         self.first_tile_pos += self.velocity.x * time_passed
         local_p = int(self.first_tile_pos)
 
+        start_row_index = abs(int(self.first_tile_pos / self.tile_width))
+        end_row_index = int((ccGlobals.size[1] / self.tile_width) + start_row_index)
+        if end_row_index > len(self.map[0]):
+            end_row_index = len(self.map[0])
         for row in self.map:
-            for x in range(len(row)):
-                obj = row[x]
-                obj.position.x = local_p + x * self.tile_width
+            for index in range(start_row_index, end_row_index):
+                row[index].position.x = local_p + index * self.tile_width
+
+
