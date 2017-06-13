@@ -1,0 +1,40 @@
+{
+  "Config": {
+    "filename": "king_objects.png"
+  },
+  "brownGround": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 64,
+    "height": 64,
+    "num_of_sprites": 4
+  },
+  "sign": {
+    "offset_x": 0,
+    "offset_y": 64,
+    "width": 64,
+    "height": 64,
+    "num_of_sprites": 2
+  },
+  "grass": {
+    "offset_x": 128,
+    "offset_y": 64,
+    "width": 64,
+    "height": 64,
+    "num_of_sprites": 5
+  },
+  "rock": {
+    "offset_x": 192,
+    "offset_y": 128,
+    "width": 64,
+    "height": 64,
+    "num_of_sprites": 2
+  },
+  "fence": {
+    "offset_x": 64,
+    "offset_y": 192,
+    "width": 64,
+    "height": 64,
+    "num_of_sprites": 3
+  }
+}

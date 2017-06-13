@@ -1,0 +1,9 @@
+{
+  "Config": {
+    "name": "KingSceneAct"
+  },
+  "tile_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_king_ground.tilescene.json"
+  }
+}

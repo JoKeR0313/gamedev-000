@@ -1,0 +1,103 @@
+{
+    "Config": {
+        "filenames": [
+            "king.sprites.json"
+        ]
+    },
+    "grass003": {
+        "type": "ccTileObject",
+        "sprite": "grass003",
+        "visible": true,
+        "enabled": true
+    },
+    "grass004": {
+        "type": "ccTileObject",
+        "sprite": "grass004",
+        "visible": true,
+        "enabled": true
+    },
+    "rock000": {
+        "type": "ccTileObject",
+        "sprite": "rock000",
+        "visible": true,
+        "enabled": true
+    },
+    "rock001": {
+        "type": "ccTileObject",
+        "sprite": "rock001",
+        "visible": true,
+        "enabled": true
+    },
+    "fence000": {
+        "type": "ccTileObject",
+        "sprite": "fence000",
+        "visible": true,
+        "enabled": true
+    },
+    "fence001": {
+        "type": "ccTileObject",
+        "sprite": "fence001",
+        "visible": true,
+        "enabled": true
+    },
+    "fence002": {
+        "type": "ccTileObject",
+        "sprite": "fence002",
+        "visible": true,
+        "enabled": true
+    },
+    "brownGround000": {
+        "type": "ccTileObject",
+        "sprite": "brownGround000",
+        "visible": true,
+        "enabled": true
+    },
+    "brownGround001": {
+        "type": "ccTileObject",
+        "sprite": "brownGround001",
+        "visible": true,
+        "enabled": true
+    },
+    "brownGround002": {
+        "type": "ccTileObject",
+        "sprite": "brownGround002",
+        "visible": true,
+        "enabled": true
+    },
+    "brownGround003": {
+        "type": "ccTileObject",
+        "sprite": "brownGround003",
+        "visible": true,
+        "enabled": true
+    },
+    "sign000": {
+        "type": "ccTileObject",
+        "sprite": "sign000",
+        "visible": true,
+        "enabled": true
+    },
+    "sign001": {
+        "type": "ccTileObject",
+        "sprite": "sign001",
+        "visible": true,
+        "enabled": true
+    },
+    "grass000": {
+        "type": "ccTileObject",
+        "sprite": "grass000",
+        "visible": true,
+        "enabled": true
+    },
+    "grass001": {
+        "type": "ccTileObject",
+        "sprite": "grass001",
+        "visible": true,
+        "enabled": true
+    },
+    "grass002": {
+        "type": "ccTileObject",
+        "sprite": "grass002",
+        "visible": true,
+        "enabled": true
+    }    
+}

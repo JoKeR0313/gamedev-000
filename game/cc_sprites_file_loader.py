@@ -48,13 +48,13 @@ class ccSpritesFileLoader(ccFileLoader):
         ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect, hitbox))
 
     def __create_multiple_sprites(self):
-        offset_x = 0
-        offset_y = 0
+        offset_x = int(self.get_field("offset_x"))
+        offset_y = int(self.get_field("offset_y"))
         num = 0
 
         for i in range(self.current_section['num_of_sprites']):
             if offset_x > self.cc_texture.get_width():
-                offset_y += self.current_section['height']
+                offset_y += int(self.get_field("height"))
                 offset_x = 0
             self.name = list(self.current_dict)[self.current_section_id] + "%03d" % num
             section = self.current_section
