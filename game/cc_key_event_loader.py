@@ -8,6 +8,7 @@ class ccKeyEventLoader(ccFileLoader):
     def __init__(self):
         super().__init__()
         self.keys = {}
+        self.actions = {}
 
     def process_file(self, filename):
         try:
@@ -20,6 +21,8 @@ class ccKeyEventLoader(ccFileLoader):
     def __process_keys(self):
         self.set_section("keys")
         self.keys = self.current_section
+        self.set_section("actions")
+        self.actions = self.current_section
 
     def get_keys(self):
         if len(self.keys) == 0:

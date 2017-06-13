@@ -3,7 +3,6 @@ import pygame
 from cc_act_manager import ccActManager
 from cc_globals import ccGlobals
 from cc_key_event_handler import ccKeyEventHandler
-from cc_key_event_loader import ccKeyEventLoader
 
 
 class TestKeyEventHandler:
