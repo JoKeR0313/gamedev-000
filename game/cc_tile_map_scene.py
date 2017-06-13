@@ -25,24 +25,49 @@ class ccTileMapScene(ccScene):
         self.offset = loader.get_offset()
 
     def draw(self):
+        contained_length = 0
         start_row_index = abs(int(self.first_tile_pos / self.tile_width))
         end_row_index = int((ccGlobals.size[1] / self.tile_width) + start_row_index)
         if end_row_index > len(self.map[0]):
+            contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
+
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].draw(ccGlobals.get_renderer())
 
+        if contained_length != 0:
+            for row in self.map:
+                for index in range(0,contained_length):
+                    row[index].draw(ccGlobals.get_renderer())
+
+
     def step(self, time_passed):
+        contained_length = 0
         self.first_tile_pos += self.velocity.x * time_passed
+        if abs(self.first_tile_pos) >= len(self.map[0]) * self.tile_width:
+            self.first_tile_pos += len(self.map[0]) * self.tile_width
+
         local_p = int(self.first_tile_pos)
 
         start_row_index = abs(int(self.first_tile_pos / self.tile_width))
         end_row_index = int((ccGlobals.size[1] / self.tile_width) + start_row_index)
         if end_row_index > len(self.map[0]):
+            contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
+
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].position.x = local_p + index * self.tile_width
+
+
+        if contained_length != 0:
+            local_p = local_p + (len(self.map[0])*self.tile_width)
+            for row in self.map:
+                for index in range(0,contained_length):
+                    row[index].position.x = local_p + index * self.tile_width
+
+
+
 
 
