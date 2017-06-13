@@ -8,7 +8,6 @@ class ccTestTileMapScene(ccTileMapScene):
     def __init__(self):
         super().__init__()
         self.velocity.x = -0.05
-        self.first_tile_pos = 0  # use offset here
 
 
 """
