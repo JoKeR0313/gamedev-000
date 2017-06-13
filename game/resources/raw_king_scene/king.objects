@@ -1,0 +1,14 @@
+[Config]
+animationFiles = king_walk.anims
+
+[king]
+type = AnimObject
+animations = kingWalkAnim,
+             kingWalkAnim ; placeholder, just to have two anims
+velocity = 0,0
+collisionPossible = false
+collisionEnabled = false
+setAnimationToPlay = kingWalkAnim
+playAnimation = true
+
+

@@ -1,0 +1,11 @@
+[TextureMapData]
+filename = king_walk.png
+permanent = true ; won't unload the texture when changing between acts, only if it is forced
+
+[command:Slice kingWalk]
+topLeft = 0,0
+widthHeight = 128,128
+numOfItems = 4
+
+
+

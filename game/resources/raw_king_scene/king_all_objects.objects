@@ -1,0 +1,67 @@
+[Config]
+spriteFiles = king_clouds_tiles.sprites,
+              king_objects.sprites,
+              king_rock_mountain.sprites,
+              empty.sprites,
+              king_mountain.sprites           
+
+# creates TileElements from the sprites.
+# TileElement names are the sprite names
+[command:MakeTiles]
+type = TileElement
+sprites = empty,
+          clouds,
+          air,
+          brownGround000,
+          brownGround001,
+          brownGround002,
+          brownGround003,
+          sign000,
+          sign001,
+          grass000,
+          grass001,
+          grass002,
+          grass003,
+          grass004,
+          rock000,
+          rock001,
+          fence000,
+          fence001,
+          fence002,
+          rockMountain64x128_000,
+          rockMountain64x128_001,
+          rockMountain64x128_002,
+          rockMountain64x128_003,
+          rockMountain64x128_004,
+          rockMountain64x128_005,
+          rockMountain64x128_006,
+          rockMountain64x128_007,
+          rockMountain64x128_008,
+          rockMountain64x128_009,
+          rockMountain64x128_010,
+          rockMountain64x128_011,
+          rockMountain64x128_012,
+          rockMountain64x128_013,
+          rockMountain64x128_014,
+          rockMountain64x128_015,
+          rockMountain64x128_016,
+          rockMountain64x128_017,
+          bigMountain64x64_000,
+          bigMountain64x64_001,
+          bigMountain64x64_002,
+          bigMountain64x64_003,
+          bigMountain64x64_004,
+          bigMountain64x64_005,
+          bigMountain64x64_006,
+          bigMountain64x64_007,
+          bigMountain64x64_008,
+          bigMountain64x64_009,
+          bigMountain64x64_010,
+          bigMountain64x64_011
+objectEnabled = true
+collisionEnabled = false
+visible = true
+;collisionPossible = true
+;collidesWith = 
+;idleTimeAfterCollision = 800
+;velocity = 0,0

@@ -1,0 +1,22 @@
+[Config]
+objectFiles = king_all_objects.objects
+orderOfMaps = Clouds
+topLeft = 0, 0
+bottomRight = 1280, 720
+;tileSize = 64, 64 ; not mandatory. If not present, tile size will be the size of the first sprite
+velocity = -15, 0
+renderToTexture = true
+
+[Tiles]
+; there can be 255 tileSprite here
+tileSprites = 00 clouds,
+              01 air
+
+[Clouds] ; map name
+numberOfRepeats = 1 ; 0 .. 127, Y repeats
+numberOfRowsColumns = 5, 1
+map = 00,
+      00,
+      01,
+      01,
+      01

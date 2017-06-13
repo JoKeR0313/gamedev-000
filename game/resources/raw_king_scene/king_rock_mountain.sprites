@@ -1,0 +1,8 @@
+[TextureMapData]
+filename = king_rock_mountain.png
+
+[command:Slice rockMountain64x128_]
+topLeft = 0,0
+widthHeight = 64,128
+numOfItems = 18
+; spacing = 30,0
