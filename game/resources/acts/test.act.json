@@ -2,8 +2,8 @@
   "Config": {
     "name": "SampleAct"
   },
-  "numbers": {
-    "scene_type": "ccObjectScene",
-    "filename": "test.objectscene.json"
+  "tile_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "test.tilescene.json"
   }
 }

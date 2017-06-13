@@ -1,0 +1,10 @@
+[TextureMapData]
+filename = king_clouds_tiles.png
+
+[clouds]
+topLeft = 0,0
+widthHeight = 256, 128
+
+[air]
+topLeft = 0,128
+widthHeight = 256, 128

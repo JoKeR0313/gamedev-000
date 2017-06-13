@@ -3,34 +3,38 @@
     "filename": "test.sprites.json"
   },
   "anim_00": {
-    "sprites": ["test_00",
-                "test_01",
-                "test_02",
-                "test_03",
-                "test_04"
-               ],
-    "frames": ["0 t500",
-               "1",
-               "2 t1000",
-               "3",
-               "4",
-                "2",
-               "goto 1"
-              ]
+    "sprites": [
+      "test_00",
+      "test_01",
+      "test_02",
+      "test_03",
+      "test_04"
+    ],
+    "frames": [
+      "0 t500",
+      "1",
+      "2 t1000",
+      "3",
+      "4 t500",
+      "3",
+      "goto 0"
+    ]
   },
   "anim_01": {
-    "sprites": ["test_all_004",
-                "test_all_003",
-                "test_all_002",
-                "test_all_001",
-                "test_all_000"
-               ],
-    "frames": ["0 t500",
-               "1",
-               "2 t50",
-               "3",
-               "4",
-               "goto 0"
-              ]
+    "sprites": [
+      "test_all_004",
+      "test_all_003",
+      "test_all_002",
+      "test_all_001",
+      "test_all_000"
+    ],
+    "frames": [
+      "0 t500",
+      "1",
+      "2 t1000",
+      "3",
+      "4",
+      "goto 0"
+    ]
   }
 }

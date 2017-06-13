@@ -1,0 +1,28 @@
+[TextureMapData]
+filename = king_objects.png
+
+[command:Slice brownGround]
+topLeft = 0,0
+widthHeight = 64,64
+numOfItems = 4
+;spacing = 30,0
+
+[command:Slice sign]
+topLeft = 0,64
+widthHeight = 64,64
+numOfItems = 2
+
+[command:Slice grass]
+topLeft = 128,64
+widthHeight = 64,64
+numOfItems = 5
+
+[command:Slice rock]
+topLeft = 192,128
+widthHeight = 64,64
+numOfItems = 2
+
+[command:Slice fence]
+topLeft = 64,192
+widthHeight = 64,64
+numOfItems = 3

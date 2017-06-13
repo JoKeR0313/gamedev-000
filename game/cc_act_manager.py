@@ -1,5 +1,6 @@
 from cc_logger import *
 from cc_act_file_loader import ccActFileLoader
+from cc_bball_coll_detector import BouncingBallCollisionDetector
 
 
 class ccActManager:
@@ -26,6 +27,7 @@ class ccActManager:
     @classmethod
     def step(cls, time_passed):
         for scene in cls.scenes:
+            # BouncingBallCollisionDetector.check_list_collision(scene.object_list)
             scene.step(time_passed)
 
     @classmethod

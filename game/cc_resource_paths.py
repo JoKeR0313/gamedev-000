@@ -1,5 +1,10 @@
 import os
+import sys
 from cc_logger import ccLogger
+
+import inspect
+if not hasattr(sys.modules[__name__], '__file__'):
+    __file__ = inspect.getfile(inspect.currentframe())
 
 
 class ccResourcePaths:
@@ -43,5 +48,10 @@ class ccResourcePaths:
     @classmethod
     def get_keys(cls):
         return cls.resource_path + "keys/"
+    
+    @classmethod
+    def get_tile_scenes(cls):
+        return cls.resource_path + "tile_scenes/"
+
 
 

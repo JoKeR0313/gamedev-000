@@ -1,0 +1,13 @@
+{
+    "Config": {
+        "name": "SampleAct"
+    },
+    "background": {
+        "scene_type": "ccCollisionObjectScene",
+        "filename": "background.objectscene.json"
+    },
+    "numbers": {
+        "scene_type": "ccCollisionObjectScene",
+        "filename": "collision.objectscene.json"
+    }
+}

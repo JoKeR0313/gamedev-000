@@ -1,0 +1,60 @@
+[Config]
+objectFiles = king_all_objects.objects
+orderOfMaps = emptySpace_06,
+              rockMountain_01,
+              emptySpace_04,
+              rockMountain_02
+
+topLeft = 0, 400
+bottomRight = 1280, 720
+tileSize = 64, 128
+velocity = -40, 0
+renderToTexture = true
+
+[Tiles]
+; there can be 255 tileSprite here
+tileSprites = 00 empty,
+              01 rockMountain64x128_000,
+              02 rockMountain64x128_001,
+              03 rockMountain64x128_002,
+              04 rockMountain64x128_003,
+              05 rockMountain64x128_004,
+              06 rockMountain64x128_005,
+              07 rockMountain64x128_006,
+              08 rockMountain64x128_007,
+              09 rockMountain64x128_008,
+              10 rockMountain64x128_009,
+              11 rockMountain64x128_010,
+              12 rockMountain64x128_011,
+              13 rockMountain64x128_012,
+              14 rockMountain64x128_013,
+              15 rockMountain64x128_014,
+              16 rockMountain64x128_015,
+              17 rockMountain64x128_016,
+              18 rockMountain64x128_017
+              
+[rockMountain_01]
+numberOfRepeats = 0 ; 0 .. 127
+numberOfRowsColumns = 2, 4
+map = 01, 04, 05, 06,
+      07, 10, 11, 12
+      
+[rockMountain_02]
+numberOfRepeats = 0 ; 0 .. 127
+numberOfRowsColumns = 2, 6
+map = 00, 00, 01, 06, 00, 00,
+      01, 02, 09, 10, 05, 06      
+
+[emptySpace_06] ; map name
+numberOfRepeats = 0 ; 0 .. 127
+numberOfRowsColumns = 2, 6
+map = 00, 00, 00, 00, 00, 00,
+      00, 00, 00, 00, 00, 00
+
+[emptySpace_04] ; map name
+numberOfRepeats = 0 ; 0 .. 127
+numberOfRowsColumns = 2, 4
+map = 00, 00, 00, 00,
+      00, 00, 00, 00
+      
+      

@@ -1,0 +1,37 @@
+{
+    "Config": {
+        "filenames": [
+            "test.sprites.json"
+        ]
+    },
+    "obj_test_00": {
+        "type": "ccTileObject",
+        "sprite": "test_00",
+        "visible": true,
+        "enabled": true
+    },
+    "obj_test_01": {
+        "type": "ccTileObject",
+        "sprite": "test_01",
+        "visible": true,
+        "enabled": true
+    },
+    "obj_test_02": {
+        "type": "ccTileObject",
+        "sprite": "test_02",
+        "visible": true,
+        "enabled": true
+    },
+    "obj_test_03": {
+        "type": "ccTileObject",
+        "sprite": "test_03",
+        "visible": true,
+        "enabled": true
+    },
+    "obj_test_04": {
+        "type": "ccTileObject",
+        "sprite": "test_04",
+        "visible": true,
+        "enabled": true
+    }
+}

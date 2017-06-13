@@ -30,11 +30,12 @@ class TestActLoader:
             ccGlobals.get_renderer().fill((0, 0, 0))
             ccActManager.draw()
             pygame.display.flip()
-            time_passed = clock.tick(30)
+            time_passed = clock.tick(60)
 
 
 def main():
     tester = TestActLoader()
     tester.test_run()
+
 
 main()

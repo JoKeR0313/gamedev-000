@@ -1,8 +1,14 @@
 from cc_file_loader import *
 from cc_logger import *
 from cc_object_scene import *
+from cc_tile_map_scene import *
 from cc_resource_paths import *
 from cc_bouncing_ball_scene_test import *
+
+from cc_resource_paths import ccResourcePaths
+
+# because of the tests we need to import these
+from test_tile_map_scene import ccTestTileMapScene
 
 
 class ccActFileLoader(ccFileLoader):
@@ -30,7 +36,11 @@ class ccActFileLoader(ccFileLoader):
         while self.next_section():
             constructor = globals()[self.current_section['scene_type']]
             obj_scene = constructor()
-            obj_scene.load(ccResourcePaths.get_object_scenes() + self.current_section['filename'])
+            if self.current_section['scene_type'] == 'ccTileMapScene' or \
+             self.current_section['scene_type'] == 'ccTestTileMapScene':
+                obj_scene.load(ccResourcePaths.get_tile_scenes() + self.current_section['filename'])
+            else:
+                obj_scene.load(ccResourcePaths.get_object_scenes() + self.current_section['filename'])
             self.scenes.append(obj_scene)
 
     def get_scenes(self):
