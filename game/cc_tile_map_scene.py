@@ -18,7 +18,6 @@ class ccTileMapScene(ccScene):
         self.first_tile_pos = 0  # use offset here
 
     def load(self, filename):
-        print(ccGlobals.size[0])
         loader = ccTileSceneFileLoader()
         loader.process_file(filename)
         self.map = loader.get_map()
