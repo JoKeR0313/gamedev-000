@@ -18,6 +18,7 @@ class ccTileMapScene(ccScene):
         self.first_tile_pos = 0  # use offset here
 
     def load(self, filename):
+        print(ccGlobals.size[0])
         loader = ccTileSceneFileLoader()
         loader.process_file(filename)
         self.map = loader.get_map()
@@ -27,7 +28,7 @@ class ccTileMapScene(ccScene):
     def draw(self):
         contained_length = 0
         start_row_index = abs(int(self.first_tile_pos / self.tile_width))
-        end_row_index = int((ccGlobals.size[1] / self.tile_width) + start_row_index)
+        end_row_index = 2 + int((ccGlobals.size[0] / self.tile_width) + start_row_index)
         if end_row_index > len(self.map[0]):
             contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
@@ -51,7 +52,7 @@ class ccTileMapScene(ccScene):
         local_p = int(self.first_tile_pos)
 
         start_row_index = abs(int(self.first_tile_pos / self.tile_width))
-        end_row_index = int((ccGlobals.size[1] / self.tile_width) + start_row_index)
+        end_row_index = 2 + int((ccGlobals.size[0] / self.tile_width) + start_row_index)
         if end_row_index > len(self.map[0]):
             contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
