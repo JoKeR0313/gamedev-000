@@ -1,0 +1,5 @@
+[TextureMapData]
+filename = empty.png
+[empty]
+topLeft = 0,0
+widthHeight = 64, 64

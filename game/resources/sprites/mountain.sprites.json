@@ -1,0 +1,12 @@
+{
+  "Config": {
+    "filename": "king_mountain.png"
+  },
+  "rockMountain64x64_": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 64,
+    "height": 64,
+    "num_of_sprites": 36
+  }
+}
