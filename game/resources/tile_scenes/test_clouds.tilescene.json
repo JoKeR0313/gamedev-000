@@ -1,8 +1,9 @@
 {
     "Config": {
-    "filenames": ["cloud_objects.objects.json"],
+    "filenames": ["king_all_objects.objects.json"],
     "offset_x": 0,
-    "offset_y": 0
+    "offset_y": 0,
+    "looping": true
   },
   "tile_objects": {
     "00": "clouds",

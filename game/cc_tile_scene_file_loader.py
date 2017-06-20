@@ -3,6 +3,8 @@ from cc_file_loader import ccFileLoader
 from cc_logger import ccLogger
 from cc_object_manager import ccObjectManager
 from cc_resource_paths import *
+from cc_globals import *
+import math
 
 from cc_resource_paths import ccResourcePaths
 
@@ -15,6 +17,7 @@ class ccTileSceneFileLoader(ccFileLoader):
         self.map = []
         self.offset = []
         self.looping = False
+        self.tile_width = 1
 
     def process_file(self, filename):
         try:
@@ -51,12 +54,13 @@ class ccTileSceneFileLoader(ccFileLoader):
                     object_row = []
                     for x in range(len(raw_map[y])):
                         obj = self.objects_dict[raw_map[y][x]].copy()
-                        sprite_width = obj.active_sprite.rectangle.width
+                        self.tile_width = obj.active_sprite.rectangle.width
                         sprite_height = obj.active_sprite.rectangle.height
-                        obj.position.x = x * sprite_width + self.offset[0]
+                        obj.position.x = x * self.tile_width + self.offset[0]
                         obj.position.y = y * sprite_height + self.offset[1]
                         object_row.append(obj)
                     self.map.append(object_row)
+                self.expand_map_for_looping()
             else:
                 for name in self.current_section:
                     if name != "map":
@@ -69,4 +73,14 @@ class ccTileSceneFileLoader(ccFileLoader):
 
     def get_looping(self):
         return self.looping
-
+    
+    def expand_map_for_looping(self):
+        if self.looping is True:
+            map_row_offset = len(self.map[0]) * self.tile_width
+            screen_width_plus_remaining_part_of_tile = math.ceil(ccGlobals.size[0] / self.tile_width) * self.tile_width
+            while screen_width_plus_remaining_part_of_tile >= (self.tile_width * len(self.map[0])):
+                for y in range(len(self.map)):
+                    for x in range(len(self.map[y])):
+                        obj = self.map[y][x].copy()
+                        obj.position.x += map_row_offset
+                        self.map[y].append(obj)
