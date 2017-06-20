@@ -1,0 +1,17 @@
+{
+  "Config": {
+    "filename": "king_clouds_tiles.png"
+  },
+  "clouds": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 256,
+    "height": 128
+  },
+    "air": {
+    "offset_x": 0,
+    "offset_y": 128,
+    "width": 256,
+    "height": 128
+  }
+}

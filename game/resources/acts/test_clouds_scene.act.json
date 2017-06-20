@@ -1,0 +1,9 @@
+{
+  "Config": {
+    "name": "CloudSceneAct"
+  },
+  "tile_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_clouds.tilescene.json"
+  }
+}

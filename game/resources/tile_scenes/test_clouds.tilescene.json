@@ -1,0 +1,19 @@
+{
+    "Config": {
+    "filenames": ["cloud_objects.objects.json"],
+    "offset_x": 0,
+    "offset_y": 0
+  },
+  "tile_objects": {
+    "00": "clouds",
+    "01": "air"
+    },
+  "Map": {
+    "map":    
+    [["00"],
+     ["00"],
+     ["01"],
+     ["01"],
+     ["01"]]
+  }
+}

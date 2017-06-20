@@ -1,0 +1,9 @@
+{
+  "Config": {
+    "name": "MountainSceneAct"
+  },
+  "tile_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_mountain.tilescene.json"
+  }
+}

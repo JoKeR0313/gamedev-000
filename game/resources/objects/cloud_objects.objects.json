@@ -1,0 +1,19 @@
+{
+    "Config": {
+        "filenames": [
+            "clouds_tiles.sprites.json"
+        ]
+    },
+    "clouds": {
+        "type": "ccTileObject",
+        "sprite": "clouds",
+        "visible": true,
+        "enabled": true
+    },
+    "air": {
+        "type": "ccTileObject",
+        "sprite": "air",
+        "visible": true,
+        "enabled": true
+    }
+}
