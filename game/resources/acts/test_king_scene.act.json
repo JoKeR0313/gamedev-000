@@ -2,7 +2,15 @@
   "Config": {
     "name": "KingSceneAct"
   },
-  "tile_map": {
+    "cloud_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_clouds.tilescene.json"
+  },
+    "mountain_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_mountain.tilescene.json"
+  },
+    "ground_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_king_ground.tilescene.json"
   }
