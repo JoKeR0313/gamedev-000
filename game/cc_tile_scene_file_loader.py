@@ -29,7 +29,9 @@ class ccTileSceneFileLoader(ccFileLoader):
     def __process_config(self):
         object_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
         print("object_files: " + object_files[0])
-        self.looping = self.get_field(field_name = 'looping', mandatory=True, section_name="Config")
+        contained_looping = self.get_field(field_name = 'looping', mandatory=True, section_name="Config")
+        if contained_looping == True:
+            self.looping=True
         self.offset.clear()
         self.offset.append(self.get_field(field_name='offset_x', mandatory=True, section_name='Config'))
         self.offset.append(self.get_field(field_name='offset_y', mandatory=True, section_name='Config'))
