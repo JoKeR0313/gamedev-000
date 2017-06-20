@@ -54,26 +54,30 @@ class ccKeyEventHandler:
               self.is_fire_pressed)
 
     def left_action(self, obj):
-        obj.position[0] += self.actions["left"]
-        obj.play("anim_01")
+        # obj.velocity.x += self.actions["left"]
+        # obj.play("anim_01")
+        pass
 
     def right_action(self, obj):
-        obj.position[0] += self.actions["right"]
-        obj.pause()
+        obj.velocity.x = -self.actions["right"]
+        # obj.pause()
 
     def up_action(self, obj):
-        obj.position[1] += self.actions["up"]
-        obj.reset()
+        # obj.position[1] += self.actions["up"]
+        # obj.reset()
+        pass
 
     def down_action(self, obj):
-        obj.position[1] += self.actions["down"]
-        obj.play("anim_01")
+        # obj.position[1] += self.actions["down"]
+        # obj.play("anim_01")
+        pass
 
     def fire_action(self, obj):
         pass
 
     def no_action(self, obj):
-        obj.play("anim_00")
+        obj.velocity.x = 0
+        pass
 
     def reset_keys(self):
         for attribute in dir(self):

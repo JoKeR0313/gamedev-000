@@ -1,17 +1,16 @@
 {
-    "Config": {
-    },
+    "Config": {},
     "keys": {
         "right": "pygame.K_d",
-        "left":  "pygame.K_a",
+        "left": "pygame.K_a",
         "up": "pygame.K_w",
-        "down" : "pygame.K_s",
-        "fire" : "pygame.K_SPACE"
+        "down": "pygame.K_s",
+        "fire": "pygame.K_SPACE"
     },
     "actions": {
-        "right": 2,
-        "left": -2,
-        "up": -2,
-        "down": 2
+        "right": 0.1,
+        "left": -0.1,
+        "up": -0.1,
+        "down": 0.1
     }
 }
