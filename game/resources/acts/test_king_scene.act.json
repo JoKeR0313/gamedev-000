@@ -13,5 +13,9 @@
     "ground_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_king_ground.tilescene.json"
+  },
+    "small_mountains_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_king_small_mountains.tilescene.json"
   }
 }

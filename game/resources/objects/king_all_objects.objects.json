@@ -3,7 +3,9 @@
         "filenames": [
             "king.sprites.json",
             "rock_mountain.sprites.json",
-            "clouds_tiles.sprites.json"
+            "clouds_tiles.sprites.json",
+            "mountain.sprites.json",
+            "empty.sprites.json"
         ]
     },
     "grass003": {
@@ -219,6 +221,85 @@
     "air": {
         "type": "ccTileObject",
         "sprite": "air",
+        "visible": true,
+        "enabled": true
+    },
+
+        "bigMountain64x64_000": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_000",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_001": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_001",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_002": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_002",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_003": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_003",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_004": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_004",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_005": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_005",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_006": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_006",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_007": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_007",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_008": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_008",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_009": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_009",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_010": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_010",
+        "visible": true,
+        "enabled": true
+    },
+    "bigMountain64x64_011": {
+        "type": "ccTileObject",
+        "sprite": "rockMountain64x64_011",
+        "visible": true,
+        "enabled": true
+    },
+    "empty": {
+        "type": "ccTileObject",
+        "sprite": "empty",
         "visible": true,
         "enabled": true
     }
