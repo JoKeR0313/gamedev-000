@@ -46,7 +46,12 @@ class ccResourcePaths:
         return cls.resource_path + "acts/"
 
     @classmethod
+    def get_keys(cls):
+        return cls.resource_path + "keys/"
+    
+    @classmethod
     def get_tile_scenes(cls):
         return cls.resource_path + "tile_scenes/"
+
 
 
