@@ -2,7 +2,7 @@
     "Config": {
     "filenames": ["king_all_objects.objects.json"],
     "offset_x": 0,
-    "offset_y": 500,
+    "offset_y": 592,
     "looping": true
   },
   "tile_objects": {

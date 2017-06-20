@@ -8,7 +8,7 @@ from cc_globals import ccGlobals
 
 
 class TestTileScene:
-    size = (1024, 768)
+    size = (1024, 720)
     num_of_rows = 1
     num_changer = 1
 
