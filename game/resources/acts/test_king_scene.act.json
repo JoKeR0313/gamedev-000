@@ -6,6 +6,10 @@
     "scene_type": "ccTestTileMapScene",
     "filename": "test_clouds.tilescene.json"
   },
+    "mountain2_map": {
+    "scene_type": "ccTestTileMapScene",
+    "filename": "test_mountain2.tilescene.json"
+  },
     "mountain_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_mountain.tilescene.json"
