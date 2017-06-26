@@ -17,6 +17,7 @@ class ccTileSceneFileLoader(ccFileLoader):
         self.map = []
         self.offset = []
         self.looping = False
+        self.velocity_x = 0
         self.tile_width = 1
 
     def process_file(self, filename):
@@ -33,7 +34,10 @@ class ccTileSceneFileLoader(ccFileLoader):
         object_files = self.get_field(field_name='filenames', mandatory=True, section_name='Config')
         print("object_files: " + object_files[0])
         contained_looping = self.get_field(field_name = 'looping', mandatory=True, section_name="Config")
-        if contained_looping == True:
+        self.velocity_x = self.get_field(field_name = 'velocity_x', mandatory=False, section_name="Config")
+        if self.velocity_x == None:
+            self.velocity_x = 0
+        if contained_looping is True:
             self.looping=True
         self.offset.clear()
         self.offset.append(self.get_field(field_name='offset_x', mandatory=True, section_name='Config'))
@@ -73,6 +77,10 @@ class ccTileSceneFileLoader(ccFileLoader):
 
     def get_looping(self):
         return self.looping
+    
+    def get_velocity(self):
+        print(self.velocity_x)
+        return pygame.math.Vector2(self.velocity_x, 0)
     
     def expand_map_for_looping(self):
         if self.looping is True:

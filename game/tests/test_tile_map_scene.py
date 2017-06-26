@@ -7,5 +7,5 @@ class ccTestTileMapScene(ccTileMapScene):
     # this logic should be in the ccTileMapScene
     def __init__(self):
         super().__init__()
-        self.velocity.x = -0.1
+        # self.velocity.x = -0.1
 

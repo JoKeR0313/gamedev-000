@@ -3,7 +3,8 @@
     "filenames": ["king_all_objects.objects.json"],
     "offset_x": 0,
     "offset_y": 486,
-    "looping": true
+    "looping": true,
+    "velocity_x": -0.060
   },
   "tile_objects": {
     "00": "empty",

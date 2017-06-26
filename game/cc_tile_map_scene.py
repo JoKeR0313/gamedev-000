@@ -25,6 +25,7 @@ class ccTileMapScene(ccScene):
         self.tile_width = self.map[0][0].active_sprite.rectangle.width
         self.offset = loader.get_offset()
         self.looping = loader.get_looping()
+        self.velocity = loader.get_velocity()
 
     def draw(self):
         contained_length = 0
