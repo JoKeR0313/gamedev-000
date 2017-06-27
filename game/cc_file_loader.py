@@ -36,7 +36,7 @@ class ccFileLoader:
         return named_section
 
     def get_field(self, field_name, mandatory=True, section_name=""):
-        # give back the field data. If it doesn't exists, send back None and if
+        # give back the field data. If it doesn't exist, send back None and if
         # mandatory is True, print an error msg. If the file is not loaded, print
         # out an error msg and send back None. section_name is optional, set the
         # current_section if not given. If current_section is invalid, write an

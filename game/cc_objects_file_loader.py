@@ -7,6 +7,7 @@ from cc_resource_paths import *
 from cc_anim_object import ccAnimObject
 from cc_anims_file_loader import ccAnimsFileLoader
 from cc_tile_object import ccTileObject
+from tests.test_king_object import KingObject
 
 
 class ccObjectsFileLoader(ccFileLoader):

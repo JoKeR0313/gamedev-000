@@ -21,5 +21,9 @@
     "ground_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_king_ground.tilescene.json"
+  },
+  "king_walk": {
+    "scene_type": "ccObjectScene",
+    "filename": "king_walk.objectscene.json"
   }
 }

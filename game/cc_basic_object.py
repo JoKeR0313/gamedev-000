@@ -32,14 +32,19 @@ class ccBasicObject(ccObject):
             self.velocity.y = obj_section["velocity_y"]
         if "sprite" in obj_section:
             self.active_sprite = ccSpriteManager.get_sprite(obj_section['sprite'])
-            self.hitbox = pygame.Rect(self.position.x, self.position.y,
-                                      self.active_sprite.hitbox.width, self.active_sprite.hitbox.height)
+            self.set_hitbox()
 
         # later: set position and velocity from test.objects.json
 
     def draw(self, renderer):
         # draw the active_sprite to the screen, to self.position position
         self.active_sprite.draw(renderer, self.position.x, self.position.y)
+        # DRAWING A BIGASS RED RECTANGLE AROUND EVERYTHING
+        if self.hitbox != None:
+            rect = pygame.Rect(self.hitbox)
+            rect.x = self.position.x
+            rect.y = self.position.y
+            pygame.draw.rect(renderer, (255, 0, 0), rect, 1)
 
     def step(self, time_passed):
         # change Object's position with velocity. Specialized object classes will
@@ -49,21 +54,29 @@ class ccBasicObject(ccObject):
         current_speed.y = self.velocity.y * time_passed
         self.position.x += current_speed.x
         self.position.y += current_speed.y
-        self.hitbox.x = self.position.x
-        self.hitbox.y = self.position.y
+        if self.hitbox != None:
+            self.hitbox.x = self.position.x
+            self.hitbox.y = self.position.y
 
     def copy(self):
         new_object = ccBasicObject()
         self.fill(new_object)
         return new_object
 
-    def fill(self, source):
-        source.position = pygame.math.Vector2(self.position)
-        source.velocity = pygame.math.Vector2(self.velocity)
-        source.active_sprite = self.active_sprite
-        source.type = self.type
-        source.id = deepcopy(self.id)
-        source.hitbox = pygame.Rect(self.hitbox.x, self.hitbox.y,
-                                    self.hitbox.width, self.hitbox.height)
-        print(source.hitbox)
-        source.object_props = deepcopy(self.object_props)
+    def fill(self, target):
+        target.position = pygame.math.Vector2(self.position)
+        target.velocity = pygame.math.Vector2(self.velocity)
+        target.active_sprite = self.active_sprite
+        target.type = self.type
+        target.id = deepcopy(self.id)
+        if self.hitbox != None:
+            target.hitbox = pygame.Rect(self.hitbox.x, self.hitbox.y,
+                                        self.hitbox.width, self.hitbox.height)
+        else:
+            target.hitbox = None
+        target.object_props = deepcopy(self.object_props)
+
+    def set_hitbox(self):
+        if self.active_sprite.hitbox != None:
+            self.hitbox = pygame.Rect(self.position.x, self.position.y,
+                                        self.active_sprite.hitbox.width, self.active_sprite.hitbox.height)

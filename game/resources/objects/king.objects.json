@@ -1,0 +1,18 @@
+{
+    "Config": {
+        "filenames": [
+            "king_walk.anims.json"
+        ]
+    },
+    "king": {
+        "type": "KingObject",
+        "animations": [
+            "kingWalkAnim"
+        ],
+        "start_anim": "kingWalkAnim",
+        "play": true,
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    }
+}

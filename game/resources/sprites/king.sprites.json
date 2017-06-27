@@ -7,7 +7,9 @@
     "offset_y": 0,
     "width": 64,
     "height": 64,
-    "num_of_sprites": 4
+    "num_of_sprites": 4,
+    "hitbox_width": 64,
+    "hitbox_height": 64
   },
   "sign": {
     "offset_x": 0,

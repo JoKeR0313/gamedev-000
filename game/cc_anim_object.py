@@ -31,6 +31,7 @@ class ccAnimObject(ccBasicObject):
                 self.current_anim = ccSpriteManager.get_sprite(anim_data['start_anim'])
                 self.current_frame = self.current_anim.get_frame(0)
                 self.active_sprite = self.current_frame.get_sprite()
+                self.set_hitbox()
 
         except:
             ccLogger.error('Sprite could not be loaded.: ')
@@ -57,6 +58,7 @@ class ccAnimObject(ccBasicObject):
                     ccLogger.warning("Animation change should be implemented")
                     # WARNING
                 self.active_sprite = self.current_frame.get_sprite()
+                self.set_hitbox()
 
     def play(self, anim_name=None):
         if self.current_anim == ccSpriteManager.get_sprite(anim_name):
@@ -84,6 +86,7 @@ class ccAnimObject(ccBasicObject):
         source.position = pygame.math.Vector2(self.position)
         source.velocity = pygame.math.Vector2(self.velocity)
         source.active_sprite = self.active_sprite
+        source.hitbox = self.hitbox
         source.type = self.type
         source.id = deepcopy(self.id)
         source.object_props = deepcopy(self.object_props)

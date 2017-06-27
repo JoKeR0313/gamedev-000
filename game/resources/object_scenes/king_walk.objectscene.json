@@ -1,0 +1,12 @@
+{
+  "Config": {
+    "filenames": [
+      "king.objects.json"
+    ]
+  },
+  "kingWalk": {
+    "object_name": "king",
+    "position_x": 350,
+    "position_y": 300
+  }
+}
