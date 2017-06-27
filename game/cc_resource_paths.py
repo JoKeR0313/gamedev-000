@@ -10,7 +10,7 @@ if not hasattr(sys.modules[__name__], '__file__'):
 class ccResourcePaths:
 
     base_path = os.path.dirname(os.path.realpath(__file__))
-    dir_name = "/resources/"
+    dir_name = "/tests/test_resources/"
     resource_path = base_path + dir_name
 
     def __init__(self):
