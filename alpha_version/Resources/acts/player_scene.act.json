@@ -1,0 +1,29 @@
+{
+  "Config": {
+    "name": "PlayerSceneAct"
+  },
+    "sky_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "sky.tilescene.json"
+  },
+    "far_away_buildings_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "far_away_buildings.tilescene.json"
+  },
+    "buildings_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "buildings.tilescene.json"
+  },
+    "close_buildings_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "close_buildings.tilescene.json"
+  },
+    "ground_map": {
+    "scene_type": "ccTileMapScene",
+    "filename": "ground.tilescene.json"
+  },
+  "player_run": {
+    "scene_type": "ccObjectScene",
+    "filename": "player_run.objectscene.json"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "Config": {
+        "filenames": [
+            "player_run.anims.json"
+        ]
+    },
+    "player": {
+        "type": "PlayerObject",
+        "animations": [
+            "playerRunAnim"
+        ],
+        "start_anim": "playerRunAnim",
+        "play": true,
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "Config": {
+    "filenames": ["player_all_objects.objects.json"],
+    "offset_x": 0,
+    "offset_y": 200,
+    "looping": true,
+    "velocity_x": -0.060
+  },
+  "tile_objects": {
+    "00": "ruinedBrickWall000",
+    "01": "brownHouse000",
+    "02": "greyHouse000",
+    "03": "infestedBrickWall000",
+    "04": "houseWithBrokenWindow000",
+    "05": "abandonedHouse000",
+    "06": "tallBrownHouse000",
+    "07": "yellowHouse000"
+    },
+    "Map": {
+    "map":    
+    ["00", "00", "00", "06", "03", "06", "01", "07", "05", "04", "02"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Config": {
+    "filename": "far_away_buildings.png"
+  },
+  "farAwayBuilding_": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 200,
+    "height": 160,
+    "num_of_sprites": 5
+  }
+}

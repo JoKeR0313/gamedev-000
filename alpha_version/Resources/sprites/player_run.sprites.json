@@ -1,0 +1,14 @@
+{
+  "Config": {
+    "filename": "player_run.png"
+  },
+  "playerRun": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 128,
+    "height": 128,
+    "num_of_sprites": 4,
+    "hitbox_width": 100,
+    "hitbox_height": 110
+  }
+}

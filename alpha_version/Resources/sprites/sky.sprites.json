@@ -1,0 +1,17 @@
+{
+  "Config": {
+    "filename": "sky.png"
+  },
+  "left": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 256,
+    "height": 128
+  },
+    "right": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 256,
+    "height": 128
+  }
+}

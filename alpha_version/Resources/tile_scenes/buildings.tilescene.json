@@ -1,0 +1,20 @@
+{
+    "Config": {
+    "filenames": ["player_all_objects.objects.json"],
+    "offset_x": 0,
+    "offset_y": 400,
+    "looping": true,
+    "velocity_x": -0.040
+  },
+  "tile_objects": {
+    "00": "building_000",
+    "01": "building_001",
+    "02": "building_002",
+    "03": "building_003",
+    "04": "building_004"
+    },
+  "Map": {
+    "map":    
+    ["00", "01", "02", "03", "04", "00", "01", "02", "03", "04", "00", "01", "02", "03", "04"]
+  }
+}

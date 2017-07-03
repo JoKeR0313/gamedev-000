@@ -1,0 +1,20 @@
+{
+  "Config": {
+    "filename": "player_run.sprites.json"
+  },
+  "playerRunAnim": {
+    "sprites": [
+      "kingWalk000",
+      "kingWalk001",
+      "kingWalk002",
+      "kingWalk003"
+    ],
+    "frames": [
+      "0 t100",
+      "1",
+      "2",
+      "3",
+      "goto 0"
+    ]
+  }
+}

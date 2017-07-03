@@ -1,0 +1,12 @@
+{
+  "Config": {
+    "filenames": [
+      "player.objects.json"
+    ]
+  },
+  "playerRun": {
+    "object_name": "player",
+    "position_x": 350,
+    "position_y": 300
+  }
+}

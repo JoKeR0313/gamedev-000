@@ -1,0 +1,61 @@
+{
+  "Config": {
+    "filename": "close_buildings.png"
+  },
+  "ruinedBrickWall": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 256,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "brownHouse": {
+    "offset_x": 256,
+    "offset_y": 0,
+    "width": 352,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "greyHouse": {
+    "offset_x": 618,
+    "offset_y": 0,
+    "width": 224,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "infestedBrickWall": {
+    "offset_x": 834,
+    "offset_y": 0,
+    "width": 288,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "houseWithBrokenWindow": {
+    "offset_x": 1122,
+    "offset_y": 0,
+    "width": 416,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "abandonedHouse": {
+    "offset_x": 1538,
+    "offset_y": 0,
+    "width": 288,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "tallBrownHouse": {
+    "offset_x": 1826,
+    "offset_y": 0,
+    "width": 192,
+    "height": 448,
+    "num_of_sprites": 1
+  },
+    "yellowHouse": {
+    "offset_x": 2018,
+    "offset_y": 0,
+    "width": 288,
+    "height": 448,
+    "num_of_sprites": 1
+  }
+}

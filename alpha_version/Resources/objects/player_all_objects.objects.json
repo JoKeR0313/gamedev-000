@@ -1,0 +1,156 @@
+{
+    "Config": {
+        "filenames": [
+            "ground.sprites.json",
+            "close_buildings.sprites.json",
+            "sky.sprites.json",
+            "buildings.sprites.json",
+            "far_away_buildings.sprites.json",
+            "empty.sprites.json"
+        ]
+    },
+    "crackedGround000": {
+        "type": "ccTileObject",
+        "sprite": "crackedGround000",
+        "visible": true,
+        "enabled": true
+    },
+    "untouchedGround000": {
+        "type": "ccTileObject",
+        "sprite": "untouchedGround000",
+        "visible": true,
+        "enabled": true
+    },
+    "groundWithSewerLid000": {
+        "type": "ccTileObject",
+        "sprite": "groundWithSewerLid000",
+        "visible": true,
+        "enabled": true
+    },
+    "groundWithGrass000": {
+        "type": "ccTileObject",
+        "sprite": "groundWithGrass000",
+        "visible": true,
+        "enabled": true
+    },
+    "groundWithDrain000": {
+        "type": "ccTileObject",
+        "sprite": "groundWithDrain000",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall000": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall000",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse000": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse000",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse000": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse000",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall000": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall000",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow000": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow000",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse000": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse000",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse000": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse000",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse000": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse000",
+        "visible": true,
+        "enabled": true
+    },
+    "building_000": {
+        "type": "ccTileObject",
+        "sprite": "building_000",
+        "visible": true,
+        "enabled": true
+    },
+    "building_001": {
+        "type": "ccTileObject",
+        "sprite": "building_001",
+        "visible": true,
+        "enabled": true
+    },
+    "building_002": {
+        "type": "ccTileObject",
+        "sprite": "building_002",
+        "visible": true,
+        "enabled": true
+    },
+    "building_003": {
+        "type": "ccTileObject",
+        "sprite": "building_003",
+        "visible": true,
+        "enabled": true
+    },
+    "building_004": {
+        "type": "ccTileObject",
+        "sprite": "building_004",
+        "visible": true,
+        "enabled": true
+    },
+    "farAwayBuilding_000": {
+        "type": "ccTileObject",
+        "sprite": "farAwayBuilding_000",
+        "visible": true,
+        "enabled": true
+    },
+    "farAwayBuilding_001": {
+        "type": "ccTileObject",
+        "sprite": "farAwayBuilding_001",
+        "visible": true,
+        "enabled": true
+    },
+    "farAwayBuilding_002": {
+        "type": "ccTileObject",
+        "sprite": "farAwayBuilding_002",
+        "visible": true,
+        "enabled": true
+    },
+    "farAwayBuilding_003": {
+        "type": "ccTileObject",
+        "sprite": "farAwayBuilding_003",
+        "visible": true,
+        "enabled": true
+    },
+    "farAwayBuilding_004": {
+        "type": "ccTileObject",
+        "sprite": "farAwayBuilding_004",
+        "visible": true,
+        "enabled": true
+    },
+    "empty": {
+        "type": "ccTileObject",
+        "sprite": "empty",
+        "visible": true,
+        "enabled": true
+    }
+}
