@@ -1,5 +1,6 @@
 from cc_logger import *
 from cc_act_file_loader import ccActFileLoader
+from cc_collision_detector import ccCollisionDetector
 from cc_bball_coll_detector import BouncingBallCollisionDetector
 
 
@@ -29,6 +30,8 @@ class ccActManager:
         for scene in cls.scenes:
             # BouncingBallCollisionDetector.check_list_collision(scene.object_list)
             scene.step(time_passed)
+        ccCollisionDetector.update(cls.scenes)
+        
 
     @classmethod
     def push_scene(cls, scene):

@@ -58,7 +58,7 @@ class ccAnimObject(ccBasicObject):
                     ccLogger.warning("Animation change should be implemented")
                     # WARNING
                 self.active_sprite = self.current_frame.get_sprite()
-                self.set_hitbox()
+                #self.set_hitbox()
 
     def play(self, anim_name=None):
         # if self.current_anim == ccSpriteManager.get_sprite(anim_name):

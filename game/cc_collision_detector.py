@@ -1,44 +1,59 @@
 import pygame
+from cc_object_scene import ccObjectScene
+from cc_tile_map_scene import ccTileMapScene
 
+"""
+update(list of scenes (cls.scene)):
+first scene first obj if hitbox is not None: 
+if collide anything:
+object.objecthit()
 
-# This is an abstract class!!!
+for range(scene)
+"""
+
 
 class ccCollisionDetector:
 
-    @staticmethod
-    def update_object_hitbox(obj):
-        obj.hitbox.x = obj.position.x
-        obj.hitbox.y = obj.position.y
+    @classmethod
+    def update(cls, scenes):
+        for i in range(len(scenes)):
+            if issubclass(type(scenes[i]), ccObjectScene):
+                for current_obj in scenes[i].object_list:
+                    if current_obj.hitbox is not None:
+                        if i <= len(scenes):
+                            for j in range(i + 1, len(scenes)):
+                                if issubclass(type(scenes[j]), ccObjectScene):
+                                    for obj in scenes[j].object_list:
+                                        if obj.hitbox is not None:
+                                            if current_obj.hitbox.colliderect(obj.hitbox):
+                                                current_obj.objecthit(obj)
+                                                obj.objecthit(current_obj)
 
-    @staticmethod
-    def update_list_hitbox(object_list):
-        print("start")
-        for obj in object_list:
-            if obj.hitbox is not None:
-                print("hello")
-                obj.hitbox.x = obj.position.x
-                obj.hitbox.y = obj.position.y
+                                if issubclass(type(scenes[j]), ccTileMapScene):
+                                    for m in range(len(scenes[i].map)):
+                                        for current_obj in scenes[j].map[m]:
+                                            if obj.hitbox is not None:
+                                                if current_obj.hitbox.colliderect(obj.hitbox):
+                                                    current_obj.objecthit(obj)
+                                                    obj.objecthit(current_obj)
 
-    @staticmethod
-    def check_collsion_between_objects(left_obj, right_obj):
-        if left_obj.hitbox.colliderect(right_obj.hitbox):
-            return True
+            if issubclass(type(scenes[i]), ccTileMapScene):
+                for m in range(len(scenes[i].map)):
+                    for current_obj in scenes[i].map[m]:
+                        if current_obj.hitbox is not None:
+                            for j in range(i + 1, len(scenes)):
 
-    @staticmethod
-    def check_list_collision(object_list):
-        for obj in object_list:
-            if obj.hitbox is not None:
-                for check_obj in object_list:
-                    if check_obj.hitbox is not None:
-                        if obj != check_obj:
-                            if obj.hitbox.colliderect(check_obj.hitbox):
-                                return True
+                                if issubclass(type(scenes[j]), ccObjectScene):
+                                    for obj in scenes[j].object_list:
+                                        if obj.hitbox is not None:
+                                            if current_obj.hitbox.colliderect(obj.hitbox):
+                                                current_obj.objecthit(obj)
+                                                obj.objecthit(current_obj)
 
-    @staticmethod
-    def check_collision_between_lists(left_object_list, right_object_list):
-        for left_obj in left_object_list:
-            if left_obj.hitbox is not None:
-                for right_obj in right_object_list:
-                    if right_obj.hitbox is not None:
-                        if left_obj.hitbox.colliderect(right_obj.hitbox):
-                            return True
+                                if issubclass(type(scenes[j]), ccTileMapScene):
+                                    for m in range(len(scenes[i].map)):
+                                        for current_obj in scenes[j].map[m]:
+                                            if obj.hitbox is not None:
+                                                if current_obj.hitbox.colliderect(obj.hitbox):
+                                                    current_obj.objecthit(obj)
+                                                    obj.objecthit(current_obj)

@@ -1,7 +1,7 @@
-from cc_collision_detector import ccCollisionDetector
+from cc_collision_tools import ccCollisionTools
 
 
-class BouncingBallCollisionDetector(ccCollisionDetector):
+class BouncingBallCollisionDetector(ccCollisionTools):
 
     @staticmethod
     def check_list_collision(object_list):
