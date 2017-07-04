@@ -14,6 +14,7 @@ class ccTileMapScene(ccScene):
         self.type = "ccTileMapScene"
         self.offset = []
         self.velocity = pygame.math.Vector2(0, 0)
+        self.actual_velocity = pygame.math.Vector2(0, 0)
         self.tile_width = 1
         self.first_tile_pos = 0  # use offset here
         self.looping = False
@@ -26,6 +27,7 @@ class ccTileMapScene(ccScene):
         self.offset = loader.get_offset()
         self.looping = loader.get_looping()
         self.velocity = loader.get_velocity()
+        self.actual_velocity = loader.get_velocity()
 
     def draw(self):
         contained_length = 0
@@ -47,7 +49,7 @@ class ccTileMapScene(ccScene):
 
     def step(self, time_passed):
         contained_length = 0
-        self.first_tile_pos += self.velocity.x * time_passed
+        self.first_tile_pos += self.actual_velocity.x * time_passed
         if self.looping is True:
             if abs(self.first_tile_pos) >= len(self.map[0]) * self.tile_width:
                 self.first_tile_pos += len(self.map[0]) * self.tile_width
