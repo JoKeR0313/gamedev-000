@@ -2,23 +2,23 @@
   "Config": {
     "name": "KingSceneAct"
   },
-    "cloud_map": {
+  "cloud_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_clouds.tilescene.json"
   },
-    "mountain2_map": {
+  "mountain2_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_mountain2.tilescene.json"
   },
-    "mountain_map": {
+  "mountain_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_mountain.tilescene.json"
   },
-    "small_mountains_map": {
+  "small_mountains_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_king_small_mountains.tilescene.json"
   },
-    "ground_map": {
+  "ground_map": {
     "scene_type": "ccTestTileMapScene",
     "filename": "test_king_ground.tilescene.json"
   },

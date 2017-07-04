@@ -61,7 +61,8 @@ class ccAnimObject(ccBasicObject):
                 self.set_hitbox()
 
     def play(self, anim_name=None):
-        if self.current_anim == ccSpriteManager.get_sprite(anim_name):
+        # if self.current_anim == ccSpriteManager.get_sprite(anim_name):
+        if anim_name is None:
             self.paused = False
         else:
             self.current_anim = ccSpriteManager.get_sprite(anim_name)
@@ -79,10 +80,10 @@ class ccAnimObject(ccBasicObject):
 
     def copy(self):
         new_object = ccAnimObject()
-        self.__fill(new_object)
+        self.fill(new_object)
         return new_object
 
-    def __fill(self, source):
+    def fill(self, source):
         source.position = pygame.math.Vector2(self.position)
         source.velocity = pygame.math.Vector2(self.velocity)
         source.active_sprite = self.active_sprite
