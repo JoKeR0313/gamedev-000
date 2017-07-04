@@ -9,81 +9,531 @@
             "empty.sprites.json"
         ]
     },
-    "crackedGround000": {
+    "sidewalk_000": {
         "type": "ccTileObject",
-        "sprite": "crackedGround000",
+        "sprite": "sidewalk_000",
         "visible": true,
         "enabled": true
     },
-    "untouchedGround000": {
+    "sidewalk_001": {
         "type": "ccTileObject",
-        "sprite": "untouchedGround000",
+        "sprite": "sidewalk_001",
         "visible": true,
         "enabled": true
     },
-    "groundWithSewerLid000": {
+    "sidewalk_002": {
         "type": "ccTileObject",
-        "sprite": "groundWithSewerLid000",
+        "sprite": "sidewalk_002",
         "visible": true,
         "enabled": true
     },
-    "groundWithGrass000": {
+    "sidewalk_003": {
         "type": "ccTileObject",
-        "sprite": "groundWithGrass000",
+        "sprite": "sidewalk_003",
         "visible": true,
         "enabled": true
     },
-    "groundWithDrain000": {
+    "sidewalk_004": {
         "type": "ccTileObject",
-        "sprite": "groundWithDrain000",
+        "sprite": "sidewalk_004",
         "visible": true,
         "enabled": true
     },
-    "ruinedBrickWall000": {
+    "roadFirstHalf_000": {
         "type": "ccTileObject",
-        "sprite": "ruinedBrickWall000",
+        "sprite": "roadFirstHalf_000",
         "visible": true,
         "enabled": true
     },
-    "brownHouse000": {
+    "roadFirstHalf_001": {
         "type": "ccTileObject",
-        "sprite": "brownHouse000",
+        "sprite": "roadFirstHalf_001",
         "visible": true,
         "enabled": true
     },
-    "greyHouse000": {
+    "roadFirstHalf_002": {
         "type": "ccTileObject",
-        "sprite": "greyHouse000",
+        "sprite": "roadFirstHalf_002",
         "visible": true,
         "enabled": true
     },
-    "infestedBrickWall000": {
+    "roadFirstHalf_003": {
         "type": "ccTileObject",
-        "sprite": "infestedBrickWall000",
+        "sprite": "roadFirstHalf_003",
         "visible": true,
         "enabled": true
     },
-    "houseWithBrokenWindow000": {
+    "roadFirstHalf_004": {
         "type": "ccTileObject",
-        "sprite": "houseWithBrokenWindow000",
+        "sprite": "roadFirstHalf_004",
         "visible": true,
         "enabled": true
     },
-    "abandonedHouse000": {
+    "roadSecondHalf_000": {
         "type": "ccTileObject",
-        "sprite": "abandonedHouse000",
+        "sprite": "roadSecondHalf_000",
         "visible": true,
         "enabled": true
     },
-    "tallBrownHouse000": {
+    "roadSecondHalf_001": {
         "type": "ccTileObject",
-        "sprite": "tallBrownHouse000",
+        "sprite": "roadSecondHalf_001",
         "visible": true,
         "enabled": true
     },
-    "yellowHouse000": {
+    "roadSecondHalf_002": {
         "type": "ccTileObject",
-        "sprite": "yellowHouse000",
+        "sprite": "roadSecondHalf_002",
+        "visible": true,
+        "enabled": true
+    },
+    "roadSecondHalf_003": {
+        "type": "ccTileObject",
+        "sprite": "roadSecondHalf_003",
+        "visible": true,
+        "enabled": true
+    },
+    "roadSecondHalf_004": {
+        "type": "ccTileObject",
+        "sprite": "roadSecondHalf_004",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_000": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_000",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_001": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_001",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_002": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_002",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_003": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_003",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_004": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_004",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_005": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_005",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_006": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_006",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_007": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_007",
+        "visible": true,
+        "enabled": true
+    },
+    "ruinedBrickWall_008": {
+        "type": "ccTileObject",
+        "sprite": "ruinedBrickWall_008",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_000": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_000",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_001": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_001",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_002": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_002",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_003": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_003",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_004": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_004",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_005": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_005",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_006": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_006",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_007": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_007",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_008": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_008",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_009": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_009",
+        "visible": true,
+        "enabled": true
+    },
+    "brownHouse_010": {
+        "type": "ccTileObject",
+        "sprite": "brownHouse_010",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_000": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_000",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_001": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_001",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_002": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_002",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_003": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_003",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_004": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_004",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_005": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_005",
+        "visible": true,
+        "enabled": true
+    },
+    "greyHouse_006": {
+        "type": "ccTileObject",
+        "sprite": "greyHouse_006",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_000": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_000",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_001": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_001",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_002": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_002",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_003": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_003",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_004": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_004",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_005": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_005",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_006": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_006",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_007": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_007",
+        "visible": true,
+        "enabled": true
+    },
+    "infestedBrickWall_008": {
+        "type": "ccTileObject",
+        "sprite": "infestedBrickWall_008",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_000": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_000",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_001": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_001",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_002": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_002",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_003": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_003",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_004": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_004",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_005": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_005",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_006": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_006",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_007": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_007",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_008": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_008",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_009": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_009",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_010": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_010",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_011": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_011",
+        "visible": true,
+        "enabled": true
+    },
+    "houseWithBrokenWindow_012": {
+        "type": "ccTileObject",
+        "sprite": "houseWithBrokenWindow_012",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_000": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_000",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_001": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_001",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_002": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_002",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_003": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_003",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_004": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_004",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_005": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_005",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_006": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_006",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_007": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_007",
+        "visible": true,
+        "enabled": true
+    },
+    "abandonedHouse_008": {
+        "type": "ccTileObject",
+        "sprite": "abandonedHouse_008",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse_000": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse_000",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse_001": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse_001",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse_002": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse_002",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse_003": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse_003",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse_004": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse_004",
+        "visible": true,
+        "enabled": true
+    },
+    "tallBrownHouse_005": {
+        "type": "ccTileObject",
+        "sprite": "tallBrownHouse_005",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_000": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_000",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_001": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_001",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_002": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_002",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_003": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_003",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_004": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_004",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_005": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_005",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_006": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_006",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_007": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_007",
+        "visible": true,
+        "enabled": true
+    },
+    "yellowHouse_008": {
+        "type": "ccTileObject",
+        "sprite": "yellowHouse_008",
         "visible": true,
         "enabled": true
     },

@@ -4,10 +4,10 @@
   },
   "playerRunAnim": {
     "sprites": [
-      "kingWalk000",
-      "kingWalk001",
-      "kingWalk002",
-      "kingWalk003"
+      "playerRun_000",
+      "playerRun_001",
+      "playerRun_002",
+      "playerRun_003"
     ],
     "frames": [
       "0 t100",

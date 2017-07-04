@@ -8,7 +8,7 @@ from GameData.cc_globals import ccGlobals
 
 
 class TestTileScene:
-    size = (1024, 720)
+    size = (1600, 900)
     num_of_rows = 1
     num_changer = 1
 

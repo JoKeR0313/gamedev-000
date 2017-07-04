@@ -21,9 +21,5 @@
     "ground_map": {
     "scene_type": "ccTileMapScene",
     "filename": "ground.tilescene.json"
-  },
-  "player_run": {
-    "scene_type": "ccObjectScene",
-    "filename": "player_run.objectscene.json"
   }
 }

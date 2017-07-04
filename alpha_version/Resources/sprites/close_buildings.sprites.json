@@ -2,60 +2,60 @@
   "Config": {
     "filename": "close_buildings.png"
   },
-  "ruinedBrickWall": {
+  "ruinedBrickWall_": {
     "offset_x": 0,
     "offset_y": 0,
-    "width": 256,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 9
   },
-    "brownHouse": {
-    "offset_x": 256,
+    "brownHouse_": {
+    "offset_x": 288,
     "offset_y": 0,
-    "width": 352,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 11
   },
-    "greyHouse": {
-    "offset_x": 618,
+    "greyHouse_": {
+    "offset_x": 640,
     "offset_y": 0,
-    "width": 224,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 7
   },
-    "infestedBrickWall": {
-    "offset_x": 834,
+    "infestedBrickWall_": {
+    "offset_x": 864,
     "offset_y": 0,
-    "width": 288,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 9
   },
-    "houseWithBrokenWindow": {
-    "offset_x": 1122,
+    "houseWithBrokenWindow_": {
+    "offset_x": 1152,
     "offset_y": 0,
-    "width": 416,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 13
   },
-    "abandonedHouse": {
-    "offset_x": 1538,
+    "abandonedHouse_": {
+    "offset_x": 1568,
     "offset_y": 0,
-    "width": 288,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 9
   },
-    "tallBrownHouse": {
-    "offset_x": 1826,
+    "tallBrownHouse_": {
+    "offset_x": 1856,
     "offset_y": 0,
-    "width": 192,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 6
   },
-    "yellowHouse": {
-    "offset_x": 2018,
+    "yellowHouse_": {
+    "offset_x": 2048,
     "offset_y": 0,
-    "width": 288,
+    "width": 32,
     "height": 448,
-    "num_of_sprites": 1
+    "num_of_sprites": 9
   }
 }

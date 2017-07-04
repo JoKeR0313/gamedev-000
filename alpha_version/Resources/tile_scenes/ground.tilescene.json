@@ -2,20 +2,32 @@
     "Config": {
     "filenames": ["player_all_objects.objects.json"],
     "offset_x": 0,
-    "offset_y": 592,
+    "offset_y": 772,
     "looping": true,
     "velocity_x": -0.080
   },
   "tile_objects": {
-    "00": "crackedGround000",
-    "01": "untouchedGround000",
-    "02": "groundWithSewerLid000",
-    "03": "groundWithGrass000",
-    "04": "groundWithDrain000"
+    "00": "sidewalk_000",
+    "01": "sidewalk_001",
+    "02": "sidewalk_002",
+    "03": "sidewalk_003",
+    "04": "sidewalk_004",
+    "05": "roadFirstHalf_000",
+    "06": "roadFirstHalf_001",
+    "07": "roadFirstHalf_002",
+    "08": "roadFirstHalf_003",
+    "09": "roadFirstHalf_004",
+    "10": "roadSecondHalf_000",
+    "11": "roadSecondHalf_001",
+    "12": "roadSecondHalf_002",
+    "13": "roadSecondHalf_003",
+    "14": "roadSecondHalf_004"
     },
   "Map": {
     "map":    
-    [["01", "04", "04", "03", "02", "04", "01", "03", "02", "01", "00", "01", "00"],
-     ["00", "01", "02", "03", "03", "00", "01", "01", "02", "03", "03", "03", "03"]]
+    [["00", "01", "02", "03", "04"],
+     ["05", "06", "07", "08", "09"],
+     ["10", "11", "12", "13", "14"],
+     ["02", "04", "00", "01", "03"]]
   }
 }

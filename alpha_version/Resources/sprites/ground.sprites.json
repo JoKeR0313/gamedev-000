@@ -2,41 +2,27 @@
   "Config": {
     "filename": "ground.png"
   },
-  "crackedGround": {
+  "sidewalk_": {
     "offset_x": 0,
     "offset_y": 0,
     "width": 192,
-    "height": 96,
-    "num_of_sprites": 1,
-    "hitbox_width": 64,
-    "hitbox_height": 64
+    "height": 32,
+    "num_of_sprites": 5
   },
-  "untouchedGround": {
-    "offset_x": 192,
-    "offset_y": 0,
+  "roadFirstHalf_": {
+    "offset_x": 0,
+    "offset_y": 32,
     "width": 192,
-    "height": 96,
-    "num_of_sprites": 1
+    "height": 32,
+    "num_of_sprites": 5
   },
-  "groundWithSewerLid": {
-    "offset_x": 384,
-    "offset_y": 0,
+  "roadSecondHalf_": {
+    "offset_x": 0,
+    "offset_y": 64,
     "width": 192,
-    "height": 96,
-    "num_of_sprites": 1
-  },
-  "groundWithGrass": {
-    "offset_x": 576,
-    "offset_y": 0,
-    "width": 192,
-    "height": 96,
-    "num_of_sprites": 1
-  },
-  "groundWithDrain": {
-    "offset_x": 768,
-    "offset_y": 0,
-    "width": 192,
-    "height": 96,
-    "num_of_sprites": 1
+    "height": 32,
+    "num_of_sprites": 5,
+    "hitbox_width": 192,
+    "hitbox_height": 32
   }
 }
