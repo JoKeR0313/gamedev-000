@@ -14,6 +14,7 @@ class ccTileMapScene(ccScene):
         self.type = "ccTileMapScene"
         self.offset = []
         self.velocity = pygame.math.Vector2(0, 0)
+        self.actual_velocity = pygame.math.Vector2(0, 0)
         self.tile_width = 1
         self.first_tile_pos = 0  # use offset here
         self.looping = False
@@ -26,6 +27,7 @@ class ccTileMapScene(ccScene):
         self.offset = loader.get_offset()
         self.looping = loader.get_looping()
         self.velocity = loader.get_velocity()
+        self.actual_velocity = loader.get_velocity()
 
     def draw(self):
         contained_length = 0
@@ -35,7 +37,6 @@ class ccTileMapScene(ccScene):
             contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
 
-        
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].draw(ccGlobals.get_renderer())
@@ -43,13 +44,12 @@ class ccTileMapScene(ccScene):
         if self.looping is True:
             if contained_length != 0:
                 for row in self.map:
-                    for index in range(0,contained_length):
+                    for index in range(0, contained_length):
                         row[index].draw(ccGlobals.get_renderer())
-
 
     def step(self, time_passed):
         contained_length = 0
-        self.first_tile_pos += self.velocity.x * time_passed
+        self.first_tile_pos += self.actual_velocity.x * time_passed
         if self.looping is True:
             if abs(self.first_tile_pos) >= len(self.map[0]) * self.tile_width:
                 self.first_tile_pos += len(self.map[0]) * self.tile_width
@@ -62,15 +62,13 @@ class ccTileMapScene(ccScene):
             contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
 
-        
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].position.x = local_p + index * self.tile_width
 
-
         if self.looping is True:
             if contained_length != 0:
-                local_p = local_p + (len(self.map[0])*self.tile_width)
+                local_p = local_p + (len(self.map[0]) * self.tile_width)
                 for row in self.map:
-                    for index in range(0,contained_length):
+                    for index in range(0, contained_length):
                         row[index].position.x = local_p + index * self.tile_width
