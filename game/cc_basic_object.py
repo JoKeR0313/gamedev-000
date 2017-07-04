@@ -41,10 +41,11 @@ class ccBasicObject(ccObject):
         self.active_sprite.draw(renderer, self.position.x, self.position.y)
         # DRAWING A BIGASS RED RECTANGLE AROUND EVERYTHING
         if self.hitbox != None:
-            rect = pygame.Rect(self.hitbox)
-            rect.x = self.position.x
-            rect.y = self.position.y
-            pygame.draw.rect(renderer, (255, 0, 0), rect, 1)
+            #rect = pygame.Rect(self.hitbox)
+            #rect.x = self.position.x
+            #rect.y = self.position.y
+            #pygame.draw.rect(renderer, (255, 0, 0), rect, 1)
+            pygame.draw.rect(renderer,(255,0,0),self.hitbox,1)
 
     def step(self, time_passed):
         # change Object's position with velocity. Specialized object classes will
@@ -80,3 +81,11 @@ class ccBasicObject(ccObject):
         if self.active_sprite.hitbox != None:
             self.hitbox = pygame.Rect(self.position.x, self.position.y,
                                         self.active_sprite.hitbox.width, self.active_sprite.hitbox.height)
+
+    def objecthit(self,other_obj):
+        pass
+        """
+        print("Hitbox",self.hitbox.x,"  ",self.hitbox.y)
+        print("Position",self.position.x,"  ",self.position.y)
+        print(self.__class__)
+"""

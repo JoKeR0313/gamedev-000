@@ -15,6 +15,11 @@ class ccTileObject(ccBasicObject):
     def load(self, obj_section):
         super().load(obj_section)
 
+    def step(self, time_passed):
+        raise NotImplementedError #don't call this!!!
+
+
+
     def copy(self):
         new_object = ccTileObject()
         self.fill(new_object)

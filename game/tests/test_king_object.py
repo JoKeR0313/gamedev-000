@@ -4,3 +4,4 @@ class KingObject(ccAnimObject):
 
     def __init__(self):
         super().__init__()
+

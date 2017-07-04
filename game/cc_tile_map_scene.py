@@ -35,7 +35,6 @@ class ccTileMapScene(ccScene):
             contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
 
-        
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].draw(ccGlobals.get_renderer())
@@ -43,9 +42,8 @@ class ccTileMapScene(ccScene):
         if self.looping is True:
             if contained_length != 0:
                 for row in self.map:
-                    for index in range(0,contained_length):
+                    for index in range(0, contained_length):
                         row[index].draw(ccGlobals.get_renderer())
-
 
     def step(self, time_passed):
         contained_length = 0
@@ -62,15 +60,19 @@ class ccTileMapScene(ccScene):
             contained_length = end_row_index - len(self.map[0])
             end_row_index = len(self.map[0])
 
-        
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].position.x = local_p + index * self.tile_width
-
+                if row[index].hitbox is not None:
+                    row[index].hitbox.x = row[index].position.x
+                    row[index].hitbox.y = row[index].position.y
 
         if self.looping is True:
             if contained_length != 0:
-                local_p = local_p + (len(self.map[0])*self.tile_width)
+                local_p = local_p + (len(self.map[0]) * self.tile_width)
                 for row in self.map:
-                    for index in range(0,contained_length):
+                    for index in range(0, contained_length):
                         row[index].position.x = local_p + index * self.tile_width
+                        if row[index].hitbox is not None:
+                            row[index].hitbox.x = row[index].position.x
+                            row[index].hitbox.y = row[index].position.y
