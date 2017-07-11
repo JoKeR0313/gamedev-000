@@ -31,7 +31,7 @@ class ccCollisionDetector:
 
                                 if issubclass(type(scenes[j]), ccTileMapScene):
                                     for m in range(len(scenes[i].map)):
-                                        for current_obj in scenes[j].map[m]:
+                                        for obj in scenes[j].map[m]:
                                             if obj.hitbox is not None:
                                                 if current_obj.hitbox.colliderect(obj.hitbox):
                                                     current_obj.objecthit(obj)
@@ -52,7 +52,7 @@ class ccCollisionDetector:
 
                                 if issubclass(type(scenes[j]), ccTileMapScene):
                                     for m in range(len(scenes[i].map)):
-                                        for current_obj in scenes[j].map[m]:
+                                        for obj in scenes[j].map[m]:
                                             if obj.hitbox is not None:
                                                 if current_obj.hitbox.colliderect(obj.hitbox):
                                                     current_obj.objecthit(obj)

@@ -22,7 +22,7 @@ class ccCollisionDetector:
                         if issubclass(type(scenes[j]), ccObjectScene):
                             ccCollisionDetector.object_scene_collision(scenes, j, current_obj)
                         elif issubclass(type(scenes[j]), ccTileMapScene):
-                            ccCollisionDetector.tilemap_scene_collision(scenes,j,current_obj)
+                            ccCollisionDetector.tilemap_scene_collision(scenes, j, current_obj)
 
     @classmethod
     def update_tilemap_scene(cls, scenes, i):
@@ -33,21 +33,22 @@ class ccCollisionDetector:
                         if issubclass(type(scenes[j]), ccObjectScene):
                             ccCollisionDetector.object_scene_collision(scenes, j, current_obj)
                         elif issubclass(type(scenes[j]), ccTileMapScene):
-                            ccCollisionDetector.tilemap_scene_collision(scenes,j,current_obj)
+                            ccCollisionDetector.tilemap_scene_collision(scenes, j, current_obj)
 
     @classmethod
     def object_scene_collision(cls, scenes, j, current_obj):
         for obj in scenes[j].object_list:
-            if obj.hitbox is not None:
-                if current_obj.hitbox.colliderect(obj.hitbox):
-                    current_obj.objecthit(obj)
-                    obj.objecthit(current_obj)
+            ccCollisionDetector.object_collision(current_obj, obj)
 
     @classmethod
     def tilemap_scene_collision(cls, scenes, j, current_obj):
         for m in range(len(scenes[i].map)):
-            for current_obj in scenes[j].map[m]:
-                if obj.hitbox is not None:
-                    if current_obj.hitbox.colliderect(obj.hitbox):
-                        current_obj.objecthit(obj)
-                        obj.objecthit(current_obj)
+            for obj in scenes[j].map[m]:
+                ccCollisionDetector.object_collision(current_obj, obj)
+
+    @classmethod
+    def object_collision(cls, current_obj, obj):
+        if obj.hitbox is not None:
+            if current_obj.hitbox.colliderect(obj.hitbox):
+                current_obj.objecthit(obj)
+                obj.objecthit(current_obj)
