@@ -78,6 +78,4 @@ class ccTileMapScene(ccScene):
                 for row in self.map:
                     for index in range(0, contained_length):
                         row[index].position.x = local_p + index * self.tile_width
-                        if row[index].hitbox is not None:
-                            row[index].hitbox.x = row[index].position.x
-                            row[index].hitbox.y = row[index].position.y
+                        row[index].actualize_hitbox_position()
