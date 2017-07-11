@@ -16,7 +16,11 @@
     "offset_y": 64,
     "width": 64,
     "height": 64,
-    "num_of_sprites": 2
+    "num_of_sprites": 2,
+    "hitbox_width": 64,
+    "hitbox_height": 50,
+    "hitbox_offset_x": 0,
+    "hitbox_offset_y": 14
   },
   "grass": {
     "offset_x": 128,

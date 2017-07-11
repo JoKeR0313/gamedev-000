@@ -65,9 +65,12 @@ class ccTileMapScene(ccScene):
         for row in self.map:
             for index in range(start_row_index, end_row_index):
                 row[index].position.x = local_p + index * self.tile_width
+                """
                 if row[index].hitbox is not None:
                     row[index].hitbox.x = row[index].position.x
                     row[index].hitbox.y = row[index].position.y
+                """
+                row[index].actualize_hitbox_position()
 
         if self.looping is True:
             if contained_length != 0:
