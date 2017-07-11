@@ -9,6 +9,7 @@ class KingObject(ccAnimObject):
         super().__init__()
         self.type = 'KingObject'
         self.jumping = False
+        self.colliding = False
 
     def step(self, time_passed):
         if ccKeyEventHandler.get_is_right_pressed():
@@ -16,6 +17,9 @@ class KingObject(ccAnimObject):
         else:
             self.pause()
         self.jump()
+        if self.colliding == False and self.velocity.y == 0:
+            self.velocity.y = 0.3
+        self.colliding = False
         super().step(time_passed)
 
     def copy(self):
@@ -28,6 +32,7 @@ class KingObject(ccAnimObject):
         self.velocity.y = 0
         self.hitbox.y = other_obj.hitbox.y - self.hitbox.height
         self.position.y -= local_hitbox_y - self.hitbox.y
+        self.colliding = True
 
     def jump(self):
         if self.jumping is False and ccKeyEventHandler.get_is_up_pressed():
