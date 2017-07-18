@@ -4,36 +4,24 @@ from cc_tile_map_scene import ccTileMapScene
 
 
 class ccCollisionDetector:
-
     @classmethod
     def update(cls, scenes):
-        for i in range(len(scenes)):
+        for i in range(len(scenes) - 1, -1, -1):
             if issubclass(type(scenes[i]), ccObjectScene):
                 ccCollisionDetector.update_object_scene(scenes, i)
-            elif issubclass(type(scenes[i]), ccTileMapScene):
-                ccCollisionDetector.update_tilemap_scene(scenes, i)
+           # i'm not sure we are needing tilemap-tilemap or tilemap-objectScene collision checks
+           # elif issubclass(type(scenes[i]), ccTileMapScene):
+           #     ccCollisionDetector.update_tilemap_scene(scenes, i)
 
     @classmethod
     def update_object_scene(cls, scenes, i):
         for current_obj in scenes[i].object_list:
             if current_obj.hitbox is not None:
-                if i <= len(scenes):
-                    for j in range(i + 1, len(scenes)):
-                        if issubclass(type(scenes[j]), ccObjectScene):
-                            ccCollisionDetector.object_scene_collision(scenes, j, current_obj)
-                        elif issubclass(type(scenes[j]), ccTileMapScene):
-                            ccCollisionDetector.tilemap_scene_collision(scenes, j, current_obj)
-
-    @classmethod
-    def update_tilemap_scene(cls, scenes, i):
-        for m in range(len(scenes[i].map)):
-            for current_obj in scenes[i].map[m]:
-                if current_obj.hitbox is not None:
-                    for j in range(i + 1, len(scenes)):
-                        if issubclass(type(scenes[j]), ccObjectScene):
-                            ccCollisionDetector.object_scene_collision(scenes, j, current_obj)
-                        elif issubclass(type(scenes[j]), ccTileMapScene):
-                            ccCollisionDetector.tilemap_scene_collision(scenes, j, current_obj)
+                for j in range(i - 1, 0, -1):
+                    if issubclass(type(scenes[j]), ccObjectScene):
+                        ccCollisionDetector.object_scene_collision(scenes, j, current_obj)
+                    elif issubclass(type(scenes[j]), ccTileMapScene):
+                        ccCollisionDetector.tilemap_scene_collision(scenes, j, current_obj)
 
     @classmethod
     def object_scene_collision(cls, scenes, j, current_obj):
@@ -42,7 +30,7 @@ class ccCollisionDetector:
 
     @classmethod
     def tilemap_scene_collision(cls, scenes, j, current_obj):
-        for m in range(len(scenes[i].map)):
+        for m in range(len(scenes[j].map)):
             for obj in scenes[j].map[m]:
                 ccCollisionDetector.object_collision(current_obj, obj)
 
