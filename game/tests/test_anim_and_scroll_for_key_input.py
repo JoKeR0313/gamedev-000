@@ -1,7 +1,8 @@
-import import_dir_setter
-import pygame
 import sys
 
+import pygame
+
+import import_dir_setter
 from cc_act_manager import ccActManager
 from cc_globals import ccGlobals
 from cc_key_event_handler import ccKeyEventHandler
@@ -36,10 +37,14 @@ class TestTileScrollForKeyInput:
             time_passed = clock.tick(30)
 
     def update_scene_velocity(self):
-        if ccKeyEventHandler.get_is_right_pressed():
-            ccGlobals.set_scene_velocity(ccKeyEventHandler.get_actions()["right"], 0)
-        else:
+        if ccGlobals.blocked is True:
             ccGlobals.set_scene_velocity(0, 0)
+            ccGlobals.blocked = False
+        else:
+            if ccKeyEventHandler.get_is_right_pressed():
+                ccGlobals.set_scene_velocity(ccKeyEventHandler.get_actions()["right"], 0)
+            else:
+                ccGlobals.set_scene_velocity(0, 0)
 
 
 def main():

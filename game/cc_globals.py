@@ -6,6 +6,7 @@ class ccGlobals:
     renderer = None
     size = (840, 480)
     scene_velocity = pygame.math.Vector2(0, 0)
+    blocked = False
 
     @classmethod
     def set_renderer(cls, renderer):
