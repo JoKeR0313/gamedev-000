@@ -39,7 +39,6 @@ class TestTileScrollForKeyInput:
     def update_scene_velocity(self):
         if ccGlobals.blocked is True:
             ccGlobals.set_scene_velocity(0, 0)
-            ccGlobals.blocked = False
         else:
             if ccKeyEventHandler.get_is_right_pressed():
                 ccGlobals.set_scene_velocity(ccKeyEventHandler.get_actions()["right"], 0)
