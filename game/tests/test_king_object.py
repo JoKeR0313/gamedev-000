@@ -21,8 +21,6 @@ class KingObject(ccAnimObject):
         if self.colliding is False and self.velocity.y == 0:
             self.velocity.y = 0.3
         self.colliding = False
-        if self.position.x < self.desired_position:
-            self.position.x += 1 # to compensate the stuck/jump when it's going backwards a bit
         super().step(time_passed)
 
     def copy(self):
@@ -36,6 +34,10 @@ class KingObject(ccAnimObject):
             local_hitbox_y = self.hitbox.y
             self.hitbox.y = other_obj.hitbox.y - self.hitbox.height
             self.position.y -= local_hitbox_y - self.hitbox.y
+            if self.jumping is False and \
+              ccKeyEventHandler.get_is_right_pressed() and \
+              self.position.x < self.desired_position:
+                self.position.x += 1 # to compensate the stuck/jump when it's going backwards a bit
         else:
             outpos_x = 0
             outpos_y = 0
