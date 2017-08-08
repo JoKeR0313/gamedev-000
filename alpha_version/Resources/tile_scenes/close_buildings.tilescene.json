@@ -4,7 +4,7 @@
     "offset_x": 0,
     "offset_y": 380,
     "looping": true,
-    "velocity_x": -0.060
+    "velocity_x": -0.080
   },
   "tile_objects": {
     "00": "ruinedBrickWall_000",

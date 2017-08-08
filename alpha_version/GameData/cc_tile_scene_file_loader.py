@@ -4,9 +4,9 @@ from GameData.cc_logger import ccLogger
 from GameData.cc_object_manager import ccObjectManager
 from GameData.cc_resource_paths import *
 from GameData.cc_globals import *
-from GameData.cc_resource_paths import ccResourcePaths
-
 import math
+
+from GameData.cc_resource_paths import ccResourcePaths
 
 
 class ccTileSceneFileLoader(ccFileLoader):

@@ -4,6 +4,8 @@ from GameData.cc_object_scene import *
 from GameData.cc_tile_map_scene import *
 from GameData.cc_resource_paths import *
 
+from GameData.cc_resource_paths import ccResourcePaths
+
 
 class ccActFileLoader(ccFileLoader):
 

@@ -1,8 +1,8 @@
-from cc_file_loader import *
-from cc_logger import *
-from cc_object_scene import *
-from cc_resource_paths import *
-from collision_object_scene import *
+from GameData.cc_file_loader import *
+from GameData.cc_logger import *
+from GameData.cc_object_scene import *
+from GameData.cc_resource_paths import *
+from GameData.collision_object_scene import *
 
 
 class ccActFileLoader(ccFileLoader):
