@@ -18,6 +18,7 @@ class TestTileScrollForKeyInput:
         renderer = pygame.display.set_mode(self.size)
         ccGlobals.set_renderer(renderer)
         ccGlobals.size = self.size
+        ccGlobals.frame_rate = 33
 
     def test_run(self):
         ccKeyEventHandler.load("test.keys.json")
@@ -34,7 +35,7 @@ class TestTileScrollForKeyInput:
             ccGlobals.get_renderer().fill((0, 0, 0))
             ccActManager.draw()
             pygame.display.flip()
-            time_passed = clock.tick(30)
+            time_passed = clock.tick(ccGlobals.frame_rate)
 
     def update_scene_velocity(self):
         if ccGlobals.blocked is True:

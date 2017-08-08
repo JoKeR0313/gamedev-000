@@ -3,6 +3,7 @@ import pygame
 
 class ccGlobals:
 
+    frame_rate = 16
     renderer = None
     size = (840, 480)
     scene_velocity = pygame.math.Vector2(0, 0)

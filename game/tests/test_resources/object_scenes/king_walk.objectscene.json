@@ -6,7 +6,7 @@
   },
   "kingWalk": {
     "object_name": "king",
-    "position_x": 100,
-    "position_y": 548
+    "position_x": 200,
+    "position_y": 0
   }
 }
