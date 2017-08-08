@@ -1,0 +1,14 @@
+{
+  "Config": {
+    "filename": "player_jump.png"
+  },
+  "playerJump_": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 108,
+    "height": 136,
+    "num_of_sprites": 5,
+    "hitbox_width": 108,
+    "hitbox_height": 136
+  }
+}

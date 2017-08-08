@@ -2,14 +2,18 @@
     "Config": {
         "filenames": [
             "player_run.anims.json",
-            "player_stand.anims.json"
+            "player_stand.anims.json",
+            "player_jump.anims.json",
+            "player_fall.anims.json"
         ]
     },
     "player": {
         "type": "PlayerObject",
         "animations": [
             "playerRunAnim",
-            "playerStandAnim"
+            "playerStandAnim",
+            "playerJumpAnim",
+            "playerFallAnim"
         ],
         "start_anim": "playerStandAnim",
         "play": true,

@@ -1,0 +1,16 @@
+{
+  "Config": {
+    "filename": "player_jump.sprites.json"
+  },
+  "playerFallAnim": {
+    "sprites": [
+      "playerJump_003",
+      "playerJump_004"
+    ],
+    "frames": [
+      "0 t100",
+      "1",
+      "goto 1"
+    ]
+  }
+}

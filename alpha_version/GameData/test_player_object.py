@@ -17,11 +17,21 @@ class PlayerObject(ccAnimObject):
             if self.current_anim_name != "playerRunAnim":
                 self.set_anim("playerRunAnim")
         else:
-            self.pause()
-            self.set_anim("playerStandAnim")
+            # self.pause()
+            if self.velocity.y <= 0.2:
+                self.set_anim("playerStandAnim")
+            else:
+                self.set_anim("playerFallAnim")
+                
         self.jump()
+
         if self.colliding is False and self.velocity.y == 0:
             self.velocity.y = 0.3
+
+        if ccKeyEventHandler.get_is_up_pressed():
+            if self.current_anim_name != "playerJumpAnim":
+                self.set_anim("playerJumpAnim")
+
         self.colliding = False
         super().step(time_passed)
 
