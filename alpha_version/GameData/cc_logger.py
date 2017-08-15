@@ -3,10 +3,10 @@ import os
 
 
 class ccLogger:
-    if not os.path.exists("GameData/Logs"):
-        os.makedirs("GameData/Logs")
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
     bad_chars = (":", " ")
-    filename = "GameData/Logs/sci-fi_game_" + \
+    filename = "logs/sci-fi_game_" + \
         str(datetime.now()).replace(":", "_").replace(" ", "_")[:-7] + ".log"
 
     def __init__(self, message):

@@ -1,5 +1,7 @@
 from GameData.cc_logger import *
 from GameData.cc_act_file_loader import ccActFileLoader
+from GameData.cc_collision_detector import ccCollisionDetector
+from GameData.cc_globals import ccGlobals
 
 
 class ccActManager:
@@ -25,9 +27,15 @@ class ccActManager:
 
     @classmethod
     def step(cls, time_passed):
+        tp = time_passed
+        while tp > ccGlobals.frame_rate:
+            tp -= ccGlobals.frame_rate
+            for scene in cls.scenes:
+                scene.step(ccGlobals.frame_rate)
+            ccCollisionDetector.update(cls.scenes)
         for scene in cls.scenes:
-            # BouncingBallCollisionDetector.check_list_collision(scene.object_list)
-            scene.step(time_passed)
+            scene.step(tp)
+        ccCollisionDetector.update(cls.scenes)
 
     @classmethod
     def push_scene(cls, scene):

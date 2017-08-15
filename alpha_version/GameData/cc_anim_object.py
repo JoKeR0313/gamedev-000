@@ -14,9 +14,10 @@ class ccAnimObject(ccBasicObject):
         super().__init__()
         self.type = 'ccAnimObject'
         self.time = 0
-        self.anims = []
+        self.anims = {}
         self.paused = False
         self.current_anim = None
+        self.current_anim_name = None
         self.current_frame = None
         self.active_sprite = None
 
@@ -24,24 +25,22 @@ class ccAnimObject(ccBasicObject):
         try:
             super().load(anim_data)
             if 'animations' in anim_data:
+                temp = anim_data['animations']
                 for anim_name in anim_data['animations']:
                     anim = ccSpriteManager.get_sprite(anim_name)
-                    self.anims.append(anim)
+                    self.anims[anim_name] = anim
             if 'start_anim' in anim_data:
-                self.current_anim = ccSpriteManager.get_sprite(anim_data['start_anim'])
-                self.current_frame = self.current_anim.get_frame(0)
-                self.active_sprite = self.current_frame.get_sprite()
-                self.set_hitbox()
+                self.set_anim(anim_data['start_anim'])
 
         except:
             ccLogger.error('Sprite could not be loaded.: ')
             raise RuntimeError('Sprite could not be loaded.')
 
-    def add_anim(self, anim):
-        if type(anim) == 'ccAnimSprite':
-            self.anims.append(anim)
-        else:
-            ccLogger.error('Not Anim sprite' + type(anim))
+    # def add_anim(self, anim):
+    #     if type(anim) == 'ccAnimSprite':
+    #         self.anims.append(anim)
+    #     else:
+    #         ccLogger.error('Not Anim sprite' + type(anim))
 
     def draw(self, renderer):
         ccBasicObject.draw(self, renderer)
@@ -58,10 +57,11 @@ class ccAnimObject(ccBasicObject):
                     ccLogger.warning("Animation change should be implemented")
                     # WARNING
                 self.active_sprite = self.current_frame.get_sprite()
-                self.set_hitbox()
+                #self.set_hitbox()
 
     def play(self, anim_name=None):
-        if self.current_anim == ccSpriteManager.get_sprite(anim_name):
+        # if self.current_anim == ccSpriteManager.get_sprite(anim_name):
+        if anim_name is None:
             self.paused = False
         else:
             self.current_anim = ccSpriteManager.get_sprite(anim_name)
@@ -79,10 +79,10 @@ class ccAnimObject(ccBasicObject):
 
     def copy(self):
         new_object = ccAnimObject()
-        self.__fill(new_object)
+        self.fill(new_object)
         return new_object
 
-    def __fill(self, source):
+    def fill(self, source):
         source.position = pygame.math.Vector2(self.position)
         source.velocity = pygame.math.Vector2(self.velocity)
         source.active_sprite = self.active_sprite
@@ -94,3 +94,11 @@ class ccAnimObject(ccBasicObject):
         source.anims = self.anims
         source.current_anim = self.current_anim
         source.current_frame = self.current_frame
+
+    def set_anim(self, anim_name):
+        if anim_name in self.anims:
+            self.current_anim = ccSpriteManager.get_sprite(anim_name)
+            self.current_anim_name = anim_name
+            self.current_frame = self.current_anim.get_frame(0)
+            self.active_sprite = self.current_frame.get_sprite()
+            self.set_hitbox()

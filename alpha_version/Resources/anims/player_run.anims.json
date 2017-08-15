@@ -7,13 +7,19 @@
       "playerRun_000",
       "playerRun_001",
       "playerRun_002",
-      "playerRun_003"
+      "playerRun_003",
+      "playerRun_004",
+      "playerRun_005",
+      "playerRun_006"
     ],
     "frames": [
       "0 t100",
       "1",
       "2",
       "3",
+      "4",
+      "5",
+      "6",
       "goto 0"
     ]
   }

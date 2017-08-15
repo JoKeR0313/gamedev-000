@@ -6,7 +6,7 @@
   },
   "playerRun": {
     "object_name": "player",
-    "position_x": 350,
-    "position_y": 300
+    "position_x": 100,
+    "position_y": 548
   }
 }

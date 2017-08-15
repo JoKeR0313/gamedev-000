@@ -1,6 +1,6 @@
-from cc_scene import ccScene
-from cc_object_scene_file_loader import ccObjectSceneFileLoader
-from cc_globals import ccGlobals
+from GameData.cc_scene import ccScene
+from GameData.cc_object_scene_file_loader import ccObjectSceneFileLoader
+from GameData.cc_globals import ccGlobals
 import pygame
 import copy
 

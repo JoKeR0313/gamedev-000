@@ -1,5 +1,5 @@
-from cc_logger import *
-from collision_act_file_loader import ccActFileLoader
+from GameData.cc_logger import *
+from GameData.collision_act_file_loader import ccActFileLoader
 
 
 class ccActManager:

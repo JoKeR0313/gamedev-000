@@ -23,6 +23,8 @@
     "height": 32,
     "num_of_sprites": 5,
     "hitbox_width": 192,
-    "hitbox_height": 32
+    "hitbox_height": 32,
+    "hitbox_offset_x": 0,
+    "hitbox_offset_y": -20
   }
 }

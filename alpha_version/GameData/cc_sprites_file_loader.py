@@ -39,11 +39,7 @@ class ccSpritesFileLoader(ccFileLoader):
     def __create_one_sprite(self):
         self.name = list(self.current_dict)[self.current_section_id]
         section = self.current_section
-        if 'hitbox_width' in section:
-            hitbox = pygame.Rect(0, 0,
-                                 section['hitbox_width'], section['hitbox_height'])
-        else:
-            hitbox = None
+        hitbox = self.create_hitbox(section)
         rect = pygame.Rect(section['offset_x'], section['offset_y'], section['width'], section['height'])
         ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect, hitbox))
 
@@ -58,12 +54,22 @@ class ccSpritesFileLoader(ccFileLoader):
                 offset_x = 0
             self.name = list(self.current_dict)[self.current_section_id] + "%03d" % num
             section = self.current_section
-            if 'hitbox_width' in section:
-                hitbox = pygame.Rect(section['offset_x'], section['offset_y'],
-                                     section['hitbox_width'], section['hitbox_height'])
-            else:
-                hitbox = None
+            hitbox = self.create_hitbox(section)
             rect = pygame.Rect(offset_x, offset_y, section['width'], section['height'])
             ccSpriteManager.add_sprite(self.name, ccSprite(ccSpriteManager.get_texture(self.file_name), rect, hitbox))
             offset_x += section['width']
             num += 1
+
+    def create_hitbox(self,section):
+        if 'hitbox_width' in section:
+            hitbox_offset_x = self.get_field('hitbox_offset_x')
+            hitbox_offset_y = self.get_field('hitbox_offset_y')
+            if hitbox_offset_x is None:
+                hitbox_offset_x = 0
+            if hitbox_offset_y is None:
+                hitbox_offset_y = 0
+            return pygame.Rect(hitbox_offset_x, hitbox_offset_y,
+                                section['hitbox_width'], section['hitbox_height'])       
+        return None
+        
+        

@@ -1,44 +1,42 @@
 import pygame
+from GameData.cc_object_scene import ccObjectScene
+from GameData.cc_tile_map_scene import ccTileMapScene
 
-
-# This is an abstract class!!!
 
 class ccCollisionDetector:
+    @classmethod
+    def update(cls, scenes):
+        for i in range(len(scenes) - 1, -1, -1):
+            if issubclass(type(scenes[i]), ccObjectScene):
+                ccCollisionDetector.update_object_scene(scenes, i)
+           # i'm not sure we are needing tilemap-tilemap or tilemap-objectScene collision checks
+           # elif issubclass(type(scenes[i]), ccTileMapScene):
+           #     ccCollisionDetector.update_tilemap_scene(scenes, i)
 
-    @staticmethod
-    def update_object_hitbox(obj):
-        obj.hitbox.x = obj.position.x
-        obj.hitbox.y = obj.position.y
+    @classmethod
+    def update_object_scene(cls, scenes, i):
+        for current_obj in scenes[i].object_list:
+            if current_obj.hitbox is not None:
+                for j in range(i - 1, 0, -1):
+                    if issubclass(type(scenes[j]), ccObjectScene):
+                        ccCollisionDetector.object_scene_collision(scenes, j, current_obj)
+                    elif issubclass(type(scenes[j]), ccTileMapScene):
+                        ccCollisionDetector.tilemap_scene_collision(scenes, j, current_obj)
 
-    @staticmethod
-    def update_list_hitbox(object_list):
-        print("start")
-        for obj in object_list:
-            if obj.hitbox is not None:
-                print("hello")
-                obj.hitbox.x = obj.position.x
-                obj.hitbox.y = obj.position.y
+    @classmethod
+    def object_scene_collision(cls, scenes, j, current_obj):
+        for obj in scenes[j].object_list:
+            ccCollisionDetector.object_collision(current_obj, obj)
 
-    @staticmethod
-    def check_collsion_between_objects(left_obj, right_obj):
-        if left_obj.hitbox.colliderect(right_obj.hitbox):
-            return True
+    @classmethod
+    def tilemap_scene_collision(cls, scenes, j, current_obj):
+        for m in range(len(scenes[j].map)):
+            for obj in scenes[j].map[m]:
+                ccCollisionDetector.object_collision(current_obj, obj)
 
-    @staticmethod
-    def check_list_collision(object_list):
-        for obj in object_list:
-            if obj.hitbox is not None:
-                for check_obj in object_list:
-                    if check_obj.hitbox is not None:
-                        if obj != check_obj:
-                            if obj.hitbox.colliderect(check_obj.hitbox):
-                                return True
-
-    @staticmethod
-    def check_collision_between_lists(left_object_list, right_object_list):
-        for left_obj in left_object_list:
-            if left_obj.hitbox is not None:
-                for right_obj in right_object_list:
-                    if right_obj.hitbox is not None:
-                        if left_obj.hitbox.colliderect(right_obj.hitbox):
-                            return True
+    @classmethod
+    def object_collision(cls, current_obj, obj):
+        if obj.hitbox is not None:
+            if current_obj.hitbox.colliderect(obj.hitbox):
+                current_obj.objecthit(obj)
+                obj.objecthit(current_obj)

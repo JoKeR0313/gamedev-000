@@ -1,0 +1,14 @@
+{
+    "Config": {
+    "filename": "player_run.sprites.json"
+  },
+  "playerStandAnim": {
+    "sprites": [
+      "playerRun_007"
+    ],
+    "frames": [
+      "0 t100",
+      "goto 0"
+    ]
+  }
+}

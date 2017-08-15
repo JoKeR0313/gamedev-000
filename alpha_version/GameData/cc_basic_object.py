@@ -1,8 +1,8 @@
 import sys
 import pygame
 from GameData.cc_object import ccObject
-from GameData.cc_sprite_manager import ccSpriteManager
 from pygame.locals import *
+from GameData.cc_sprite_manager import ccSpriteManager
 from copy import deepcopy
 
 pygame.init()
@@ -41,10 +41,11 @@ class ccBasicObject(ccObject):
         self.active_sprite.draw(renderer, self.position.x, self.position.y)
         # DRAWING A BIGASS RED RECTANGLE AROUND EVERYTHING
         if self.hitbox != None:
-            rect = pygame.Rect(self.hitbox)
-            rect.x = self.position.x
-            rect.y = self.position.y
-            pygame.draw.rect(renderer, (255, 0, 0), rect, 1)
+            #rect = pygame.Rect(self.hitbox)
+            #rect.x = self.position.x
+            #rect.y = self.position.y
+            #pygame.draw.rect(renderer, (255, 0, 0), rect, 1)
+            pygame.draw.rect(renderer, (255, 0, 0), self.hitbox, 1)
 
     def step(self, time_passed):
         # change Object's position with velocity. Specialized object classes will
@@ -54,9 +55,7 @@ class ccBasicObject(ccObject):
         current_speed.y = self.velocity.y * time_passed
         self.position.x += current_speed.x
         self.position.y += current_speed.y
-        if self.hitbox != None:
-            self.hitbox.x = self.position.x
-            self.hitbox.y = self.position.y
+        self.actualize_hitbox_position()
 
     def copy(self):
         new_object = ccBasicObject()
@@ -78,5 +77,17 @@ class ccBasicObject(ccObject):
 
     def set_hitbox(self):
         if self.active_sprite.hitbox != None:
-            self.hitbox = pygame.Rect(self.position.x, self.position.y,
-                                        self.active_sprite.hitbox.width, self.active_sprite.hitbox.height)
+            self.hitbox = pygame.Rect(self.position.x + self.active_sprite.hitbox.x,
+                                      self.position.y + self.active_sprite.hitbox.y,
+                                      self.active_sprite.hitbox.width, 
+                                      self.active_sprite.hitbox.height)
+
+    def objecthit(self, other_obj):
+        pass
+
+    
+    def actualize_hitbox_position(self):
+        if self.hitbox is not None:
+            self.hitbox.x = self.position.x + self.active_sprite.hitbox.x
+            self.hitbox.y = self.position.y + self.active_sprite.hitbox.y
+
