@@ -8,6 +8,7 @@ from cc_anim_object import ccAnimObject
 from cc_anims_file_loader import ccAnimsFileLoader
 from cc_tile_object import ccTileObject
 from tests.test_king_object import KingObject
+from cc_sound_file_loader import ccSoundFileLoader
 
 
 class ccObjectsFileLoader(ccFileLoader):
@@ -32,6 +33,8 @@ class ccObjectsFileLoader(ccFileLoader):
                 loader = ccSpritesFileLoader()
             elif '.anims.json' in spr_file:
                 loader = ccAnimsFileLoader()
+            elif '.sounds.json' in spr_file:
+                loader = ccSoundFileLoader()
             loader.process_file(spr_file)
 
     def __process_object_sections(self):

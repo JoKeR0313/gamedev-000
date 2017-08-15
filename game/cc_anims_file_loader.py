@@ -7,6 +7,8 @@ from cc_anim_sprite import *
 from cc_anim_frame import *
 from cc_sprites_file_loader import *
 from cc_resource_paths import *
+from cc_sound_file_loader import ccSoundFileLoader
+from cc_sound_manager import ccSoundManager
 
 
 class ccAnimsFileLoader(ccFileLoader):
@@ -26,10 +28,15 @@ class ccAnimsFileLoader(ccFileLoader):
     def __config(self):
 
         self.set_section("Config")
-        self.file_name = self.get_field("filename")
+        file_name = self.get_field("filename")
 
         loader = ccSpritesFileLoader()
-        loader.process_file(self.file_name)
+        loader.process_file(file_name)
+
+        file_name = self.get_field("sound_filename")
+
+        loader =ccSoundFileLoader()
+        loader.process_file(file_name)
 
     def __process_all_anims_sprites(self):
 
@@ -70,5 +77,12 @@ class ccAnimsFileLoader(ccFileLoader):
             anim_frame = ccAnimFrame(sprite, time, next_frame)
             anim_sprite.add_frame(anim_frame)
 
+
+        sound_name = self.get_field("sound")
+        sound = ccSoundManager.get_sound(sound_name)
+        if sound is None:
+            ccLogger.error(sound_name + 'could not be loaded')
+        else:
+            anim_sprite.add_sound(sound)
         ccSpriteManager.add_sprite(self.get_current_section_name(), anim_sprite)
 

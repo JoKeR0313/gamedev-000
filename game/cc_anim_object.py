@@ -62,12 +62,15 @@ class ccAnimObject(ccBasicObject):
 
     def play(self, anim_name=None):
         # if self.current_anim == ccSpriteManager.get_sprite(anim_name):
+
         if anim_name is None:
             self.paused = False
         else:
             self.current_anim = ccSpriteManager.get_sprite(anim_name)
             self.current_frame = self.current_anim.get_frame(0)
             self.paused = False
+
+        
         # set and start playing an anim. anim_name is optional,
         # it should play the current animation if the anim_name is not set
         # if an anim was paused, resume from that point where it was
