@@ -5,14 +5,12 @@
   "playerJumpAnim": {
     "sprites": [
       "playerJump_000",
-      "playerJump_001",
       "playerJump_002"
     ],
     "frames": [
       "0 t100",
       "1",
-      "2",
-      "goto 0"
+      "goto 1"
     ]
   }
 }

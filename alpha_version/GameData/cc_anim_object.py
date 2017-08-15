@@ -102,3 +102,5 @@ class ccAnimObject(ccBasicObject):
             self.current_frame = self.current_anim.get_frame(0)
             self.active_sprite = self.current_frame.get_sprite()
             self.set_hitbox()
+        else:
+            ccLogger.error("Error: the following animation was not found: ", anim_name)
