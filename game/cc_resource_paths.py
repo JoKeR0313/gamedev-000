@@ -46,6 +46,14 @@ class ccResourcePaths:
         return cls.resource_path + "acts/"
 
     @classmethod
+    def get_sfx(cls):
+        return cls.resource_path + "sfx/"
+
+    @classmethod
+    def get_sounds(cls):
+        return cls.resource_path + "sounds/"
+
+    @classmethod
     def get_keys(cls):
         return cls.resource_path + "keys/"
     

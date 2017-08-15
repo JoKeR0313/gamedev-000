@@ -23,6 +23,7 @@ class ccSpriteManager:
         if texture:
             return texture
         ccLogger.error(texture_name + " not found.")
+        return None
 
     @classmethod
     def add_sprite(cls, sprite_name, sprite):

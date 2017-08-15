@@ -1,6 +1,7 @@
 {
   "Config": {
-    "filename": "king_walk.sprites.json"
+    "filename": "king_walk.sprites.json",
+    "sound_filename": "test_king.sounds.json"
   },
   "kingWalkAnim": {
     "sprites": [
@@ -15,6 +16,7 @@
       "2",
       "3",
       "goto 0"
-    ]
+    ],
+    "sound": "walk"
   }
 }
