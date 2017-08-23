@@ -7,5 +7,12 @@
     "offset_y": 0,
     "width": 64,
     "height": 64
+  },
+  
+  "empty192": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 192,
+    "height": 32
   }
 }

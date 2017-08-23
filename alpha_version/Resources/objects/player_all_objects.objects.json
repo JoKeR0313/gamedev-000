@@ -602,5 +602,11 @@
         "sprite": "empty",
         "visible": true,
         "enabled": true
+    },
+    "empty192": {
+        "type": "ccTileObject",
+        "sprite": "empty192",
+        "visible": true,
+        "enabled": true
     }
 }
