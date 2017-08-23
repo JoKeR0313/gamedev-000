@@ -7,16 +7,17 @@ from cc_globals import ccGlobals
 class ccKeyEventHandler:
 
     keys = {"right": pygame.K_RIGHT, "left": pygame.K_LEFT, "up": pygame.K_UP, "down": pygame.K_DOWN,
-            "fire": pygame.K_SPACE}
+            "fire": pygame.K_SPACE, "escape": pygame.K_ESCAPE}
 
     actions = {"right": 2, "left": -1, "up": -1, "down": 1,
-               "fire": False}
+               "fire": False, "escape": False}
 
     is_right_pressed = False
     is_left_pressed = False
     is_up_pressed = False
     is_down_pressed = False
     is_fire_pressed = False
+    is_escape_pressed = False
 
     @classmethod
     def load(cls, filename):
@@ -45,6 +46,8 @@ class ccKeyEventHandler:
             cls.is_down_pressed = True
         if pressed[cls.keys["fire"]]:
             cls.is_fire_pressed = True
+        if pressed[cls.keys["escape"]]:
+            cls.is_escape_pressed = True
         # if not cls.is_left_pressed and not cls.is_right_pressed and not cls.is_up_pressed \
         #         and not cls.is_down_pressed and not cls.is_fire_pressed:
 
@@ -55,6 +58,7 @@ class ccKeyEventHandler:
         cls.is_up_pressed = False
         cls.is_down_pressed = False
         cls.is_fire_pressed = False
+        cls.is_escape_pressed = False
 
     #------------- Getters --------------------
     @classmethod
@@ -76,6 +80,10 @@ class ccKeyEventHandler:
     @classmethod
     def get_is_fire_pressed(cls):
         return cls.is_fire_pressed
+
+    @classmethod
+    def get_is_escape_pressed(cls):
+        return cls.is_escape_pressed
 
     @classmethod
     def get_actions(cls):
