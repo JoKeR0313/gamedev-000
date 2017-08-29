@@ -1,0 +1,140 @@
+{
+    "Config": {
+        "filenames": [
+            "empty.sprites.json",
+            "cars.sprites.json"
+        ]
+    },
+    "car_000": {
+        "type": "ccTileObject",
+        "sprite": "car_000",
+        "visible": true,
+        "enabled": true
+    },
+    "car_001": {
+        "type": "ccTileObject",
+        "sprite": "car_001",
+        "visible": true,
+        "enabled": true
+    },
+    "car_002": {
+        "type": "ccTileObject",
+        "sprite": "car_002",
+        "visible": true,
+        "enabled": true
+    },
+    "car_003": {
+        "type": "ccTileObject",
+        "sprite": "car_003",
+        "visible": true,
+        "enabled": true
+    },
+    "car_004": {
+        "type": "ccTileObject",
+        "sprite": "car_004",
+        "visible": true,
+        "enabled": true
+    },
+    "car_005": {
+        "type": "ccTileObject",
+        "sprite": "car1_000",
+        "visible": true,
+        "enabled": true
+    },
+    "car_006": {
+        "type": "ccTileObject",
+        "sprite": "car1_001",
+        "visible": true,
+        "enabled": true
+    },
+    "car_007": {
+        "type": "ccTileObject",
+        "sprite": "car1_002",
+        "visible": true,
+        "enabled": true
+    },
+    "car_008": {
+        "type": "ccTileObject",
+        "sprite": "car1_003",
+        "visible": true,
+        "enabled": true
+    },
+    "car_009": {
+        "type": "ccTileObject",
+        "sprite": "car1_004",
+        "visible": true,
+        "enabled": true
+    },
+    "car_010": {
+        "type": "ccTileObject",
+        "sprite": "car1_005",
+        "visible": true,
+        "enabled": true
+    },
+    "car_011": {
+        "type": "ccTileObject",
+        "sprite": "car1_006",
+        "visible": true,
+        "enabled": true
+    },
+    "car_012": {
+        "type": "ccTileObject",
+        "sprite": "car1_007",
+        "visible": true,
+        "enabled": true
+    },
+    "car_013": {
+        "type": "ccTileObject",
+        "sprite": "car1_008",
+        "visible": true,
+        "enabled": true
+    },
+    "car_014": {
+        "type": "ccTileObject",
+        "sprite": "car1_009",
+        "visible": true,
+        "enabled": true
+    },
+    "car_015": {
+        "type": "ccTileObject",
+        "sprite": "car1_010",
+        "visible": true,
+        "enabled": true
+    },
+    "car_016": {
+        "type": "ccTileObject",
+        "sprite": "car1_011",
+        "visible": true,
+        "enabled": true
+    },
+    "car_017": {
+        "type": "ccTileObject",
+        "sprite": "car1_012",
+        "visible": true,
+        "enabled": true
+    },
+    "car_018": {
+        "type": "ccTileObject",
+        "sprite": "car1_013",
+        "visible": true,
+        "enabled": true
+    },
+    "car_019": {
+        "type": "ccTileObject",
+        "sprite": "car1_014",
+        "visible": true,
+        "enabled": true
+    },
+    "car_020": {
+        "type": "ccTileObject",
+        "sprite": "car1_015",
+        "visible": true,
+        "enabled": true
+    },
+    "car_021": {
+        "type": "ccTileObject",
+        "sprite": "car1_016",
+        "visible": true,
+        "enabled": true
+    }
+}

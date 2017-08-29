@@ -1,0 +1,23 @@
+{
+    "Config": {
+      "filename": "cars.png"
+    },
+    "car_": {
+      "offset_x": 0,
+      "offset_y": 0,
+      "width": 32,
+      "height": 64,
+      "num_of_sprites": 5
+    },
+    "car1_": {
+      "offset_x": 160,
+      "offset_y": 0,
+      "width": 32,
+      "height": 64,
+      "num_of_sprites": 17,
+      "hitbox_width": 32,
+      "hitbox_height": 64,
+      "hitbox_offset_x": 0,
+      "hitbox_offset_y": 0
+    }
+  }

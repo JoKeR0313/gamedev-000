@@ -8,7 +8,9 @@
     "width": 108,
     "height": 136,
     "num_of_sprites": 5,
-    "hitbox_width": 108,
-    "hitbox_height": 136
+    "hitbox_width": 54,
+    "hitbox_height": 136,
+    "hitbox_offset_x": 26,
+    "hitbox_offset_y": 0
   }
 }

@@ -41,10 +41,6 @@ class ccBasicObject(ccObject):
         self.active_sprite.draw(renderer, self.position.x, self.position.y)
         # DRAWING A BIGASS RED RECTANGLE AROUND EVERYTHING
         if self.hitbox != None:
-            #rect = pygame.Rect(self.hitbox)
-            #rect.x = self.position.x
-            #rect.y = self.position.y
-            #pygame.draw.rect(renderer, (255, 0, 0), rect, 1)
             pygame.draw.rect(renderer, (255, 0, 0), self.hitbox, 1)
 
     def step(self, time_passed):

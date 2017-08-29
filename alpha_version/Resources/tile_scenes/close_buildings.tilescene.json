@@ -2,7 +2,7 @@
   "Config": {
     "filenames": ["player_all_objects.objects.json"],
     "offset_x": 0,
-    "offset_y": 380,
+    "offset_y": 324,
     "looping": true,
     "velocity_x": -0.080
   },
