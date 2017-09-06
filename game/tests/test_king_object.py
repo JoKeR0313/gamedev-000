@@ -66,9 +66,6 @@ class KingObject(ccAnimObject):
         if self.velocity.y > 0:  # falling down
             if other_obj.velocity.x == 0 and other_obj.velocity.y == 0:  # other is standing
                 if self.hitbox.height / 2 > intersect.height:
-                    if self.hitbox.top >= other_obj.hitbox.bottom - 60:
-                        ccLogger.error(other_obj.hitbox.bottom)
-                        ccLogger.error(self.hitbox.top)
                     if self.hitbox.y > other_obj.hitbox.y:  # move Y position based on collision positions
                         outpos_y = intersect.height
                     else:
@@ -82,12 +79,17 @@ class KingObject(ccAnimObject):
             else:
                 ccLogger.error("Missing implementation")
         else:  # jumping or walking
-            if other_obj.velocity.x == 0 and other_obj.velocity.y == 0:  # other is standing
-                if self.hitbox.x < other_obj.hitbox.x:  # move X position based on collision positions
+            if other_obj.velocity.x == 0 and other_obj.velocity.y == 0: # other is standing
+                if self.hitbox.height / 2 > intersect.height:
+                    if self.hitbox.y > other_obj.hitbox.y:  # move Y position based on collision positions
+                        outpos_y = intersect.height
+                    else:
+                        outpos_y = -intersect.height
+                """if self.hitbox.x < other_obj.hitbox.x:  # move X position based on collision positions
                     outpos_x = -intersect.width
                     ccGlobals.blocked = True
                 else:
-                    outpos_x = intersect.width
+                    outpos_x = intersect.width"""
 
         self.position.x += outpos_x
         self.position.y += outpos_y
