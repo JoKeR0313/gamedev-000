@@ -29,5 +29,9 @@
     "player_run": {
     "scene_type": "ccObjectScene",
     "filename": "player_run.objectscene.json"
+  },
+  "trashcan": {
+    "scene_type": "ccTileMapScene",
+    "filename": "trashcan.tilescene.json"
   }
 }

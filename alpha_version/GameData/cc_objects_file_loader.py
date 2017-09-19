@@ -8,6 +8,7 @@ from GameData.cc_anim_object import ccAnimObject
 from GameData.cc_anims_file_loader import ccAnimsFileLoader
 from GameData.cc_tile_object import ccTileObject
 from GameData.test_player_object import PlayerObject
+from GameData.cc_trashcan_object import TrashcanObject
 
 
 class ccObjectsFileLoader(ccFileLoader):

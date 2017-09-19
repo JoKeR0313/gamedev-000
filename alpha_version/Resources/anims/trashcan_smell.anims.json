@@ -1,0 +1,20 @@
+{
+    "Config": {
+      "filename": "trashcan_smell.sprites.json"
+    },
+    "trashcanSmellAnim": {
+      "sprites": [
+        "trashcanSmell_000",
+        "trashcanSmell_001",
+        "trashcanSmell_002",
+        "trashcanSmell_003"
+      ],
+      "frames": [
+        "0 t100",
+        "1",
+        "2",
+        "3",
+        "goto 0"
+      ]
+    }
+  }

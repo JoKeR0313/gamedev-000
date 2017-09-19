@@ -1,0 +1,18 @@
+{
+    "Config": {
+        "filenames": [
+            "trashcan_smell.anims.json"
+        ]
+    },
+    "trashcan": {
+        "type": "TrashcanObject",
+        "animations": [
+            "trashcanSmellAnim"
+        ],
+        "start_anim": "trashcanSmellAnim",
+        "play": true,
+        "visible": true,
+        "velocity_x": 0,
+        "velocity_y": 0
+    }
+}
