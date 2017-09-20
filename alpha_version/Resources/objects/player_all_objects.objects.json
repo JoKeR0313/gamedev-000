@@ -608,5 +608,11 @@
         "sprite": "empty192",
         "visible": true,
         "enabled": true
+    },
+    "empty32x64": {
+        "type": "ccTileObject",
+        "sprite": "empty32x64",
+        "visible": true,
+        "enabled": true
     }
 }

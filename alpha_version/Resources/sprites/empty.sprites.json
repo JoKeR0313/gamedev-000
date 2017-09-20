@@ -14,5 +14,11 @@
     "offset_y": 0,
     "width": 192,
     "height": 32
+  },
+  "empty32x64": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "width": 32,
+    "height": 64
   }
 }
