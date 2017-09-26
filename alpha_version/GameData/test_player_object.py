@@ -72,6 +72,8 @@ class PlayerObject(ccAnimObject):
             self.velocity.y *= 0.7
 
         elif self.state == State.falling:
+            if self.velocity.y <= 0:
+                self.velocity.y = 0.05
             ccLogger.error("Falling", self.position.x, self.position.y)            
             self.velocity.y *= 1.3
             if self.velocity.y > 1.1:
